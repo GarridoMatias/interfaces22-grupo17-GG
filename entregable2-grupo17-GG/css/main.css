@@ -1,0 +1,139 @@
+/*mobile first*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*logo*/
+.logo {
+    width: 120px;
+    margin: 0 5%;
+}
+
+
+/*Tipografia*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 64px;
+}
+
+
+/*contenedores*/
+.container-header {
+    background-color: #2EC0F9;
+    display: flex;
+    align-items: center;
+}
+
+.container-accesos-user {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-destacado {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.i-menu {
+    width: 20px;
+    height: 10px;
+    margin-left: 10px;
+}
+
+.i-carrito,
+.i-user {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+
+.i-carrito:hover,
+.i-user:hover {
+    opacity: 1;
+}
+
+.btn-destacado {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 15%;
+    border: 2px solid #ffffff;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 8px;
+    color: #ffffff;
+}
+
+.title-destacado {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 10%;
+    width: 60%;
+}
+
+.title-destacado h1 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: -1px 1px 0px rgba(103, 103, 103, 0.46);
+}
+
+
+.img-destacado {
+    width: 130%;
+    object-fit: cover;
+    box-sizing: border-box;
+    filter: brightness(50%);
+}
+
+
+/*medias queries*/
+@media screen and (min-width:480px) {
+    .container-destacado {
+        height: 200px;
+    }
+
+    .logo {
+        width: 150px;
+        margin: 0 5%;
+    }
+
+    .i-menu {
+        width: 30px;
+        height: 20px;
+        margin-left: 10px;
+    }
+
+    .i-carrito,
+    .i-user {
+        width: 25px;
+        height: 25px;
+        margin: 0 10px;
+    }
+
+    .img-destacado {
+        width: 100%;
+        transform: translateY(-30%);
+    }
+}
+
+@media screen and (min-width:768px) {
+    .btn-destacado {
+        left: 40%;
+        right: 40%;
+        bottom: 10%;
+    }
+}
