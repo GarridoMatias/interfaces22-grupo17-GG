@@ -41,49 +41,84 @@ h1 {
 
 /*SIN TERMINAR, CUANDO TERMINO ACOMODO CADA UNO EN SU LUGAR :D*/
 
+footer h3 {
+    margin: 10px 0;
+}
+
+footer a {
+    margin: 5px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
 .container-footer {
     width: 100%;
     background-color: #14191d;
     color: white;
 }
 
-.conteiner-ayuda,
-.conteiner-servicios,
-.conteiner-contacto,
-.conteiner-terminos {
+.container-ayuda,
+.container-servicios,
+.container-contacto,
+.container-terminos,
+.container-social {
     display: flex;
     flex-direction: column;
+    margin: 0% 5%;
 }
 
-.barras {}
+.barras {
+    font-size: 0;
+    padding: 0px 10px;
+}
 
-.conteiner-developers {
+.container-developers {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.seccion-footer a {
+footer a {
     text-decoration: none;
     color: white;
 }
 
-.seccion-footer a:hover {
+footer a:hover {
     color: #30C4D8;
 }
 
+.text-CR {
+    text-align: center;
+}
+
 @media screen and (min-width:768px) {
-    .conteiner-top-footer,
-    .conteiner-botton-footer {
+    .container-top-footer,
+    .container-botton-footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        width: 100%;
     }
-    .conteiner-terminos {
+    .container-terminos {
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+    .barras {
+        font-size: inherit;
+    }
+    .container-otro {
+        width: 100%;
+    }
+    .container-terminos a {
+        text-align: center;
+    }
+    .logo.logo-footer {
+        padding: 30px 0;
+        margin-right: 0;
     }
 }
 
