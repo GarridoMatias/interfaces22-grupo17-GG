@@ -1,10 +1,13 @@
 /*mobile first*/
+
 body {
     margin: 0;
     padding: 0;
 }
 
+
 /*logo*/
+
 .logo {
     width: 120px;
     margin: 0 5%;
@@ -49,11 +52,67 @@ p {
 }
 
 /*contenedores*/
+
 .container-header {
     background-color: var(--primary-color);
     display: flex;
     align-items: center;
 }
+
+
+/*bA-footer()*/
+
+
+/*SIN TERMINAR, CUANDO TERMINO ACOMODO CADA UNO EN SU LUGAR :D*/
+
+.container-footer {
+    width: 100%;
+    background-color: #14191d;
+    color: white;
+}
+
+.conteiner-ayuda,
+.conteiner-servicios,
+.conteiner-contacto,
+.conteiner-terminos {
+    display: flex;
+    flex-direction: column;
+}
+
+.barras {}
+
+.conteiner-developers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.seccion-footer a:hover {
+    color: #30C4D8;
+}
+
+@media screen and (min-width:768px) {
+    .conteiner-top-footer,
+    .conteiner-botton-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .conteiner-terminos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+/**/
 
 .container-accesos-user {
     width: 70%;
@@ -124,7 +183,7 @@ p {
     text-shadow: -1px 1px 0px rgba(103, 103, 103, 0.46);
 }
 
-/*imagenes*/
+
 .img-destacado {
     width: 130%;
     object-fit: cover;
@@ -134,22 +193,20 @@ p {
 
 
 /*medias queries*/
+
 @media screen and (min-width:480px) {
     .container-destacado {
         height: 200px;
     }
-
     .logo {
         width: 150px;
         margin: 0 5%;
     }
-
     .i-menu {
         width: 30px;
         height: 20px;
         margin-left: 10px;
     }
-
     .i-carrito,
     .i-user {
         width: 25px;
@@ -157,59 +214,14 @@ p {
         margin: 0 10px;
     }
 
-    .btn-destacado {
-        left: 25%;
-        right: 25%;
-        bottom: 10%;
+    .img-destacado {
+        width: 100%;
+        transform: translateY(-30%);
+>>>>>>> 8285a707c204db697c8acf1fb0978217c4b91033
     }
 }
 
 @media screen and (min-width:768px) {
-
-    /*Tipografia*/
-    h1 {
-        font-size: 65px;
-    }
-
-    h2 {
-        font-size: 55;
-    }
-
-    h3 {
-        font-size: 45;
-    }
-
-    h4 {
-        font-size: 35;
-    }
-
-    p {
-        font-size: 30px;
-    }
-
-    .img-destacado {
-        width: 100%;
-        transform: translateY(-30%);
-    }
-
-    .title-destacado {
-        left: 25%;
-        right: 25%;
-        top: -15%;
-        width: 50%;
-    }
-}
-
-@media screen and (min-width:1024px) {
-    .btn-destacado {
-        left: 35%;
-        right: 35%;
-        width: 30%;
-        bottom: 10%;
-    }
-}
-
-@media screen and (min-width:1920px) {
     .btn-destacado {
         left: 40%;
         right: 40%;
