@@ -1,10 +1,13 @@
 /*mobile first*/
+
 body {
     margin: 0;
     padding: 0;
 }
 
+
 /*logo*/
+
 .logo {
     width: 120px;
     margin: 0 5%;
@@ -25,11 +28,67 @@ h1 {
 
 
 /*contenedores*/
+
 .container-header {
     background-color: #2EC0F9;
     display: flex;
     align-items: center;
 }
+
+
+/*bA-footer()*/
+
+
+/*SIN TERMINAR, CUANDO TERMINO ACOMODO CADA UNO EN SU LUGAR :D*/
+
+.container-footer {
+    width: 100%;
+    background-color: #14191d;
+    color: white;
+}
+
+.conteiner-ayuda,
+.conteiner-servicios,
+.conteiner-contacto,
+.conteiner-terminos {
+    display: flex;
+    flex-direction: column;
+}
+
+.barras {}
+
+.conteiner-developers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.seccion-footer a:hover {
+    color: #30C4D8;
+}
+
+@media screen and (min-width:768px) {
+    .conteiner-top-footer,
+    .conteiner-botton-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .conteiner-terminos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+/**/
 
 .container-accesos-user {
     width: 70%;
@@ -91,7 +150,6 @@ h1 {
     text-shadow: -1px 1px 0px rgba(103, 103, 103, 0.46);
 }
 
-
 .img-destacado {
     width: 130%;
     object-fit: cover;
@@ -101,29 +159,26 @@ h1 {
 
 
 /*medias queries*/
+
 @media screen and (min-width:480px) {
     .container-destacado {
         height: 200px;
     }
-
     .logo {
         width: 150px;
         margin: 0 5%;
     }
-
     .i-menu {
         width: 30px;
         height: 20px;
         margin-left: 10px;
     }
-
     .i-carrito,
     .i-user {
         width: 25px;
         height: 25px;
         margin: 0 10px;
     }
-
     .img-destacado {
         width: 100%;
         transform: translateY(-30%);
