@@ -10,8 +10,14 @@ body {
     margin: 0 5%;
 }
 
+/*colores*/
+:root {
+    --primary-color: #2ec0f9;
+    --secondary-color: #14191D;
+}
 
-/*Tipografia*/
+
+/*tipografia*/
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -20,13 +26,31 @@ body {
 h1 {
     font-weight: 400;
     font-size: 55px;
-    line-height: 64px;
 }
 
+h2 {
+    font-size: 45;
+}
+
+h3 {
+    font-size: 35;
+}
+
+h4 {
+    font-size: 25;
+}
+
+h5 {
+    font-size: 30;
+}
+
+p {
+    font-size: 18px;
+}
 
 /*contenedores*/
 .container-header {
-    background-color: #2EC0F9;
+    background-color: var(--primary-color);
     display: flex;
     align-items: center;
 }
@@ -38,13 +62,14 @@ h1 {
 }
 
 .container-destacado {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 250px;
+    height: 40vh;
     left: 0px;
     overflow: hidden;
 }
 
+/*iconos*/
 .i-menu {
     width: 20px;
     height: 10px;
@@ -64,25 +89,33 @@ h1 {
     opacity: 1;
 }
 
+/*botones*/
 .btn-destacado {
     position: absolute;
-    left: 20%;
-    right: 20%;
-    bottom: 15%;
+    left: 15%;
+    right: 15%;
+    bottom: 20%;
     border: 2px solid #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     background-color: transparent;
     padding: 8px;
     color: #ffffff;
+    font-size: 30px;
 }
 
+.btn-destacado:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+/*textos*/
 .title-destacado {
     position: absolute;
-    left: 20%;
-    right: 20%;
-    top: 10%;
-    width: 60%;
+    left: 10%;
+    right: 10%;
+    top: 8%;
+    width: 80%;
 }
 
 .title-destacado h1 {
@@ -91,7 +124,7 @@ h1 {
     text-shadow: -1px 1px 0px rgba(103, 103, 103, 0.46);
 }
 
-
+/*imagenes*/
 .img-destacado {
     width: 130%;
     object-fit: cover;
@@ -124,16 +157,63 @@ h1 {
         margin: 0 10px;
     }
 
-    .img-destacado {
-        width: 100%;
-        transform: translateY(-30%);
+    .btn-destacado {
+        left: 25%;
+        right: 25%;
+        bottom: 10%;
     }
 }
 
 @media screen and (min-width:768px) {
+
+    /*Tipografia*/
+    h1 {
+        font-size: 65px;
+    }
+
+    h2 {
+        font-size: 55;
+    }
+
+    h3 {
+        font-size: 45;
+    }
+
+    h4 {
+        font-size: 35;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    .img-destacado {
+        width: 100%;
+        transform: translateY(-30%);
+    }
+
+    .title-destacado {
+        left: 25%;
+        right: 25%;
+        top: -15%;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .btn-destacado {
+        left: 35%;
+        right: 35%;
+        width: 30%;
+        bottom: 10%;
+    }
+}
+
+@media screen and (min-width:1920px) {
     .btn-destacado {
         left: 40%;
         right: 40%;
+        width: 20%;
         bottom: 10%;
     }
 }
