@@ -13,7 +13,9 @@ body {
     margin: 0 5%;
 }
 
+
 /*colores*/
+
 :root {
     --primary-color: #2ec0f9;
     --secondary-color: #14191D;
@@ -48,8 +50,9 @@ h5 {
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;
 }
+
 
 /*contenedores*/
 
@@ -128,6 +131,18 @@ footer a:hover {
     text-align: center;
 }
 
+.container-follow {
+    display: flex;
+}
+
+.i-facebook,
+.i-instagram {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+
 @media screen and (min-width:768px) {
     .container-top-footer {
         display: flex;
@@ -182,7 +197,9 @@ footer a:hover {
     overflow: hidden;
 }
 
+
 /*iconos*/
+
 .i-menu {
     width: 20px;
     height: 10px;
@@ -202,7 +219,9 @@ footer a:hover {
     opacity: 1;
 }
 
+
 /*botones*/
+
 .btn-destacado {
     position: absolute;
     left: 15%;
@@ -222,7 +241,9 @@ footer a:hover {
     color: var(--primary-color);
 }
 
+
 /*textos*/
+
 .title-destacado {
     position: absolute;
     left: 10%;
@@ -236,7 +257,6 @@ footer a:hover {
     color: #ffffff;
     text-shadow: -1px 1px 0px rgba(103, 103, 103, 0.46);
 }
-
 
 .img-destacado {
     width: 130%;
@@ -267,7 +287,6 @@ footer a:hover {
         height: 25px;
         margin: 0 10px;
     }
-
     .img-destacado {
         width: 100%;
         transform: translateY(-30%);
