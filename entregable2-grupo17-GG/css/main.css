@@ -41,16 +41,31 @@ h1 {
 
 /*SIN TERMINAR, CUANDO TERMINO ACOMODO CADA UNO EN SU LUGAR :D*/
 
-footer h3 {
+body {
+    position: relative;
+    padding-bottom: 20em;
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h3,
+footer a,
+footer p {
     margin: 10px 0;
 }
 
 footer a {
-    margin: 5px 0;
+    text-decoration: none;
+    color: white;
 }
 
-footer p {
-    margin: 5px 0;
+footer a:hover {
+    color: #30C4D8;
 }
 
 .container-footer {
@@ -69,11 +84,6 @@ footer p {
     margin: 0% 5%;
 }
 
-.barras {
-    font-size: 0;
-    padding: 0px 10px;
-}
-
 .container-developers {
     display: flex;
     flex-direction: row;
@@ -81,13 +91,13 @@ footer p {
     align-items: center;
 }
 
-footer a {
-    text-decoration: none;
-    color: white;
+.container-developers p {
+    color: gray;
 }
 
-footer a:hover {
-    color: #30C4D8;
+.barras {
+    font-size: 0;
+    margin: 0;
 }
 
 .text-CR {
@@ -95,30 +105,39 @@ footer a:hover {
 }
 
 @media screen and (min-width:768px) {
-    .container-top-footer,
-    .container-botton-footer {
+    .container-top-footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
+        padding: 30px 0;
+    }
+    .container-botton-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 94%;
+        padding: 0 3%;
     }
     .container-terminos {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
     }
-    .barras {
-        font-size: inherit;
-    }
-    .container-otro {
-        width: 100%;
+    .container-legales {
+        width: 60%;
     }
     .container-terminos a {
         text-align: center;
     }
-    .logo.logo-footer {
-        padding: 30px 0;
-        margin-right: 0;
+    .barras {
+        font-size: inherit;
+        padding: 0px 10px;
+    }
+    .text-CR {
+        margin: 0 5%;
+        text-align: start;
     }
 }
 
