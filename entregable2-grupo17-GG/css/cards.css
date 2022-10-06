@@ -1,0 +1,80 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.categoria-juegos {
+    width: 100%;
+}
+
+.titulo-categoria {
+    color: #000000;
+    margin-left: 5%;
+}
+
+.container-cards-juegos {
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 25vh;
+}
+
+.container-categorias-juegos {
+    overflow: hidden;
+}
+
+.card-juego {
+    border-radius: 5px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    width: calc(100%/3);
+    border-radius: 5px;
+    margin: 0 20px;
+    flex: 0 0 30%;
+    object-fit: cover;
+}
+
+.card-juego img {
+    width: 160%;
+    left: 20px;
+    top: 20px;
+}
+
+.card-juego img:hover {
+    width: 100%;
+
+}
+
+@media screen and (min-width:768px) {
+    .categoria-juegos {
+        margin-left: 2%;
+    }
+
+    .container-cards-juegos {
+        height: 25vh;
+    }
+
+    .card-juego {
+        flex: 0 0 25%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .card-juego {
+        flex: 0 0 20%;
+        width: calc(100%/4);
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .container-cards-juegos {
+        height: 20vh;
+    }
+
+    .card-juego {
+        flex: 0 0 15%;
+        width: calc(100%/5);
+    }
+}
