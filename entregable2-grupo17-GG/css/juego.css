@@ -5,7 +5,7 @@
 .b-comentario {
     width: 30px;
     height: 30px;
-    margin: 0 5px;
+    margin: 0 20px;
     background-image: url(../icons/enviar.png);
     background-color: #393939;
     background-repeat: no-repeat;
@@ -24,38 +24,61 @@
 .redes {
     display: flex;
     justify-content: space-between;
+    width: 70%;
 }
 
 .container-compartir {
-    margin: 0 5%;
+    margin-top: 50px;
     /*LO HAGO POR EN MAIN CSS TENGO UNA CLASE Q SE LLAMA CONTAINER-AYUDA AL IGUAL QUE ACA Y SE APLICA EL CSS DE MAIN.CSS*/
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .container-contacto {
-    width: 40%;
     display: flex;
+    flex-direction: column;
+    margin: 0% 2%;
+    width: 35%;
+}
+
+.container-social {
+    width: 100%;
+    margin: 5% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+h4 {
+    margin: 20px 0;
+}
+
+.iniciales-comunidad {
+    width: 60px;
+    border-radius: 100%;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
 }
 
 .textarea-comentario {
-    width: 304px;
     background-color: #d9d9d950;
     border-radius: 10px;
 }
 
-.container-ayuda {
+.container-ayuda-comentario {
     display: flex;
+    flex-direction: column;
+    margin: 50px 0
 }
 
 .caja-comentarios {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 form {
-    width: auto;
     display: flex;
     align-items: flex-end;
 }
