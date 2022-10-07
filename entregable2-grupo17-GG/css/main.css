@@ -92,6 +92,7 @@ p {
     width: 100%;
     z-index: 10000;
     min-height: 5vh;
+    top: 0;
 }
 
 .container-accesos-user {
