@@ -15,13 +15,45 @@
 
 <body>
     <header class="container-header">
-        <img src="./icons/menu.png" class="i-menu">
-        <img class="logo" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+        <a href="javascript:void(0)" id="btn-sidebar-menu">
+            <img src="./icons/menu.png" class="i-menu">
+        </a>
+        <a href="index.html" class="logo">
+            <img src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+        </a>
         <div class="container-accesos-user">
-            <img src="./icons/user.png" class="i-user">
-            <img src="./icons/carrito.png" class="i-carrito">
+            <a href=""><img src="./icons/user.png" class="i-user icono"></a>
+            <a href=""><img src="./icons/carrito.png" class="i-carrito icono"></a>
         </div>
     </header>
+    <div id="sidebar-menu" class="sidebar-menu">
+        <div id="contenido-menu" class="contenido-menu">
+            <a href="" id="btn-close-menu" class="close-menu">x</a>
+            <h2 class="titulo-menu">Rocket Games</h2>
+            <div class="seccion-menu">
+                <h2>Juegos</h2>
+                <a href="">Destacados</a>
+                <a href="">Ajustes del juego</a>
+            </div>
+            <div class="seccion-menu">
+                <h2>Categorias</h2>
+                <a href="">Accion</a>
+                <a href="">Aventura</a>
+                <a href="">Carrera</a>
+                <a href="">Clásicos</a>
+                <a href="">Infantiles</a>
+                <a href="">Más jugados</a>
+            </div>
+            <div class="seccion-menu seccion-menu-perfil">
+                <a href="">Perfil</a>
+                <a href="">Configuración de cuenta</a>
+                <a href="">Cerrar sesión</a>
+            </div>
+            <div class="seccion-menu-blog">
+                <a href="" class="blog-rocket"><img class="icon-blog" src="./icons/blog.png" alt="icon-blog.png">Blog Rocket Games</a>
+            </div>
+        </div>
+    </div>
 
     <section class="container-juego">
 
@@ -150,51 +182,48 @@
 
             <div class="container-social">
                 <h3>Nosotros</h3>
-                <a href="">Equipo</a>
-                <div class="container-follow">
-                    <p>Follow us</p>
-                    <a href="">
-                        <img src="icons/instagram.png" alt="instagram.png" class="i-instagram">
-                    </a>
-                    <a href="">
-                        <img src="icons/facebook.png" alt="facebook.png" class="i-facebook">
-                    </a>
+                <div class="contenido-nosotros">
+                    <a href="">Equipo</a>
+                    <div class="container-follow">
+                        <p>Follow us</p>
+                        <a href="">
+                            <img src="icons/instagram.png" alt="instagram.png" class="i-instagram icono">
+                        </a>
+                        <a href="">
+                            <img src="icons/facebook.png" alt="facebook.png" class="i-facebook icono">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="container-botton-footer">
+            <div class="institucional">
+                <img class="logo logo-footer" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
 
-            <img class="logo logo-footer" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+                <!---->
+                <div class="container-legales">
+                    <div class="container-terminos">
+                        <a href="">Terminos y condiciones</a>
+                        <p class="barras"> | </p>
+                        <a href="">Politicas de privacidad</a>
+                        <p class="barras"> | </p>
+                        <a href="">Licencia</a>
+                    </div>
 
-            <!---->
-            <div class="container-legales">
-                <div class="container-terminos">
-                    <a href="">Terminos y condiciones</a>
-                    <p class="barras"> | </p>
-                    <a href="">Politicas de privacidad</a>
-                    <p class="barras"> | </p>
-                    <a href="">Licencia</a>
+                    <p class="text-CR">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
 
                 </div>
-
-                <p class="text-CR">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
-
             </div>
 
             <div class="container-developers">
+
                 <p>Powered by &nbsp</p>
                 <a href="">Grupo 17</a>
             </div>
-
         </div>
-
-
-
-
-
-
     </footer>
+    
     <script src="js/rocketGames.js"></script>
 
 </body>

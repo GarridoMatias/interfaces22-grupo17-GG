@@ -8,7 +8,7 @@
 
 .titulo-categoria {
     color: #000000;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .container-cards-juegos {
@@ -23,6 +23,8 @@
 
 .container-categorias-juegos {
     overflow: hidden;
+    position: relative;
+    top: 5vh;
 }
 
 .card-juego {
@@ -33,17 +35,36 @@
     border-radius: 5px;
     margin: 0 20px;
     flex: 0 0 30%;
+    position: relative;
     object-fit: cover;
 }
 
 .card-juego img {
-    width: 160%;
-    left: 20px;
-    top: 20px;
+    width: fit-content;
 }
 
 .card-juego img:hover {
     width: 120%;
+}
+
+.btn-play {
+    position: absolute;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 5px 30px;
+    border-color: #ffffff;
+    border-radius: 5px;
+    bottom: 5%;
+    font-size: 1.5rem;
+    left: 30%;
+    right: 30%;
+    width: 20%;
+    text-align: center;
+}
+
+.btn-play:hover {
+    background-color: #ffffff;
+    color: var(--paleta3-color);
 }
 
 @media screen and (min-width:768px) {
