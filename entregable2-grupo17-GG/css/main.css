@@ -1,10 +1,14 @@
 /*mobile first*/
 
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     margin: 0;
     padding: 0;
     position: relative;
-    padding-bottom: 20em;
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
 }
@@ -144,7 +148,7 @@ p {
     position: absolute;
     left: 15%;
     right: 15%;
-    bottom: 20%;
+    bottom: 10%;
     border: 2px solid #ffffff;
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
@@ -164,8 +168,7 @@ p {
 /*footer*/
 
 footer {
-    position: absolute;
-    bottom: 0;
+    margin-top: 10vh;
     width: 100%;
 }
 
@@ -356,7 +359,7 @@ footer a:hover {
     align-items: center;
 }
 
-.icon-blog {
+.i-blog {
     margin: 0 5% 0 0;
 }
 
