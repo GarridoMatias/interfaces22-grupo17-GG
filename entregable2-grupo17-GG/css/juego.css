@@ -3,7 +3,8 @@
 }
 
 img {
-    width: 100%;
+    width: 90%;
+    margin: 0 5%;
 }
 
 .b-comentario {
@@ -31,6 +32,11 @@ img {
     width: 70%;
 }
 
+.container-comunidad {
+    width: 40%;
+    margin-left: 5%;
+}
+
 .container-compartir {
     margin-top: 50px;
     /*LO HAGO POR EN MAIN CSS TENGO UNA CLASE Q SE LLAMA CONTAINER-AYUDA AL IGUAL QUE ACA Y SE APLICA EL CSS DE MAIN.CSS*/
@@ -42,19 +48,36 @@ img {
 .container-contacto {
     display: flex;
     flex-direction: column;
-    margin: 0% 2%;
+    margin-right: 5%;
     width: 35%;
 }
 
 .container-social {
     width: 100%;
-    margin: 5% 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 h4 {
     margin: 20px 0;
+}
+
+.i-inicial {
+    width: 35px;
+    height: 35px;
+}
+
+.valoracion h4,
+.valoracion p {
+    margin: 5px;
+}
+
+.valoracion {
+    display: flex;
+    align-items: center;
+    background-color: rgba(217, 217, 217, 20%);
+    border-radius: 10px;
+    margin: 30px 0;
 }
 
 .iniciales-comunidad {
