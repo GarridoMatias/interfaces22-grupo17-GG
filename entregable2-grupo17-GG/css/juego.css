@@ -2,6 +2,10 @@
     color: white;
 }
 
+img {
+    width: 100%;
+}
+
 .b-comentario {
     width: 30px;
     height: 30px;
