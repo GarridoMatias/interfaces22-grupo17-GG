@@ -18,7 +18,7 @@ body {
 
 .logo img {
     width: 120px;
-    margin: 0 5%;
+    margin: 1% 0 0 5%;
 }
 
 a {
@@ -447,6 +447,10 @@ footer a:hover {
 }
 
 @media screen and (min-width:768px) {
+    .logo {
+        width: 180px;
+    }
+
     .btn-destacado {
         left: 35%;
         right: 35%;

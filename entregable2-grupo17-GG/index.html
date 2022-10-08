@@ -62,6 +62,7 @@
                 <h1>StarCitizen</h1>
             </div>
             <a href="./juegoDestacado.html" id="btn-juego-destacado" class="btn-destacado">Explorá el juego</a>
+            <a href="" id="icon-compartir"><img src="./icons/flecha.png" alt="icon-compartir.png"></a>
         </section>
         <section class="container-categorias-juegos">
             <div class="categoria-juegos">
@@ -69,8 +70,8 @@
                 <div class="container-cards-juegos">
                     <div class="card-juego">
                         <a href="./juego.html" id="btn-play" class="btn-play">Play</a>
-                        <a href="javascript:void(0)" class="i-info-card icono"><img src="./icons/informacion.png"
-                                alt="icon-info.png"></a>
+                        <a href="javascript:void(0)" id="i-info-card" class="i-info-card icono"><img
+                                src="./icons/informacion.png" alt="icon-info.png"></a>
                         <img class="i-destacado" src="./icons/destacado.png" alt="icon-destacado.png">
                         <img class=".img-juego" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
                     </div>
@@ -99,7 +100,8 @@
                 </div>
             </div>
             <!-- Dialogo con información del juego-->
-            <div class="dialogo-info-juego">
+            <div class="dialogo-info-juego" id="dialogo-info-juego" data-animation="slideInOutLeft">
+                <a href="" id="btn-close-dialogo" class="close-dialogo">x</a>
                 <div id="imagen-dialogo"></div>
             </div>
         </section>

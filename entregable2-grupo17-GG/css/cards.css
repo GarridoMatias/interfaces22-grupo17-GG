@@ -92,17 +92,25 @@
 
 .dialogo-info-juego {
     width: 0;
-    height: 50vh;
+    height: 70vh;
     position: fixed;
-    z-index: 100000;
-    background-color: #ffffff;
+    z-index: 10000;
+    background-color: var(--primary-color);
     overflow-x: hidden;
-    transition: 0.4s;
+    transition: 0.4s ease;
+    left: 10%;
     padding: 1rem 0;
     box-sizing: border-box;
     border-radius: 5px;
+    top: 15vh;
 }
 
+.close-dialogo {
+    color: #ffffff;
+    margin-right: 5%;
+    display: flex;
+    justify-content: flex-end;
+}
 
 @media screen and (min-width:768px) {
     .categoria-juegos {
@@ -119,7 +127,9 @@
     }
 
     .btn-play {
-        bottom: 30%;
+        bottom: 25%;
+        left: 25%;
+        right: 25%;
     }
 }
 
