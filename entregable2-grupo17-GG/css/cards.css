@@ -41,10 +41,12 @@
 
 .card-juego .img-juego {
     width: fit-content;
+    filter: brightness(50%);
 }
 
 .card-juego .img-juego:hover {
     width: 120%;
+    filter: brightness(100%);
 }
 
 .btn-play {
@@ -60,6 +62,7 @@
     right: 30%;
     width: 20%;
     text-align: center;
+    z-index: 1000;
 }
 
 .btn-play:hover {
@@ -71,6 +74,7 @@
     position: absolute;
     top: 5%;
     right: 5%;
+    z-index: 1000;
 }
 
 .i-info-card img {
@@ -86,6 +90,7 @@
     position: absolute;
     top: -2%;
     left: 5%;
+    z-index: 1000;
 }
 
 /*Dialog*/
@@ -99,17 +104,25 @@
     overflow-x: hidden;
     transition: 0.4s ease;
     left: 10%;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 15px;
     top: 15vh;
+    box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
+    -webkit-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
+    -moz-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
 }
 
 .close-dialogo {
     color: #ffffff;
-    margin-right: 5%;
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+.img-dialogo{
+    width: 100%;
+    height: 40vh;
 }
 
 @media screen and (min-width:768px) {
