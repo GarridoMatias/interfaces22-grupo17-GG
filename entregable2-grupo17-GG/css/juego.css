@@ -180,5 +180,6 @@ label {
 }
 
 .container-juego {
-    background-color: #393939;
+    background-color: var(--secondary-color);
+    margin-top: 10vh;
 }

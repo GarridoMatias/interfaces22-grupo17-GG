@@ -16,7 +16,7 @@ body {
 
 /*logo*/
 
-.logo {
+.logo img {
     width: 120px;
     margin: 0 5%;
 }
@@ -91,6 +91,10 @@ p {
 
 /*contenedores*/
 
+.container-home {
+    margin-top: 10vh;
+}
+
 .container-header {
     background-color: var(--primary-color);
     display: flex;
@@ -98,7 +102,7 @@ p {
     position: fixed;
     width: 100%;
     z-index: 10000;
-    min-height: 5vh;
+    height: 10vh;
     top: 0;
 }
 
@@ -113,7 +117,6 @@ p {
     width: 100%;
     height: 40vh;
     left: 0px;
-    top: 5vh;
     overflow: hidden;
 }
 
@@ -155,7 +158,7 @@ p {
     background-color: transparent;
     padding: 8px;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -164,6 +167,9 @@ p {
     color: var(--primary-color);
 }
 
+.btn-sidebar-menu {
+    margin: 0 2%;
+}
 
 /*footer*/
 
@@ -290,6 +296,7 @@ footer a:hover {
     overflow-x: hidden;
     transition: 0.4s;
     padding: 1rem 0;
+    top: 10vh;
     box-sizing: border-box;
 }
 
@@ -364,15 +371,37 @@ footer a:hover {
 }
 
 
+/*breadcrumb*/
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    padding: 10px;
+}
+
+.breadcrumb p {
+    margin: 0 5px;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
 /*medias queries*/
 
 @media screen and (min-width:480px) {
     .sidebar-menu {
         height: auto;
     }
+
     #contenido-menu {
         height: 80vh;
     }
+
     .close-menu {
         font-size: 2.3rem;
     }
@@ -380,32 +409,39 @@ footer a:hover {
     .container-destacado {
         height: 200px;
     }
+
     .container-nosotros {
         flex-wrap: nowrap;
         flex-direction: row;
         align-items: center;
     }
+
     .contenido-nosotros {
         width: 60%;
     }
-    .logo {
+
+    .logo img {
         width: 150px;
         margin: 0 5%;
     }
+
     .title-destacado {
         top: -10%;
     }
+
     .i-menu {
         width: 30px;
         height: 20px;
         margin-left: 10px;
     }
+
     .i-carrito,
     .i-user {
         width: 25px;
         height: 25px;
         margin: 0 10px;
     }
+
     .img-destacado {
         width: 100%;
         transform: translateY(-30%);
@@ -419,13 +455,16 @@ footer a:hover {
         width: 30%;
         bottom: 10%;
     }
+
     .container-top-footer,
     .container-botton-footer {
         padding: 20px 0 0 0;
     }
+
     .container-top-footer {
         flex-wrap: nowrap;
     }
+
     .container-nosotros {
         margin: 0;
         width: initial;
@@ -433,11 +472,13 @@ footer a:hover {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .contenido-nosotros {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
     }
+
     .container-botton-footer {
         display: flex;
         flex-direction: row;
@@ -445,40 +486,49 @@ footer a:hover {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
     .institucional {
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
     }
+
     .institucional .logo {
         width: 20%;
         float: left;
         margin: 0 auto 20px auto;
     }
+
     .container-terminos {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
+
     .container-legales {
         width: 75%;
         float: right;
     }
+
     .container-terminos a {
         text-align: center;
     }
+
     .container-developers {
         padding: 0;
     }
+
     .barras {
         font-size: inherit;
         padding: 0px 10px;
     }
+
     .text-CR {
         text-align: start;
     }
+
     h1 {
         font-size: 65px;
     }
@@ -487,14 +537,17 @@ footer a:hover {
         font-size: 55px;
         font-weight: 100;
     }
+
     h3 {
         font-size: 45px;
         font-weight: 100;
     }
+
     h4 {
         font-size: 35px;
         font-weight: 100;
     }
+
     p {
         font-size: 20px;
     }
@@ -504,12 +557,15 @@ footer a:hover {
     .container-botton-footer {
         flex-wrap: nowrap;
     }
+
     .institucional {
         width: 75%;
     }
+
     .institucional .logo {
         width: 25%;
     }
+
     .container-legales {
         width: 70%;
         margin: 0 0 0 5%;
@@ -521,13 +577,15 @@ footer a:hover {
         width: 60%;
         margin: 0 0 0 15%;
     }
+
     .btn-destacado {
         left: 40%;
         right: 40%;
         width: 20%;
     }
+
     .container-accesos-user {
-        width: 75%;
+        width: 85%;
     }
 }
 
