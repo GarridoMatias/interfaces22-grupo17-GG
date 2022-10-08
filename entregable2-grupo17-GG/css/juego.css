@@ -47,7 +47,6 @@
 
 .container-compartir {
     margin-top: 50px;
-    /*LO HAGO POR EN MAIN CSS TENGO UNA CLASE Q SE LLAMA CONTAINER-AYUDA AL IGUAL QUE ACA Y SE APLICA EL CSS DE MAIN.CSS*/
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -145,14 +144,6 @@ input {
     border-color: #FFFFFF;
 }
 
-.iniciales-comunidad {
-    width: 60px;
-    border-radius: 100%;
-    background-color: black;
-    padding: 10px;
-    text-align: center;
-}
-
 .textarea-comentario {
     background-color: #d9d9d950;
     border-radius: 10px;
@@ -180,6 +171,8 @@ label {
 }
 
 .container-juego {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color);
+    queda el fondo del juego con el mismo background del footer*/
+    background-color: #393939;
     margin-top: 10vh;
 }
