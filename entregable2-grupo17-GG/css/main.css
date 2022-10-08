@@ -377,9 +377,7 @@ footer a:hover {
     flex-direction: row;
     color: #ffffff;
     background-color: var(--secondary-color);
-    position: fixed;
     width: 100%;
-    z-index: 10000;
     padding: 10px;
 }
 
