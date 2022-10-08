@@ -81,14 +81,14 @@
     
     .container-objetivo,
     .container-comunidad {
-        margin-left: 5%;
+        margin-left: 10%;
         width: 40%;
     }
     
     .container-instrucciones,
     .container-contacto {
-        margin-right: 5%;
-        width: 35%;
+        margin-right: 10%;
+        width: 25%;
     }
     /*contenedor social*/
     
@@ -112,7 +112,7 @@
         align-items: center;
         width: 100%;
         background-color: rgba(217, 217, 217, 20%);
-        border-radius: 10px;
+        border-radius: 20px;
         margin-top: 18px;
     }
     
@@ -216,5 +216,5 @@
     
     .textarea-comentario {
         background-color: #d9d9d950;
-        border-radius: 10px;
+        border-radius: 20px;
     }

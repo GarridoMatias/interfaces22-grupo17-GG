@@ -14,183 +14,187 @@
 </head>
 
 <body>
-    <header class="container-header">
-        <a href="javascript:void(0)" id="btn-sidebar-menu">
-            <img src="./icons/menu.png" class="i-menu">
-        </a>
-        <a href="index.html" class="logo">
-            <img src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
-        </a>
-        <div class="container-accesos-user">
-            <a href=""><img src="./icons/user.png" class="i-user icono"></a>
-            <a href=""><img src="./icons/carrito.png" class="i-carrito icono"></a>
-        </div>
-    </header>
-    <div id="sidebar-menu" class="sidebar-menu">
-        <div id="contenido-menu" class="contenido-menu">
-            <a href="" id="btn-close-menu" class="close-menu">x</a>
-            <h2 class="titulo-menu">Rocket Games</h2>
-            <div class="seccion-menu">
-                <h2>Juegos</h2>
-                <a href="">Destacados</a>
-                <a href="">Ajustes del juego</a>
-            </div>
-            <div class="seccion-menu">
-                <h2>Categorias</h2>
-                <a href="">Accion</a>
-                <a href="">Aventura</a>
-                <a href="">Carrera</a>
-                <a href="">Clásicos</a>
-                <a href="">Infantiles</a>
-                <a href="">Más jugados</a>
-            </div>
-            <div class="seccion-menu seccion-menu-perfil">
-                <a href="">Perfil</a>
-                <a href="">Configuración de cuenta</a>
-                <a href="">Cerrar sesión</a>
-            </div>
-            <div class="seccion-menu-blog">
-                <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog
-                    Rocket Games</a>
-            </div>
-        </div>
+    <div id="id-spin" class="loader-div">
+        <div class="loader"></div>
+        <h2 id="id-porcentaje">0%</h2>
     </div>
-    <div class="container-home">
-        <section class="container-destacado">
-            <img src="./images/000destacado.jpg" alt="citizen.jpg" class="img-destacado">
-            <div class="title-destacado">
-                <h1>StarCitizen</h1>
+    <div id="id-div" class="test-preload">
+        <header class="container-header">
+            <a href="javascript:void(0)" id="btn-sidebar-menu">
+                <img src="./icons/menu.png" class="i-menu">
+            </a>
+            <a href="index.html" class="logo">
+                <img src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+            </a>
+            <div class="container-accesos-user">
+                <a href=""><img src="./icons/user.png" class="i-user icono"></a>
+                <a href=""><img src="./icons/carrito.png" class="i-carrito icono"></a>
             </div>
-            <a href="./juegoDestacado.html" id="btn-juego-destacado" class="btn-destacado">Explorá el juego</a>
-            <a href="" id="icon-compartir"><img src="./icons/flecha.png" alt="icon-compartir.png"></a>
-        </section>
-        <section class="container-categorias-juegos">
-            <div class="categoria-juegos">
-                <h2 class="titulo-categoria">Recomendados</h2>
-                <div id="container-cards" class="container-cards-juegos">
-                    <div>
-                        <a href="javascript:void(0)" id="slide-control-prev" class="slide-control icono next">
-                            <img src="./icons/slide-control.png" alt="slide-control.png">
-                        </a>
-                    </div>
-                    <div class="card-juego">
-                        <a href="./juego.html" id="btn-play" class="btn-play btn-play-card">Play</a>
-                        <a href="javascript:void(0)" id="i-info-card" class="i-info-card icono"><img
-                                src="./icons/informacion.png" alt="icon-info.png"></a>
-                        <img class="i-destacado i-destacado-card" src="./icons/destacado.png" alt="icon-destacado.png">
-                        <img class="img-juego" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/002juego-harrypotter.jpg" alt="harrypotter.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/003juego-sackboy.jfif" alt="sackboy.jfif">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/004juego-mariokart.jpg" alt="mariokart.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
-                    </div>
-                    <div class="card-juego">
-                        <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
-                    </div>
+        </header>
+        <div id="sidebar-menu" class="sidebar-menu">
+            <div id="contenido-menu" class="contenido-menu">
+                <a href="" id="btn-close-menu" class="close-menu">x</a>
+                <h2 class="titulo-menu">Rocket Games</h2>
+                <div class="seccion-menu">
+                    <h2>Juegos</h2>
+                    <a href="">Destacados</a>
+                    <a href="">Ajustes del juego</a>
+                </div>
+                <div class="seccion-menu">
+                    <h2>Categorias</h2>
+                    <a href="">Accion</a>
+                    <a href="">Aventura</a>
+                    <a href="">Carrera</a>
+                    <a href="">Clásicos</a>
+                    <a href="">Infantiles</a>
+                    <a href="">Más jugados</a>
+                </div>
+                <div class="seccion-menu seccion-menu-perfil">
+                    <a href="">Perfil</a>
+                    <a href="">Configuración de cuenta</a>
+                    <a href="">Cerrar sesión</a>
+                </div>
+                <div class="seccion-menu-blog">
+                    <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog Rocket Games</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-home">
+            <section class="container-destacado">
+                <img src="./images/000destacado.jpg" alt="citizen.jpg" class="img-destacado">
+                <div class="title-destacado">
+                    <h1>StarCitizen</h1>
+                </div>
+                <a href="./juegoDestacado.html" id="btn-juego-destacado" class="btn-destacado">Explorá el juego</a>
+                <a href="" id="icon-compartir"><img src="./icons/flecha.png" alt="icon-compartir.png"></a>
+            </section>
+            <section class="container-categorias-juegos">
+                <div class="categoria-juegos">
+                    <h2 class="titulo-categoria">Recomendados</h2>
+                    <div id="container-cards" class="container-cards-juegos">
+                        <div>
+                            <a href="javascript:void(0)" id="slide-control-prev" class="slide-control icono next">
+                                <img src="./icons/slide-control.png" alt="slide-control.png">
+                            </a>
+                        </div>
+                        <div class="card-juego">
+                            <a href="./juego.html" id="btn-play" class="btn-play btn-play-card">Play</a>
+                            <a href="javascript:void(0)" id="i-info-card" class="i-info-card icono"><img src="./icons/informacion.png" alt="icon-info.png"></a>
+                            <img class="i-destacado i-destacado-card" src="./icons/destacado.png" alt="icon-destacado.png">
+                            <img class="img-juego" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/002juego-harrypotter.jpg" alt="harrypotter.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/003juego-sackboy.jfif" alt="sackboy.jfif">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/004juego-mariokart.jpg" alt="mariokart.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
+                        </div>
+                        <div class="card-juego">
+                            <img class="img-juego" src="./images/005juego-plantszombies3.jpg" alt="plantszombies3.jpg">
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <!-- Dialogo con información del juego-->
-            <div class="dialogo-info-juego" id="dialogo-info-juego" data-animation="slideInOutLeft">
-                <a href="" id="btn-close-dialogo" class="close-dialogo">x</a>
-                <img class="i-destacado i-destacado-dialog" src="./icons/destacado.png" alt="icon-destacado.png">
-                <div id="imagen-dialogo">
-                    <a href="./juego.html" id="btn-play" class="btn-play btn-play-dialog">
-                        <img src="./icons/play-circle.png" class="i-play-dialog">Play</a>
-                    <img class="img-dialogo-info" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
+                <!-- Dialogo con información del juego-->
+                <div class="dialogo-info-juego" id="dialogo-info-juego" data-animation="slideInOutLeft">
+                    <a href="" id="btn-close-dialogo" class="close-dialogo">x</a>
+                    <img class="i-destacado i-destacado-dialog" src="./icons/destacado.png" alt="icon-destacado.png">
+                    <div id="imagen-dialogo">
+                        <a href="./juego.html" id="btn-play" class="btn-play btn-play-dialog">
+                            <img src="./icons/play-circle.png" class="i-play-dialog">Play</a>
+                        <img class="img-dialogo-info" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
+                    </div>
+                    <div class="contenido-info-dialogo">
+                        <div class="header-info-dialogo">
+                            <h4>BloodBorne</h4>
+                            <div class="container-accion-dialogo">
+                                <img class="i-favorito-dialogo icono" src="./icons/favoritos.png" alt="icon-favoritos.png">
+                                <p class="btn-carrito">Ya compraste este juego</p>
+                            </div>
+                        </div>
+                        <p>Explora un mundo totalmente devastado, en el que solo pequeños grupos de personas han conseguido mantenerse con vida. Sobrevive como puedas en este juego apocalíptico.</p>
+                    </div>
                 </div>
-                <div class="contenido-info-dialogo">
-                    <div class="header-info-dialogo">
-                        <h4>BloodBorne</h4>
-                        <div class="container-accion-dialogo">
-                            <img class="i-favorito-dialogo icono" src="./icons/favoritos.png" alt="icon-favoritos.png">
-                            <p class="btn-carrito">Ya compraste este juego</p>
+            </section>
+        </div>
+        <div>
+
+        </div>
+
+        <footer class="container-footer">
+
+            <div class="container-top-footer">
+                <div class="container-ayuda">
+                    <h3>Ayuda</h3>
+                    <a href="">FAQs</a>
+                    <a href="">Contacto</a>
+                </div>
+
+                <div class="container-servicios">
+                    <h3>Servicios</h3>
+                    <a href="">Consegui actualizaciones</a>
+                    <a href="">Productos</a>
+                </div>
+
+                <div class="container-nosotros">
+                    <h3>Nosotros</h3>
+                    <div class="contenido-nosotros">
+                        <a href="">Equipo</a>
+                        <div class="container-follow">
+                            <p>Follow us</p>
+                            <a href="">
+                                <img src="icons/instagram.png" alt="instagram.png" class="i-instagram icono">
+                            </a>
+                            <a href="">
+                                <img src="icons/facebook.png" alt="facebook.png" class="i-facebook icono">
+                            </a>
                         </div>
                     </div>
-                    <p>Explora un mundo totalmente devastado, en el que solo pequeños grupos de personas han conseguido
-                        mantenerse con vida. Sobrevive como puedas en este juego apocalíptico.</p>
                 </div>
             </div>
-        </section>
-    </div>
-    <div>
 
-    </div>
+            <div class="container-botton-footer">
+                <div class="institucional">
+                    <img class="logo logo-footer" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
 
-    <footer class="container-footer">
+                    <!---->
+                    <div class="container-legales">
+                        <div class="container-terminos">
+                            <a href="">Terminos y condiciones</a>
+                            <p class="barras"> | </p>
+                            <a href="">Politicas de privacidad</a>
+                            <p class="barras"> | </p>
+                            <a href="">Licencia</a>
+                        </div>
 
-        <div class="container-top-footer">
-            <div class="container-ayuda">
-                <h3>Ayuda</h3>
-                <a href="">FAQs</a>
-                <a href="">Contacto</a>
-            </div>
+                        <p class="text-CR">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
 
-            <div class="container-servicios">
-                <h3>Servicios</h3>
-                <a href="">Consegui actualizaciones</a>
-                <a href="">Productos</a>
-            </div>
-
-            <div class="container-nosotros">
-                <h3>Nosotros</h3>
-                <div class="contenido-nosotros">
-                    <a href="">Equipo</a>
-                    <div class="container-follow">
-                        <p>Follow us</p>
-                        <a href="">
-                            <img src="icons/instagram.png" alt="instagram.png" class="i-instagram icono">
-                        </a>
-                        <a href="">
-                            <img src="icons/facebook.png" alt="facebook.png" class="i-facebook icono">
-                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="container-botton-footer">
-            <div class="institucional">
-                <img class="logo logo-footer" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+                <div class="container-developers">
 
-                <!---->
-                <div class="container-legales">
-                    <div class="container-terminos">
-                        <a href="">Terminos y condiciones</a>
-                        <p class="barras"> | </p>
-                        <a href="">Politicas de privacidad</a>
-                        <p class="barras"> | </p>
-                        <a href="">Licencia</a>
-                    </div>
-
-                    <p class="text-CR">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
-
+                    <p>Powered by &nbsp</p>
+                    <a href="">Grupo 17</a>
                 </div>
             </div>
 
-            <div class="container-developers">
+        </footer>
 
-                <p>Powered by &nbsp</p>
-                <a href="">Grupo 17</a>
-            </div>
-        </div>
-
-    </footer>
-
+    </div>
+    <script src="js/preloader.js"></script>
     <script src="js/rocketGames.js"></script>
 </body>
 
