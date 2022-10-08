@@ -67,12 +67,17 @@
         <section class="container-categorias-juegos">
             <div class="categoria-juegos">
                 <h2 class="titulo-categoria">Recomendados</h2>
-                <div class="container-cards-juegos">
+                <div id="container-cards" class="container-cards-juegos">
+                    <div>
+                        <a href="javascript:void(0)" id="slide-control-prev" class="slide-control icono next">
+                            <img src="./icons/slide-control.png" alt="slide-control.png">
+                        </a>
+                    </div>
                     <div class="card-juego">
-                        <a href="./juego.html" id="btn-play" class="btn-play">Play</a>
+                        <a href="./juego.html" id="btn-play" class="btn-play btn-play-card">Play</a>
                         <a href="javascript:void(0)" id="i-info-card" class="i-info-card icono"><img
                                 src="./icons/informacion.png" alt="icon-info.png"></a>
-                        <img class="i-destacado" src="./icons/destacado.png" alt="icon-destacado.png">
+                        <img class="i-destacado i-destacado-card" src="./icons/destacado.png" alt="icon-destacado.png">
                         <img class="img-juego" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
                     </div>
                     <div class="card-juego">
@@ -102,8 +107,22 @@
             <!-- Dialogo con información del juego-->
             <div class="dialogo-info-juego" id="dialogo-info-juego" data-animation="slideInOutLeft">
                 <a href="" id="btn-close-dialogo" class="close-dialogo">x</a>
+                <img class="i-destacado i-destacado-dialog" src="./icons/destacado.png" alt="icon-destacado.png">
                 <div id="imagen-dialogo">
+                    <a href="./juego.html" id="btn-play" class="btn-play btn-play-dialog">
+                        <img src="./icons/play-circle.png" class="i-play-dialog">Play</a>
                     <img class="img-dialogo-info" src="./images/001juego-bloodborne.jpg" alt="bloodborne.jpg">
+                </div>
+                <div class="contenido-info-dialogo">
+                    <div class="header-info-dialogo">
+                        <h4>BloodBorne</h4>
+                        <div class="container-accion-dialogo">
+                            <img class="i-favorito-dialogo icono" src="./icons/favoritos.png" alt="icon-favoritos.png">
+                            <p class="btn-carrito">Ya compraste este juego</p>
+                        </div>
+                    </div>
+                    <p>Explora un mundo totalmente devastado, en el que solo pequeños grupos de personas han conseguido
+                        mantenerse con vida. Sobrevive como puedas en este juego apocalíptico.</p>
                 </div>
             </div>
         </section>
