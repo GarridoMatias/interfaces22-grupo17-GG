@@ -12,6 +12,8 @@
 }
 
 .loader-div {
+    position: absolute;
+    z-index: 10;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -33,8 +35,8 @@
     color: #3498db;
 }
 
-.test-preload {
-    display: none;
+#id-div-contenido {
+    filter: blur(1.5rem);
 }
 
 html {

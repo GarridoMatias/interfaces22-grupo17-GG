@@ -20,7 +20,7 @@ function go() {
             clearInterval(timer);
             document.querySelector("#id-spin").style.display = "none";
 
-            document.querySelector("#id-div").style.display = "inherit";
+            document.querySelector("#id-div-contenido").style.filter = "inherit";
 
             return;
         }
