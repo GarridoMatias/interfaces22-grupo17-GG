@@ -20,10 +20,6 @@
     align-items: center;
 }
 
-.loader-none {
-    display: none;
-}
-
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -39,10 +35,6 @@
 
 .test-preload {
     display: none;
-}
-
-.test-preload2 {
-    display: inherit;
 }
 
 html {

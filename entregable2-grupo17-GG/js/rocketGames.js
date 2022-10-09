@@ -19,19 +19,22 @@ function openMenu() {
     document.querySelector("#sidebar-menu").style.width = "400px";
 }
 
-function closeMenu() {
+function closeMenu(e) {
+    e.preventDefault(); // agregado para que no recargue la pagina al cerrar popap
+
     document.querySelector("#sidebar-menu").style.width = "0";
     document.querySelector("#contenido-menu").style.marginLeft = "0";
-    document.querySelector("#btn-close-menu").style.display = "none";
+    document.querySelector("#btn-close-menu").style.display = "inherit";
 }
 
 function openDialog() {
     document.querySelector("#dialogo-info-juego").style.width = "80%";
 }
 
-function closeDialog() {
-    document.querySelector("#dialogo-nfo-juego").style.width = "0";
-    document.querySelector("#btn-close-dialogo").style.display = "none";
+function closeDialog(e) {
+    e.preventDefault(); // agregado para que no recargue la pagina al cerrar popap
+    document.querySelector("#dialogo-info-juego").style.width = "0";
+    document.querySelector("#btn-close-dialogo").style.display = "inherit";
 }
 
 function compartir() {
