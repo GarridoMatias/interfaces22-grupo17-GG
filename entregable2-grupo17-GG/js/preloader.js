@@ -14,7 +14,6 @@ function go() {
             porcentaje.innerHTML = `${porcentajeactual+1}%`;
         }, 1000);
 
-
         if (timePassed > 5000) {
             clearInterval(timer);
             let spiner = document.getElementById("id-spin");
