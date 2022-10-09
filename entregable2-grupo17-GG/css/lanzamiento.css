@@ -1,3 +1,121 @@
 .container-juego-destacado {
     margin-top: 10vh;
 }
+
+.container-juego-lanzamiento {
+    margin-top: 10vh;
+}
+
+.container-banner {
+    background-color: #131313;
+    display: flex;
+}
+
+.img-lanzamiento {
+    width: 50%;
+    height: auto;
+}
+
+.container-banner-texto {
+    width: 50%;
+    text-align: center;
+}
+
+.p-promocion {
+    font-size: 30px;
+    margin: 0 10%;
+    margin-bottom: 2vh;
+}
+
+.container-presentacion {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-informacion {
+    text-align: center;
+    margin: 3vh 0;
+}
+
+.container-imagenes-destacadas {
+    display: flex;
+    width: 100%;
+}
+
+.img-destacadas {
+    width: 25%;
+}
+
+.t-informacion,
+.titulo-fecha-lanzamiento,
+.titulo-historia,
+.p-historia,
+.titulo-personajes,
+.titulo-apodo,
+.titulo-nombre {
+    color: black;
+}
+
+.titulo-fecha-lanzamiento {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+}
+
+.titulo-historia {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.70);
+    margin: 0;
+}
+
+.titulo-descripcion {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.70);
+    margin: 0;
+}
+
+.p-historia {
+    width: 90%;
+}
+
+.p-descripcion,
+.p-historia {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.container-estreno {
+    margin: 10vh 0 10vh 0;
+    display: flex;
+}
+
+.container-historia {
+    width: 50%;
+}
+
+.container-objetivo-lanzamiento {
+    background-color: #14191D;
+    display: flex;
+    width: 100%;
+}
+
+.container-descripcion {
+    width: 40%;
+    margin: auto 5%;
+}
+
+.img-lore {
+    width: 45%;
+    margin: 25px 5% 25px 0;
+}
+
+.personajes {
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+}
