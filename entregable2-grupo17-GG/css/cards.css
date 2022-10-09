@@ -109,9 +109,9 @@
 .slide-control {
     position: absolute;
     top: 0;
-    left: 0;
     z-index: 100;
     height: 100%;
+    width: 5%;
 }
 
 .slide-control img {
@@ -163,6 +163,7 @@
     height: 40vh;
     object-fit: cover;
     filter: brightness(50%);
+    object-position: center;
 }
 
 .btn-play-dialog {
@@ -205,6 +206,23 @@
 }
 
 .btn-carrito {
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--paleta4-color);
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    z-index: 100;
+}
+
+.btn-carrito:hover {
+    background-color: #ffffff;
+    color: var(--paleta4-color);
+}
+
+.btn-valor {
     padding: 5px;
     color: #ffffff;
     border-radius: 5px;
@@ -252,7 +270,7 @@
     }
 
     .contenido-info-dialogo p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .btn-play-card {
@@ -313,6 +331,7 @@
         font-size: 55px;
     }
 
+    .btn-valor,
     .btn-carrito {
         padding: 10px;
         font-size: 22px;
@@ -325,6 +344,47 @@
 
     .i-destacado-dialog {
         width: 65px;
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .i-play-dialog {
+        width: 40px;
+        margin-right: 15px;
+    }
+
+    .btn-play-dialog {
+        padding: 20px;
+        font-size: 2rem;
+    }
+
+    .contenido-info-dialogo p {
+        font-size: 28px;
+    }
+
+    .header-info-dialogo {
+        margin: 25px 0;
+    }
+
+    .header-info-dialogo h4 {
+        margin: 10px;
+        font-size: 65px;
+    }
+
+    .btn-valor,
+    .btn-carrito {
+        padding: 15px;
+        font-size: 25px;
+    }
+
+    .i-favorito-dialogo {
+        width: 40px;
+        margin-right: 25px;
+    }
+
+    .i-destacado-dialog {
+        width: 75px;
     }
 
 }
