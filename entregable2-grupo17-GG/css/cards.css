@@ -111,8 +111,8 @@
     top: 0;
     right: 0;
     z-index: 100;
-    width: 5%;
     height: 100%;
+    width: 5%;
 }
 
 .slide-control img {
