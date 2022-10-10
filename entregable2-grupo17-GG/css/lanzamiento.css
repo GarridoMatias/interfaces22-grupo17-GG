@@ -123,11 +123,8 @@
 .personajes {
     display: flex;
     flex-direction: row;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    overflow: scroll;
+    width: 1280px;
+    overflow-x: scroll;
     position: relative;
 }
 

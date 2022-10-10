@@ -109,8 +109,9 @@
 .slide-control {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 100;
+    width: 5%;
     height: 100%;
 }
 
@@ -128,6 +129,7 @@
     transform: rotateY(180deg);
     left: 2%;
 }
+
 
 /*Dialog*/
 
@@ -226,12 +228,10 @@
     .dialogo-info-juego {
         height: 75vh;
     }
-
     .header-info-dialogo {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
-
     .btn-play-dialog {
         bottom: 50%;
     }
@@ -241,36 +241,29 @@
     .categoria-juegos {
         margin-left: 2%;
     }
-
     .container-cards-juegos {
         height: 25vh;
     }
-
     .card-juego {
         flex: 0 0 25%;
-        height: 25vh;
+        height: auto;
     }
-
     .contenido-info-dialogo p {
         font-size: 20px;
     }
-
     .btn-play-card {
         bottom: 25%;
         left: 25%;
         right: 25%;
     }
-
     .btn-play-dialog {
         left: 45%;
         right: 45%;
         width: 5%;
     }
-
     .next {
         right: 2%;
     }
-
 }
 
 @media screen and (min-width:1024px) {
@@ -278,7 +271,6 @@
         flex: 0 0 20%;
         width: calc(100%/4);
     }
-
     .i-destacado {
         width: 30px;
     }
@@ -288,43 +280,34 @@
     .container-cards-juegos {
         height: 20vh;
     }
-
     .card-juego {
         flex: 0 0 15%;
         width: calc(100%/5);
     }
-
     .btn-play-dialog {
         width: 10%;
         left: 45%;
         right: 45%;
     }
-
     .contenido-info-dialogo p {
         font-size: 25px;
     }
-
     .header-info-dialogo {
         margin: 20px 0;
     }
-
     .header-info-dialogo h4 {
         margin: 5px;
         font-size: 55px;
     }
-
     .btn-carrito {
         padding: 10px;
         font-size: 22px;
     }
-
     .i-favorito-dialogo {
         width: 35px;
         margin-right: 20px;
     }
-
     .i-destacado-dialog {
         width: 65px;
     }
-
 }
