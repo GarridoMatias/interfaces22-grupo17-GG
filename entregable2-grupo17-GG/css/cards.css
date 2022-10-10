@@ -135,7 +135,7 @@
 
 .dialogo-info-juego {
     width: 0;
-    height: 80vh;
+    height: 68vh;
     position: fixed;
     z-index: 10000;
     background-color: var(--primary-color);
@@ -195,7 +195,7 @@
     margin: 0 5%;
 }
 
-.contenido-info-dialogo p {
+.container-accion-dialogo p {
     font-size: 14px;
 }
 
@@ -247,10 +247,12 @@
     align-items: center;
 }
 
+.p-descripcion-dialogo {
+    font-size: 15px;
+    text-align: center;
+}
+
 @media screen and (min-width:480px) {
-    .dialogo-info-juego {
-        height: 75vh;
-    }
     .header-info-dialogo {
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -258,9 +260,15 @@
     .btn-play-dialog {
         bottom: 50%;
     }
+    .p-descripcion-dialogo {
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width:768px) {
+    .header-info-dialogo {
+        margin: 20px 0;
+    }
     .categoria-juegos {
         margin-left: 2%;
     }
@@ -273,7 +281,7 @@
         height: auto;
     }
     .contenido-info-dialogo p {
-        font-size: 18px;
+        font-size: 25px;
     }
     .btn-play-card {
         bottom: 25%;
@@ -287,6 +295,9 @@
     }
     .next {
         right: 2%;
+    }
+    .dialogo-info-juego {
+        height: 70vh;
     }
 }
 
@@ -319,9 +330,6 @@
     .contenido-info-dialogo p {
         font-size: 30px;
     }
-    .header-info-dialogo {
-        margin: 20px 0;
-    }
     .header-info-dialogo h4 {
         margin: 5px;
         font-size: 55px;
@@ -339,5 +347,8 @@
     }
     .i-play-dialogo {
         width: 40px;
+    }
+    .dialogo-info-juego {
+        height: 75vh;
     }
 }
