@@ -14,12 +14,11 @@
 .container-cards-juegos {
     display: flex;
     flex-direction: row;
-    overflow-y: scroll;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
     width: 100%;
-    overflow: scroll;
     position: relative;
+    overflow: scroll;
 }
 
 .container-categorias-juegos {
@@ -116,16 +115,12 @@
 }
 
 .slide-control img {
-    height: 100%;
+    height: 50%;
     position: absolute;
-    right: 0;
+    background-color: black;
 }
 
-.next {
-    right: 0;
-}
-
-.slide-control .prev img {
+.prev img {
     transform: rotateY(180deg);
     left: 2%;
 }
@@ -312,6 +307,9 @@
     .slide-control {
         visibility: visible;
     }
+    .container-cards-juegos {
+        overflow: visible;
+    }
 }
 
 @media screen and (min-width:1200px) {
@@ -356,13 +354,25 @@
 #slide-control-prev {
     position: absolute;
     left: 10px;
-    height: 100%;
     z-index: 100;
+    height: 40vh;
+    top: auto;
 }
 
 #slide-control-next {
     position: absolute;
+    height: 40vh;
     right: 10px;
-    height: 100%;
     z-index: 100;
+    top: auto;
+}
+
+.class-next {
+    overflow: visible;
+    width: auto;
+    right: 400px;
+}
+
+.carrusel {
+    display: flex;
 }

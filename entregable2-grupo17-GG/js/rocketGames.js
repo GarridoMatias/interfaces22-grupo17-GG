@@ -4,18 +4,20 @@ let btnMenu = document.querySelector("#btn-sidebar-menu");
 let btnCloseMenu = document.querySelector("#btn-close-menu");
 let btnDialogInfo = document.querySelector("#i-info-card");
 let btnCloseDialog = document.querySelector("#btn-close-dialogo");
-let iconCompartir = document.querySelector("#icon-compartir");
 
 let slideControlNext = document.querySelector("#slide-control-next");
 let slideControlPrev = document.querySelector("#slide-control-prev");
+
 
 let carrusel = document.querySelector("#container-cards");
 
 btnMenu.addEventListener("click", openMenu);
 btnCloseMenu.addEventListener("click", closeMenu);
 
-iconCompartir.addEventListener("click", compartir);
 slideControlNext.addEventListener("click", slideNext);
+slideControlPrev.addEventListener("click", slidePrev);
+
+
 
 function openMenu() {
     document.querySelector("#sidebar-menu").style.width = "400px";
@@ -42,8 +44,45 @@ function closeDialog() {
 }
 
 function slideNext() {
-    document.getElementById("container-cars")
-    slideControlNext.style.visibility = "hidden";
+    let element = document.getElementById('container-cards');
+    let elementStyle = window.getComputedStyle(element);
+    let elementMarginActual = elementStyle.getPropertyValue('margin-left');
+
+    let card = document.querySelector('.card-juego');
+    let cardStyle = window.getComputedStyle(card);
+    let cardWidth = cardStyle.getPropertyValue('width');
+
+    let marginAgregar = parseInt(elementMarginActual) - parseInt(cardWidth);
+    let totalCards = document.querySelector(".width-carrusel");
+    let cardwStyle = window.getComputedStyle(totalCards);
+    let maxWidth = parseInt(cardwStyle.getPropertyValue('width')) * -1;
+    console.log(elementMarginActual);
+    console.log(maxWidth);
+
+    if (parseInt(elementMarginActual) >= (maxWidth)) {
+        document.querySelector("#container-cards").style.marginLeft = `${marginAgregar}px`;
+    } else {
+        document.querySelector("#container-cards").style.marginLeft = "0px"
+    }
+}
+
+function slidePrev() {
+    let element = document.getElementById('container-cards');
+    let elementStyle = window.getComputedStyle(element);
+    let elementMarginActual = elementStyle.getPropertyValue('margin-left');
+
+    let card = document.querySelector('.card-juego');
+    let cardStyle = window.getComputedStyle(card);
+    let cardWidth = cardStyle.getPropertyValue('width');
+
+    let marginAgregar = parseInt(elementMarginActual) + parseInt(cardWidth);
+    let totalCards = document.querySelectorAll(".card-juego").length;
+    let maxWidth = (totalCards * parseInt(cardWidth));
+    if (parseInt(elementMarginActual) < 0) {
+        document.querySelector("#container-cards").style.marginLeft = `${marginAgregar}px`;
+    } else {
+        document.querySelector("#container-cards").style.marginLeft = "0px"
+    }
 }
 
 btnCloseDialog.addEventListener("click", closeDialog);
