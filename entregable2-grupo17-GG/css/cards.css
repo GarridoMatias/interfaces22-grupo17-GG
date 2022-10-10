@@ -109,7 +109,6 @@
 .slide-control {
     position: absolute;
     top: 0;
-    left: 0;
     z-index: 100;
     height: 100%;
     width: 5%;
@@ -219,6 +218,7 @@
     z-index: 100;
 }
 
+
 .btn-carrito:hover {
     background-color: #ffffff;
     color: var(--paleta4-color);
@@ -246,10 +246,12 @@
     .dialogo-info-juego {
         height: 75vh;
     }
+
     .header-info-dialogo {
         flex-wrap: nowrap;
         justify-content: space-between;
     }
+
     .btn-play-dialog {
         bottom: 50%;
     }
@@ -259,26 +261,32 @@
     .categoria-juegos {
         margin-left: 2%;
     }
+
     .container-cards-juegos {
         height: 25vh;
     }
+
     .card-juego {
         flex: 0 0 25%;
         height: auto;
     }
+
     .contenido-info-dialogo p {
         font-size: 18px;
     }
+
     .btn-play-card {
         bottom: 25%;
         left: 25%;
         right: 25%;
     }
+
     .btn-play-dialog {
         left: 45%;
         right: 45%;
         width: 5%;
     }
+
     .next {
         right: 2%;
     }
@@ -289,6 +297,7 @@
         flex: 0 0 20%;
         width: calc(100%/4);
     }
+
     .i-destacado {
         width: 30px;
     }
@@ -298,33 +307,39 @@
     .container-cards-juegos {
         height: 20vh;
     }
+
     .card-juego {
         flex: 0 0 15%;
         width: calc(100%/5);
     }
+
     .btn-play-dialog {
-        width: 10%;
-        left: 45%;
-        right: 45%;
-    }
-    .contenido-info-dialogo p {
-        font-size: 25px;
-    }
-    .header-info-dialogo {
-        margin: 20px 0;
-    }
-    .header-info-dialogo h4 {
-        margin: 5px;
-        font-size: 55px;
+        padding: 20px;
+        font-size: 2rem;
     }
 
-    .btn-carrito {
-        padding: 10px;
-        font-size: 22px;
+    .contenido-info-dialogo p {
+        font-size: 28px;
     }
+
+    .header-info-dialogo {
+        margin: 25px 0;
+    }
+
+    .header-info-dialogo h4 {
+        margin: 10px;
+        font-size: 65px;
+    }
+
+    .btn-valor,
+    .btn-carrito {
+        padding: 15px;
+        font-size: 25px;
+    }
+
     .i-favorito-dialogo {
-        width: 35px;
-        margin-right: 20px;
+        width: 40px;
+        margin-right: 25px;
     }
 
     .i-destacado-dialog {
