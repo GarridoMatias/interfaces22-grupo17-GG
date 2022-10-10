@@ -2,6 +2,7 @@
 
 let btnMenu = document.querySelector("#btn-sidebar-menu");
 let btnCloseMenu = document.querySelector("#btn-close-menu");
+let btnDialogInfo = document.querySelector("#i-info-card");
 let btnCloseDialog = document.querySelector("#btn-close-dialogo");
 let iconCompartir = document.querySelector("#icon-compartir");
 let slideControlNext = document.querySelector("#slide-control-prev");
@@ -19,6 +20,7 @@ let btnDialogGow = document.querySelector("#i-info-gow");
 
 btnMenu.addEventListener("click", openMenu);
 btnCloseMenu.addEventListener("click", closeMenu);
+btnDialogInfo.addEventListener("click", openDialog);
 btnCloseDialog.addEventListener("click", closeDialog);
 iconCompartir.addEventListener("click", compartir);
 slideControlNext.addEventListener("click", slideNext);
@@ -60,70 +62,21 @@ function openMenu() {
     document.querySelector("#sidebar-menu").style.width = "400px";
 }
 
-function closeMenu() {
+function closeMenu(e) {
+    e.preventDefault(); // agregado para que no recargue la pagina al cerrar popap
+
     document.querySelector("#sidebar-menu").style.width = "0";
     document.querySelector("#contenido-menu").style.marginLeft = "0";
     document.querySelector("#btn-close-menu").style.display = "none";
 }
 
-function openDialog(juego, valor) {
-    let dialogo = document.querySelector("#dialogo-info-juego");
-    let imagen = document.querySelector("#img-juego");
-    let titulo = document.querySelector("#titulo-dialogo");
-    let infoValor = document.querySelector("#info-valor-dialogo");
-    let descripcion = document.querySelector("#descripcion-dialogo");
-    let btnCarrito = document.querySelector("#btn-agregar-carrito");
-
-    if (juego === "BloodBorne") {
-        imagen.src = "./images/001juego-bloodborne.jpg";
-        descripcion.innerHTML = "Explora un mundo totalmente devastado, en el que solo pequeños grupos de personas han conseguido mantenerse con vida. Sobrevive como puedas en este juego apocalíptico.";
-    }
-    if (juego === "Harry Potter y la Piedra Filosofal") {
-        imagen.src = "./images/002juego-harrypotter.jpg";
-        descripcion.innerHTML = "Podrás crear tu propio personaje y vivir de primera mano todo lo que significa estudiar en esta mágica escuela. Compartirás clases con los profesores más conocidos que trabajan allí.";
-    }
-    if (juego === "Sackboy: A Big Adventure") {
-        imagen.src = "./images/003juego-sackboy.jfif";
-        descripcion.innerHTML = "Una aventura a lo grande es en sus mecánicas. Saltar, golpear, esquivar y obetener objetos son las acciones básicas que nos van a acompañar durante toda la aventura.";
-    }
-    if (juego === "Mario Kart") {
-        imagen.src = "./images/004juego-mariokart.jpg";
-        descripcion.innerHTML = "Recorre los niveles de este mundo retro y encuentra la súper hoja que te dará el poder de volar. Esquiva los obstáculos, recoge las monedas y frutas y defiéndete de los enemigos con las habilidades de Mario.";
-    }
-    if (juego === "Plantas & Zombies 3") {
-        imagen.src = "./images/005juego-plantszombies3.jpg";
-        descripcion.innerHTML = "Tiene como objetivo llevaros de vuelta al Patio, el lugar donde empezó todo. Tus personajes favoritos están ahí, con nuevos giros emocionantes que podrás descubrir.";
-    }
-    if (juego === "Stumble Guys") {
-        imagen.src = "./images/006juego-stumbleguys.jpg";
-        descripcion.innerHTML = "¡Siente la adrenalina a flor de piel mientras participas en asombrosas carreras de plataformas y obstáculos en el juego Stumble Guys Multiplayer Royale y luchas por ser el primero en cruzar la línea de meta sano y salvo!";
-    }
-    if (juego === "A Game of Thrones") {
-        imagen.src = "./images/007juego-got.jpg";
-        descripcion.innerHTML = "A lo largo del juego, los jugadores expandirán su influencia a través de Poniente con una combinación de estrategias planificadas, dominio de la diplomacia y fuerzas militares.";
-    }
-    if (juego === "God of War") {
-        imagen.src = "./images/008juego-godofwar.jpg";
-        descripcion.innerHTML = "God of War mezcla luchas encarnizadas con pequeñas dosis de puzzles y plataforma. El personaje puede realizar un gran número de combos y poderes durante el transcurso del viaje, que irá aprendiendo avanzando el juego y mejorando sus cualidades.";
-    }
-
-    if (valor === "comprado") {
-        infoValor.innerHTML = "Ya compraste este juego";
-        btnCarrito.style.visibility = "visible";
-    } else if (valor === "agregado") {
-        infoValor.innerHTML = "Agregado al carrito";
-        btnCarrito.style.visibility = "hidden";
-    } else {
-        infoValor.innerHTML = valor;
-        btnCarrito.style.visibility = "visible";
-    }
-
-    titulo.innerHTML = juego;
-    dialogo.style.width = "80%";
+function openDialog() {
+    document.querySelector("#dialogo-info-juego").style.width = "80%";
 }
 
 function closeDialog() {
-    document.querySelector("#dialogo-info-juego").style.width = "0";
+    document.querySelector("#dialogo-nfo-juego").style.width = "0";
+    document.querySelector("#btn-close-dialogo").style.display = "none";
 }
 
 function compartir() {
@@ -133,3 +86,16 @@ function compartir() {
 function slideNext() {
     slideControlNext.style.visibility = "hidden";
 }
+
+let btnPopap = document.querySelectorAll(".i-info-card");
+btnPopap.forEach(b => b.addEventListener("click", function() {
+    let juego = b.getAttribute("id").split("-")[3];
+    openDialog(juego);
+}));
+
+let btnCloseDialog = document.querySelectorAll(".close-dialogo");
+btnCloseDialog.forEach(b => b.addEventListener("click", function() {
+    let juego = b.getAttribute("id").split("-")[3];
+    closeDialog(juego);
+    this.preventDefault();
+}))

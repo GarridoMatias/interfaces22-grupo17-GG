@@ -1,9 +1,11 @@
 "use strict"
 
+
 function go() {
     let start = Date.now();
 
     let timer = setInterval(function() {
+
         let timePassed = Date.now() - start;
         let porcentaje = document.getElementById("id-porcentaje");
         let h2porcentaje = setInterval(function() {
@@ -16,13 +18,14 @@ function go() {
 
         if (timePassed > 5000) {
             clearInterval(timer);
-            let spiner = document.getElementById("id-spin");
-            spiner.classList.replace("loader-div", "loader-none")
-            let div = document.getElementById("id-div");
-            div.classList.replace("test-preload", "test-preload2");
+            document.querySelector("#id-spin").style.display = "none";
+
+            document.querySelector("#id-div-contenido").style.filter = "inherit";
+
             return;
         }
 
     }, 20);
 }
+
 go();
