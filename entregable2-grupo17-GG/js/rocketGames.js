@@ -5,7 +5,9 @@ let btnCloseMenu = document.querySelector("#btn-close-menu");
 let btnDialogInfo = document.querySelector("#i-info-card");
 let btnCloseDialog = document.querySelector("#btn-close-dialogo");
 let iconCompartir = document.querySelector("#icon-compartir");
-let slideControlNext = document.querySelector("#slide-control-prev");
+
+let slideControlNext = document.querySelector("#slide-control-next");
+let slideControlPrev = document.querySelector("#slide-control-prev");
 
 let carrusel = document.querySelector("#container-cards");
 
@@ -39,18 +41,15 @@ function closeDialog() {
     document.querySelector("#dialogo-info-juego").style.width = "0";
 }
 
-function compartir() {
-
-}
-
 function slideNext() {
+    document.getElementById("container-cars")
     slideControlNext.style.visibility = "hidden";
 }
 
 btnCloseDialog.addEventListener("click", closeDialog);
 
 let btnDialogV2 = document.querySelectorAll(".i-info-card");
-btnDialogV2.forEach(b => b.addEventListener("click", function () {
+btnDialogV2.forEach(b => b.addEventListener("click", function() {
     let juego = b.getAttribute("id").split("-")[3];
     openDialog(juegos[juego]);
 }));

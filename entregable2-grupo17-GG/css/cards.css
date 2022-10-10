@@ -352,3 +352,17 @@
         height: 75vh;
     }
 }
+
+#slide-control-prev {
+    position: absolute;
+    left: 10px;
+    height: 100%;
+    z-index: 100;
+}
+
+#slide-control-next {
+    position: absolute;
+    right: 10px;
+    height: 100%;
+    z-index: 100;
+}
