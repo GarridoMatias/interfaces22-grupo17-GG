@@ -56,8 +56,7 @@ function slideNext() {
     let totalCards = document.querySelector(".width-carrusel");
     let cardwStyle = window.getComputedStyle(totalCards);
     let maxWidth = parseInt(cardwStyle.getPropertyValue('width')) * -1;
-    console.log(elementMarginActual);
-    console.log(maxWidth);
+
 
     if (parseInt(elementMarginActual) >= (maxWidth)) {
         document.querySelector("#container-cards").style.marginLeft = `${marginAgregar}px`;
