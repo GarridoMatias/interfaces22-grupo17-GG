@@ -168,6 +168,10 @@
     object-position: center;
 }
 
+.titulo-dialogo {
+    text-align: center;
+}
+
 .btn-play-dialog {
     bottom: 55%;
     left: 35%;

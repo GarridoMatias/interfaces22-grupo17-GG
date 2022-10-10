@@ -115,15 +115,15 @@ let juegos = {
     },
     minecraft: {
         "titulo": "Minecraft",
-        "img": "./images/009juego-bloodborne.jpg",
+        "img": "./images/009juego-minecraft.webp",
         "descripcion": "Es una combinación entre ir creando minas y picando en ellas para conseguir los elementos necesarios para mejorar tu equipo y posibilidades. El modo creativo es radicalmente diferente, si bien la base del juego sigue siendo la misma.",
         "precio": "Gratis",
         "estado": "Play"
     },
     escuadron: {
-        "titulo": "Escuadron S6",
-        "img": "./images/010juego-bloodborne.jpg",
-        "descripcion": "Apex Legends se desarrolla en un universo envolvente en el que la historia evoluciona continuamente, los mapas cambian en cada temporada y nuevas leyendas se unen a la lucha.",
+        "titulo": "Fortnite: Salvar el mundo",
+        "img": "./images/010juego-escuadron.png",
+        "descripcion": "Ofrece una batalla con armas de fuego que requiere práctica, habilidad, trabajo en equipo y reacciones rápidas. El desafío para los padres es mitigar los riesgos y maximizar los beneficios de Fortnite.",
         "precio": "Gratis",
         "estado": "Play"
     }
