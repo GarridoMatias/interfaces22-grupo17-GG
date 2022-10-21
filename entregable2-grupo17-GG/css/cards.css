@@ -13,7 +13,8 @@
 
 .container-cards-juegos,
 .container-cards-juegos-fav,
-.container-cards-juegos-mmo {
+.container-cards-juegos-mmo,
+.container-cards-juegos-personaje {
     display: flex;
     flex-direction: row;
     scrollbar-width: none;
@@ -23,12 +24,15 @@
     overflow: scroll;
 }
 
-.container-categorias-juegos {
+.container-categorias-juegos,
+.container-lore {
     overflow: hidden;
     position: relative;
 }
 
-.card-juego {
+.card-juego-recomendados,
+.card-juego-favoritos,
+.card-juego-multijugador {
     overflow: hidden;
     scroll-snap-align: center;
     width: calc(100%/2);
@@ -43,12 +47,24 @@
     -moz-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.53);
 }
 
-.card-juego .img-juego {
+.card-juego-recomendados .img-juego,
+.card-juego-favoritos .img-juego,
+.card-juego-multijugador .img-juego {
     width: fit-content;
     filter: brightness(50%);
 }
 
-.card-juego .img-juego:hover {
+.card-juego-personaje .img-personaje {
+    filter: brightness(50%);
+}
+
+.card-juego-personaje .img-personaje:hover {
+    filter: brightness(100%);
+}
+
+.card-juego-recomendados .img-juego:hover,
+.card-juego-favoritos .img-juego:hover,
+.card-juego-multijugador .img-juego:hover {
     width: 120%;
     filter: brightness(100%);
 }
@@ -248,7 +264,11 @@
     text-align: center;
 }
 
-@media screen and (min-width:480px) {
+.container-cards-juegos-personaje {
+    display: flex;
+}
+
+@media screen and (min-width: 480px) {
     .header-info-dialogo {
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -265,15 +285,16 @@
     .header-info-dialogo {
         margin: 20px 0;
     }
-    .categoria-juegos {
-        margin-left: 2%;
-    }
     .container-cards-juegos,
     .container-cards-juegos-fav,
-    .container-cards-juegos-mmo {
+    .container-cards-juegos-mmo,
+    .container-cards-juegos-personaje {
         height: 25vh;
     }
-    .card-juego {
+    .card-juego-recomendados,
+    .card-juego-favoritos,
+    .card-juego-multijugador,
+    .card-juego-personaje {
         margin: 0 20px;
         flex: 0 0 25%;
         height: auto;
@@ -300,7 +321,10 @@
 }
 
 @media screen and (min-width:1024px) {
-    .card-juego {
+    .card-juego-recomendados,
+    .card-juego-favoritos,
+    .card-juego-multijugador,
+    .card-juego-personaje {
         flex: 0 0 20%;
         width: calc(100%/4);
     }
@@ -310,7 +334,10 @@
     .slide-control {
         visibility: visible;
     }
-    .container-cards-juegos {
+    .container-cards-juegos,
+    .container-cards-juegos-fav,
+    .container-cards-juegos-mmo,
+    .container-cards-juegos-personaje {
         overflow: visible;
     }
 }
@@ -321,7 +348,13 @@
     .container-cards-juegos-mmo {
         height: 20vh;
     }
-    .card-juego {
+    .container-cards-juegos-personaje {
+        height: 30vh;
+    }
+    .card-juego-recomendados,
+    .card-juego-favoritos,
+    .card-juego-multijugador,
+    .card-juego-personaje {
         flex: 0 0 15%;
         width: calc(100%/5);
     }
@@ -356,7 +389,7 @@
     }
 }
 
-#slide-control-prev {
+.slide-control-prev {
     position: absolute;
     left: 10px;
     z-index: 100;
@@ -364,7 +397,7 @@
     top: auto;
 }
 
-#slide-control-next {
+.slide-control-next {
     position: absolute;
     height: 40vh;
     right: 10px;
@@ -380,4 +413,7 @@
 
 .carrusel {
     display: flex;
+    width: 90%;
+    margin: 0 5%;
+    text-align: center;
 }
