@@ -34,14 +34,20 @@ function slideNext(categoria) {
     let tamanioCard = (parseInt(cardWidth) + parseInt(cardMargin) + parseInt(cardMargin));
     let tamanioNecesario = carr * tamanioCard;
 
+    document.querySelector('.slide-control-prev').style.visibility = 'visible'
+    document.querySelector('.slide-control-prev').style.display = 'block'
+
     let maximoWidth = parseInt(cantidadCards) * parseInt(tamanioCard);
     let margenActualValor = parseInt(elementMarginActual) * -1;
     let faltante = ((margenActualValor + parseInt(widthContenedor)) - maximoWidth) * -1;
     let marginAgregar = 0;
     if (faltante >= tamanioNecesario) {
         marginAgregar = parseInt(elementMarginActual) - parseInt(tamanioNecesario);
+               
     } else {
         marginAgregar = parseInt(elementMarginActual) - parseInt(faltante);
+        document.querySelector('.slide-control-next').style.visibility = 'hidden'
+        document.querySelector('.slide-control-next').style.display = 'none'
     }
     document.querySelector(`#container-cards-${categoria}`).style.marginLeft = `${marginAgregar}px`;
 
@@ -51,6 +57,8 @@ function slidePrev(categoria) {
     let element = document.getElementById(`container-cards-${categoria}`);
     let elementStyle = window.getComputedStyle(element);
     let elementMarginActual = elementStyle.getPropertyValue('margin-left');
+    document.querySelector('.slide-control-next').style.visibility = 'visible'
+    document.querySelector('.slide-control-next').style.display = 'block'
 
     // selecciono todas las card
     let card = document.querySelector(`.card-juego-${categoria}`);
@@ -69,6 +77,8 @@ function slidePrev(categoria) {
 
     } else {
         document.querySelector(`#container-cards-${categoria}`).style.marginLeft = "0px"
+        document.querySelector('.slide-control-prev').style.visibility = 'hidden'
+        document.querySelector('.slide-control-prev').style.display = 'none'
     }
 }
 
@@ -128,7 +138,7 @@ let juegos = {
         "titulo": "God of War",
         "img": "./images/008juego-godofwar.jpg",
         "descripcion": "God of War mezcla luchas encarnizadas con pequeñas dosis de puzzles y plataforma. El personaje puede realizar un gran número de combos y poderes durante el transcurso del viaje, que irá aprendiendo avanzando el juego y mejorando sus cualidades.",
-        "precio": "1500",
+        "precio": "$1500",
         "estado": "Agregar al carrito"
     },
     minecraft: {
@@ -144,5 +154,20 @@ let juegos = {
         "descripcion": "Ofrece una batalla con armas de fuego que requiere práctica, habilidad, trabajo en equipo y reacciones rápidas. El desafío para los padres es mitigar los riesgos y maximizar los beneficios de Fortnite.",
         "precio": "Gratis",
         "estado": "Play"
+    },
+    wonderzoo: {
+        "titulo": "Wonder Zoo",
+        "img": "./images/010juego-wonderzoo.jpg",
+        "descripcion": "¡Un infame cazador furtivo está amenazando a los animales en su hábitat natural! ¡Dirige un safari que los ponga a salvo y dales la bienvenida a tu maravilloso zoo!.",
+        "precio": "Gratis",
+        "estado": "Play"
+    },
+    amongus: {
+        "titulo": "Among Us",
+        "img": "./images/011juego-amongus.webp",
+        "descripcion": "Los miembros de la tripulación pueden ganar completando todas las misiones o detectando y votando a los impostores en el barco. Los impostores pueden usar el sabotaje para provocar el caos, lo que facilita matar enemigos y obtener mejores excusas.",
+        "precio": "$1300",
+        "estado": "Play"
     }
+
 }
