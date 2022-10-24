@@ -34,8 +34,8 @@ function slideNext(categoria) {
     let tamanioCard = (parseInt(cardWidth) + parseInt(cardMargin) + parseInt(cardMargin));
     let tamanioNecesario = carr * tamanioCard;
 
-    document.querySelector('.slide-control-prev').style.visibility = 'visible'
-    document.querySelector('.slide-control-prev').style.display = 'block'
+    document.querySelector(`#id-prev-${categoria}`).style.visibility = 'visible'
+    document.querySelector(`#id-prev-${categoria}`).style.display = 'block'
 
     let maximoWidth = parseInt(cantidadCards) * parseInt(tamanioCard);
     let margenActualValor = parseInt(elementMarginActual) * -1;
@@ -46,8 +46,8 @@ function slideNext(categoria) {
                
     } else {
         marginAgregar = parseInt(elementMarginActual) - parseInt(faltante);
-        document.querySelector('.slide-control-next').style.visibility = 'hidden'
-        document.querySelector('.slide-control-next').style.display = 'none'
+        document.querySelector(`#id-next-${categoria}`).style.visibility = 'hidden'
+        document.querySelector(`#id-next-${categoria}`).style.display = 'none'
     }
     document.querySelector(`#container-cards-${categoria}`).style.marginLeft = `${marginAgregar}px`;
 
@@ -57,8 +57,8 @@ function slidePrev(categoria) {
     let element = document.getElementById(`container-cards-${categoria}`);
     let elementStyle = window.getComputedStyle(element);
     let elementMarginActual = elementStyle.getPropertyValue('margin-left');
-    document.querySelector('.slide-control-next').style.visibility = 'visible'
-    document.querySelector('.slide-control-next').style.display = 'block'
+    document.querySelector(`#id-next-${categoria}`).style.visibility = 'visible'
+    document.querySelector(`#id-next-${categoria}`).style.display = 'block'
 
     // selecciono todas las card
     let card = document.querySelector(`.card-juego-${categoria}`);
@@ -77,8 +77,8 @@ function slidePrev(categoria) {
 
     } else {
         document.querySelector(`#container-cards-${categoria}`).style.marginLeft = "0px"
-        document.querySelector('.slide-control-prev').style.visibility = 'hidden'
-        document.querySelector('.slide-control-prev').style.display = 'none'
+        document.querySelector(`#id-prev-${categoria}`).style.visibility = 'hidden'
+        document.querySelector(`#id-prev-${categoria}`).style.display = 'none'
     }
 }
 
