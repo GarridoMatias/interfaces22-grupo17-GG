@@ -16,6 +16,7 @@ function openDialog(juego) {
     document.querySelector("#id-img-dialogo").src = `${juego.img}`;
     document.querySelector("#id-precio-dialogo").innerHTML = juego.precio;
     document.querySelector("#id-descripcion-dialogo").innerHTML = juego.descripcion;
+    document.querySelector("#id-anchor-juego-dialogo").href = juego.url;
 }
 
 function closeDialog() {
