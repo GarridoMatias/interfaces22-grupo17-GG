@@ -1,10 +1,7 @@
 "use strict"
 
-
 let btnOpenDialog = document.querySelectorAll(".i-info-card");
 let btnCloseDialog = document.querySelector("#btn-close-dialogo");
-
-
 
 
 btnOpenDialog.forEach(b => b.addEventListener("click", function() {
@@ -12,7 +9,6 @@ btnOpenDialog.forEach(b => b.addEventListener("click", function() {
     openDialog(juegos[juego]);
 }));
 btnCloseDialog.addEventListener("click", closeDialog);
-
 
 function openDialog(juego) {
     document.querySelector("#dialogo-info-juego").style.width = "80%";

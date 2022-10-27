@@ -51,23 +51,6 @@
 .card-juego-favoritos .img-juego,
 .card-juego-multijugador .img-juego {
     width: fit-content;
-    filter: brightness(50%);
-}
-
-.card-juego-personaje .img-personaje {
-    filter: brightness(50%);
-}
-
-.card-juego-personaje .img-personaje:hover {
-    filter: brightness(100%);
-}
-
-.card-juego-recomendados .img-juego:hover,
-.card-juego-favoritos .img-juego:hover,
-.card-juego-multijugador .img-juego:hover {
-    width: 120%;
-    filter: brightness(100%);
-    height: 100%;
 }
 
 .btn-play {
@@ -318,6 +301,24 @@
     }
     .dialogo-info-juego {
         height: 70vh;
+    }
+    .card-juego-recomendados .img-juego,
+    .card-juego-favoritos .img-juego,
+    .card-juego-multijugador .img-juego {
+        filter: brightness(50%);
+    }
+    .card-juego-personaje .img-personaje {
+        filter: brightness(50%);
+    }
+    .card-juego-personaje .img-personaje:hover {
+        filter: brightness(100%);
+    }
+    .card-juego-recomendados .img-juego:hover,
+    .card-juego-favoritos .img-juego:hover,
+    .card-juego-multijugador .img-juego:hover {
+        width: 120%;
+        filter: brightness(100%);
+        height: 100%;
     }
 }
 

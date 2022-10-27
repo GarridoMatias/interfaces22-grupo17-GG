@@ -3,7 +3,6 @@
 let btnMenu = document.querySelector("#btn-sidebar-menu");
 let btnCloseMenu = document.querySelector("#btn-close-menu");
 
-
 btnMenu.addEventListener("click", openMenu);
 btnCloseMenu.addEventListener("click", closeMenu);
 
