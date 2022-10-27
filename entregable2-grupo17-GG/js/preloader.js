@@ -1,6 +1,5 @@
 "use strict"
 
-
 function go() {
     let start = Date.now();
 

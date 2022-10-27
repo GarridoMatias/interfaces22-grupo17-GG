@@ -2,20 +2,24 @@
 
 const carr = 4; // cada cuantas card mueve el carrusel
 
+// escuchando siguiente y anterior
 let slideControlNext = document.querySelectorAll(".slide-control-next");
 let slideControlPrev = document.querySelectorAll(".slide-control-prev");
 
+//para todos los "siguientes" separamos del ID la categoria al la cual corresponde
+//y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
 slideControlNext.forEach(b => b.addEventListener("click", function() {
     let categoria = b.getAttribute("id").split("-")[2];
     slideNext(categoria);
 }));
+//para todos los "anteriores"  separamos del ID la categoria al la cual corresponde
+//y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
 slideControlPrev.forEach(b => b.addEventListener("click", function() {
     let categoria = b.getAttribute("id").split("-")[2];
     slidePrev(categoria);
 }));
 
-//le paso por parametro a que carrusel corresponde para calcular los tamanios
-//implementar luego
+//le pasamos por parametro a que carrusel corresponde para calcular los tamanios
 function slideNext(categoria) {
     let element = document.getElementById(`container-cards-${categoria}`);
     let elementStyle = window.getComputedStyle(element);
@@ -32,6 +36,7 @@ function slideNext(categoria) {
 
     // calcular tamanio que ocupa una card
     let tamanioCard = (parseInt(cardWidth) + parseInt(cardMargin) + parseInt(cardMargin));
+    //tamanio que ocupa un movimiento en el carrusel (DEFINIDA EN LA CONSTANTE CARR)
     let tamanioNecesario = carr * tamanioCard;
 
     document.querySelector(`#id-prev-${categoria}`).style.visibility = 'visible'
@@ -41,9 +46,10 @@ function slideNext(categoria) {
     let margenActualValor = parseInt(elementMarginActual) * -1;
     let faltante = ((margenActualValor + parseInt(widthContenedor)) - maximoWidth) * -1;
     let marginAgregar = 0;
+
     if (faltante >= tamanioNecesario) {
         marginAgregar = parseInt(elementMarginActual) - parseInt(tamanioNecesario);
-               
+
     } else {
         marginAgregar = parseInt(elementMarginActual) - parseInt(faltante);
         document.querySelector(`#id-next-${categoria}`).style.visibility = 'hidden'
@@ -70,6 +76,9 @@ function slidePrev(categoria) {
     let tamanioCard = (parseInt(cardWidth) + parseInt(cardMargin) + parseInt(cardMargin));
     let tamanioNecesario = tamanioCard * carr;
     let margenActualValor = parseInt(elementMarginActual) * -1;
+
+    //si hay margen para quitar y este margen es el necesario se lo quito
+    //si no cumple ponemos margen en 0px
     if (parseInt(elementMarginActual) < 0 && margenActualValor > tamanioNecesario) {
 
         let marginQuitar = (parseInt(elementMarginActual) + tamanioNecesario);
@@ -81,7 +90,6 @@ function slidePrev(categoria) {
         document.querySelector(`#id-prev-${categoria}`).style.display = 'none'
     }
 }
-
 
 let juegos = {
     bloodborne: {
@@ -169,5 +177,4 @@ let juegos = {
         "precio": "$1300",
         "estado": "Play"
     }
-
 }
