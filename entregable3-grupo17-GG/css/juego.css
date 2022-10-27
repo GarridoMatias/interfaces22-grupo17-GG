@@ -201,6 +201,10 @@
         margin-top: 5px;
     }
 
+    .a-mas-comentarios:hover {
+        color: var(--secondary-color);
+    }
+
     .p-objetivo,
     .p-instrucciones {
         text-align: justify;

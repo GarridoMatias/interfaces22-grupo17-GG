@@ -80,6 +80,10 @@
     color: var(--paleta3-color);
 }
 
+.btn-play:active {
+    transform: scale(1.2);
+}
+
 .i-info-card {
     position: absolute;
     top: 5%;
@@ -124,6 +128,10 @@
 .prev img {
     transform: rotateY(180deg);
     left: 2%;
+}
+
+.next img{
+    right: 0;
 }
 
 

@@ -183,8 +183,12 @@ p {
 
 .icono:hover {
     opacity: 1;
+    transform: scale(1.1);
 }
 
+.icono:active{
+    transform: scale(0.8);
+}
 
 /*botones*/
 
@@ -206,6 +210,11 @@ p {
 .btn-destacado:hover {
     background-color: #ffffff;
     color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.btn-destacado:active {
+    opacity: 0.5;
 }
 
 .btn-sidebar-menu {
@@ -431,6 +440,11 @@ footer a:hover {
 .breadcrumb p:hover {
     color: var(--primary-color);
 }
+
+.breadcrumb p:active {
+    opacity: 0.5;
+}
+
 
 
 /*medias queries*/
