@@ -8,13 +8,13 @@ let slideControlPrev = document.querySelectorAll(".slide-control-prev");
 
 //para todos los "siguientes" separamos del ID la categoria al la cual corresponde
 //y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
-slideControlNext.forEach(b => b.addEventListener("click", function() {
+slideControlNext.forEach(b => b.addEventListener("click", function () {
     let categoria = b.getAttribute("id").split("-")[2];
     slideNext(categoria);
 }));
 //para todos los "anteriores"  separamos del ID la categoria al la cual corresponde
 //y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
-slideControlPrev.forEach(b => b.addEventListener("click", function() {
+slideControlPrev.forEach(b => b.addEventListener("click", function () {
     let categoria = b.getAttribute("id").split("-")[2];
     slidePrev(categoria);
 }));
@@ -92,6 +92,13 @@ function slidePrev(categoria) {
 }
 
 let juegos = {
+    cuatroenlinea: {
+        "titulo": "Cuatro en linea",
+        "img": "./images/cuatroenlinea.png",
+        "descripcion": "Prueba esta versión virtual del clásico juego. Desafía a tus amigos mientras intentas hacer que tus piezas se conecten en líneas de cuatro o más.",
+        "precio": "Gratis",
+        "estado": "Play"
+    },
     bloodborne: {
         "titulo": "BloodBorne",
         "img": "./images/001juego-bloodborne.jpg",
