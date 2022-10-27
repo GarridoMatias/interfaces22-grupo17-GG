@@ -47,6 +47,13 @@
         margin: 0px 10px 20px 10px;
     }
 
+    .reply:hover{
+        color: var(--primary-color);
+    }
+
+    .reply:active{
+        opacity: 0.5;
+    }
     /*contenedores*/
 
     .container-juego {
@@ -202,7 +209,11 @@
     }
 
     .a-mas-comentarios:hover {
-        color: var(--secondary-color);
+        color: var(--primary-color);
+    }
+
+    .a-mas-comentarios:active {
+       opacity: 0.5;
     }
 
     .p-objetivo,
