@@ -35,9 +35,11 @@ class Casillero {
         let img = this.img;
         let x = this.x;
         let y = this.y;
+        let width = this.width;
+        let height = this.height;
 
         this.img.onload = function() {
-            ctx.drawImage(img, x, y, this.width, this.height);
+            ctx.drawImage(img, x, y, width, height);
         }
 
 

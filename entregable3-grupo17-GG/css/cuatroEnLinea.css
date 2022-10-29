@@ -15,3 +15,46 @@
     -webkit-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
     -moz-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
 }
+
+.form-configuracion {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 70%;
+}
+
+.container-radio,
+.container-selector-fichas {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/* HIDE RADIO */
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* IMAGE STYLES */
+
+[type=radio]+img {
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+[type=radio]+img:hover {
+    transform: scale(1.2, 1.2);
+}
+
+
+/* CHECKED STYLES */
+
+[type=radio]:checked+img {
+    outline: 2px solid #f00;
+}
