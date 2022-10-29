@@ -52,8 +52,7 @@
                 <a href="">Cerrar sesión</a>
             </div>
             <div class="seccion-menu-blog">
-                <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog
-                    Rocket Games</a>
+                <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog Rocket Games</a>
             </div>
         </div>
     </div>
@@ -72,185 +71,177 @@
 
         <section class="pantalla-juego">
             <div class="container-jugar">
-                <div class="espacio-de-juego">
-                    <img class="juego" src="images/tablero.png" alt="tablero.jpg">
-                </div>
+                <canvas id="canvas" height="640"></canvas>
+
                 <div class="container-aside-juego">
-                    <div class="container-config-juego">
-                        <a href="javascript:void(0)">
-                            <img class="i-rueda-config icono " src="icons/configuracion.png" alt="configuracion.png">
+                    <div class="container-config-juego btn-configurar ">
+                        <a href="javascript:void(0) ">
+                            <img class="i-rueda-config icono " src="icons/configuracion.png " alt="configuracion.png ">
                         </a>
-                        <a href="javascript:void(0)">
-                            <img class="i-volumen icono" src="icons/volumen.png" alt="volumen.png">
+                        <a href="javascript:void(0) ">
+                            <img class="i-volumen icono " src="icons/volumen.png " alt="volumen.png ">
                         </a>
                     </div>
-                    <a href="javascript:void(0)">
-                        <img class="i-like icono" src="icons/like_1.png" alt="like.png">
+                    <a href="javascript:void(0) ">
+                        <img class="i-like icono " src="icons/like_1.png " alt="like.png ">
                     </a>
+                </div>
+
+                <div class="container-dialog-config" data-animation="slideInOutLeft">
+                    <a href="javascript:void(0)" id="btn-close-dialogo" class=" btn-close-dialogo close-dialogo">x</a>
+                    <button>Guardar cambios</button>
                 </div>
             </div>
 
-            <div class="container-informacion">
-                <div class="container-objetivo">
+            <div class="container-informacion ">
+                <div class="container-objetivo ">
 
-                    <h4 class="titulo-objetivo">Objetivo del juego</h4>
-                    <p class="p-objetivo">El 4 en Línea pertenece a la familia de juegos populares ya que sus sencillas
-                        reglas se pueden aprender rápidamente ofreciendo un gran entretenimiento durante un largo
-                        tiempo. El objetivo de este juego consiste en colocar cuatro fichas en una fila contínua
-                        vertical, horizontal o diagonalmente. Se juega sobre un tablero de 8x8 casillas que al empezar
-                        está vacío.</p>
-                    <p>La partida termina si una de las siguientes condiciones se cumple:
-                        Uno de los jugadores coloca cuatro o más fichas en una línea contínua vertical, horizontal o
-                        diagonalmente. Este jugador gana la partida.
-                        Todas las casillas del tablero están ocupadas y ningún jugador cumple la condición anterior para
-                        ganar. En este caso la partida finaliza en empate.</p>
+                    <h4 class="titulo-objetivo ">Objetivo del juego</h4>
+                    <p class="p-objetivo ">El 4 en Línea pertenece a la familia de juegos populares ya que sus sencillas reglas se pueden aprender rápidamente ofreciendo un gran entretenimiento durante un largo tiempo. El objetivo de este juego consiste en colocar cuatro fichas
+                        en una fila contínua vertical, horizontal o diagonalmente. Se juega sobre un tablero de 8x8 casillas que al empezar está vacío.</p>
+                    <p>La partida termina si una de las siguientes condiciones se cumple: Uno de los jugadores coloca cuatro o más fichas en una línea contínua vertical, horizontal o diagonalmente. Este jugador gana la partida. Todas las casillas del tablero
+                        están ocupadas y ningún jugador cumple la condición anterior para ganar. En este caso la partida finaliza en empate.</p>
 
                 </div>
 
-                <div class="container-instrucciones">
+                <div class="container-instrucciones ">
 
-                    <h4 class="titulo-instrucciones">Instrucciones</h4>
-                    <p class="p-instrucciones">Ambos jugadores sitúan sus fichas (una por movimiento) en el tablero. La
-                        regla para colocarlas consiste en que la estas siempre "caen hasta abajo". Es decir una ficha
-                        puede ser colocada bien en la parte inferior de una columna o bien sobre otra de alguna otra
-                        columna
-                    <p>
+                    <h4 class="titulo-instrucciones ">Instrucciones</h4>
+                    <p class="p-instrucciones ">Ambos jugadores sitúan sus fichas (una por movimiento) en el tablero. La regla para colocarlas consiste en que la estas siempre "caen hasta abajo ". Es decir una ficha puede ser colocada bien en la parte inferior de una columna o bien
+                        sobre otra de alguna otra columna
+                        <p>
 
                 </div>
             </div>
 
         </section>
 
-        <section class="container-social">
-            <div class="container-comunidad">
+        <section class="container-social ">
+            <div class="container-comunidad ">
 
-                <h4 class="titulo-social">Comunidad</h4>
-                <form action="">
-                    <input class="inp-comunidad" type="text" placeholder="Ingresa un comentario">
-                    <input class="b-comentario icono" type="button" value="">
+                <h4 class="titulo-social ">Comunidad</h4>
+                <form action=" ">
+                    <input class="inp-comunidad " type="text " placeholder="Ingresa un comentario ">
+                    <input class="b-comentario icono " type="button " value=" ">
                 </form>
 
 
-                <div class="valoraciones">
+                <div class="valoraciones ">
 
-                    <div class="container-resenia">
-                        <img class="i-inicial icono" src="icons/magui.png" alt="mati.png">
+                    <div class="container-resenia ">
+                        <img class="i-inicial icono " src="icons/magui.png " alt="mati.png ">
 
-                        <div class="container-usuario">
-                            <div class="detalle-usuario">
+                        <div class="container-usuario ">
+                            <div class="detalle-usuario ">
 
-                                <h4 class="titulo-usuario">Maga</h4>
+                                <h4 class="titulo-usuario ">Maga</h4>
 
-                                <div class="difusion">
+                                <div class="difusion ">
 
-                                    <div class="container-likes">
-                                        <p class="p-likes">18</p>
-                                        <a href="">
-                                            <img class="i-like-comentario icono" src="icons/pulgar.png"
-                                                alt="pulgar.png">
+                                    <div class="container-likes ">
+                                        <p class="p-likes ">18</p>
+                                        <a href=" ">
+                                            <img class="i-like-comentario icono " src="icons/pulgar.png " alt="pulgar.png ">
                                         </a>
                                     </div>
 
-                                    <a class="reply" href="javascript:void(0)">reply</a>
+                                    <a class="reply " href="javascript:void(0) ">reply</a>
                                 </div>
 
                             </div>
 
-                            <p class="p-comentario">Me gusta mucho este juego</p>
+                            <p class="p-comentario ">Me gusta mucho este juego</p>
 
                         </div>
                     </div>
 
-                    <div class="container-resenia">
-                        <img class="i-inicial icono" src="icons/reni.png" alt="magui.png">
+                    <div class="container-resenia ">
+                        <img class="i-inicial icono " src="icons/reni.png " alt="magui.png ">
 
-                        <div class="container-usuario">
-                            <div class="detalle-usuario">
+                        <div class="container-usuario ">
+                            <div class="detalle-usuario ">
 
-                                <h4 class="titulo-usuario">Roco</h4>
+                                <h4 class="titulo-usuario ">Roco</h4>
 
-                                <div class="difusion">
+                                <div class="difusion ">
 
-                                    <div class="container-likes">
-                                        <p class="p-likes">25</p>
-                                        <a href="javascript:void(0)">
-                                            <img class="i-like-comentario icono" src="icons/pulgar.png"
-                                                alt="pulgar.png">
+                                    <div class="container-likes ">
+                                        <p class="p-likes ">25</p>
+                                        <a href="javascript:void(0) ">
+                                            <img class="i-like-comentario icono " src="icons/pulgar.png " alt="pulgar.png ">
                                         </a>
                                     </div>
 
-                                    <a class="reply" href="javascript:void(0)">reply</a>
+                                    <a class="reply " href="javascript:void(0) ">reply</a>
                                 </div>
 
                             </div>
 
-                            <p class="p-comentario">Muy entretenido y se puede jugar de a dos!</p>
+                            <p class="p-comentario ">Muy entretenido y se puede jugar de a dos!</p>
 
                         </div>
                     </div>
 
-                    <div class="container-resenia">
-                        <img class="i-inicial icono" src="icons/mati.png" alt="reni.png">
+                    <div class="container-resenia ">
+                        <img class="i-inicial icono " src="icons/mati.png " alt="reni.png ">
 
-                        <div class="container-usuario">
-                            <div class="detalle-usuario">
+                        <div class="container-usuario ">
+                            <div class="detalle-usuario ">
 
-                                <h4 class="titulo-usuario">Mati</h4>
+                                <h4 class="titulo-usuario ">Mati</h4>
 
-                                <div class="difusion">
+                                <div class="difusion ">
 
-                                    <div class="container-likes">
-                                        <p class="p-likes">32</p>
-                                        <a href="javascript:void(0)">
-                                            <img class="i-like-comentario icono" src="icons/pulgar.png"
-                                                alt="pulgar.png">
+                                    <div class="container-likes ">
+                                        <p class="p-likes ">32</p>
+                                        <a href="javascript:void(0) ">
+                                            <img class="i-like-comentario icono " src="icons/pulgar.png " alt="pulgar.png ">
                                         </a>
                                     </div>
 
-                                    <a class="reply" href="javascript:void(0)">reply</a>
+                                    <a class="reply " href="javascript:void(0) ">reply</a>
                                 </div>
 
                             </div>
 
-                            <p class="p-comentario">Esta muy bueno, un clásico!</p>
+                            <p class="p-comentario ">Esta muy bueno, un clásico!</p>
 
                         </div>
                     </div>
 
-                    <a class="a-mas-comentarios" href="javascript:void(0)">Ver mas comentarios</a>
+                    <a class="a-mas-comentarios " href="javascript:void(0) ">Ver mas comentarios</a>
 
                 </div>
             </div>
 
-            <div class="container-contacto">
-                <div class="container-compartir">
-                    <h4 class="titulo-social">Comparte este juego</h4>
-                    <div class="redes">
-                        <a href="javascript:void(0)">
-                            <img src="icons/whatsapp.png" alt="" class="i-whatsapp icono">
+            <div class="container-contacto ">
+                <div class="container-compartir ">
+                    <h4 class="titulo-social ">Comparte este juego</h4>
+                    <div class="redes ">
+                        <a href="javascript:void(0) ">
+                            <img src="icons/whatsapp.png " alt=" " class="i-whatsapp icono ">
                         </a>
-                        <a href="javascript:void(0)">
-                            <img src="icons/facebook.png" alt="" class="i-facebook icono">
+                        <a href="javascript:void(0) ">
+                            <img src="icons/facebook.png " alt=" " class="i-facebook icono ">
                         </a>
-                        <a href="">
-                            <img src="icons/instagram.png" alt="" class="i-instagram icono">
+                        <a href=" ">
+                            <img src="icons/instagram.png " alt=" " class="i-instagram icono ">
                         </a>
-                        <a href="">
-                            <img src="icons/twitter.png" alt="" class="i-twitter icono">
+                        <a href=" ">
+                            <img src="icons/twitter.png " alt=" " class="i-twitter icono ">
                         </a>
                     </div>
                 </div>
 
-                <div class="container-ayuda-comentario">
-                    <h4 class="titulo-social">Ayuda</h4>
-                    <form action="">
-                        <div class="caja-comentarios">
-                            <label for="comentario">Puedes dejarnos tu comentario</label>
-                            <textarea class="textarea-comentario" name="comentario" id="inp-comentario"
-                                rows="7"></textarea>
+                <div class="container-ayuda-comentario ">
+                    <h4 class="titulo-social ">Ayuda</h4>
+                    <form action=" ">
+                        <div class="caja-comentarios ">
+                            <label for="comentario ">Puedes dejarnos tu comentario</label>
+                            <textarea class="textarea-comentario " name="comentario " id="inp-comentario " rows="7 "></textarea>
 
                         </div>
-                        <button class="b-comentario icono"></button>
+                        <button class="b-comentario icono "></button>
 
                     </form>
 
@@ -263,66 +254,69 @@
     </section>
 
 
-    <footer class="container-footer">
+    <footer class="container-footer ">
 
-        <div class="container-top-footer">
-            <div class="container-ayuda">
+        <div class="container-top-footer ">
+            <div class="container-ayuda ">
                 <h3>Ayuda</h3>
-                <a href="">FAQs</a>
-                <a href="">Contacto</a>
+                <a href=" ">FAQs</a>
+                <a href=" ">Contacto</a>
             </div>
 
-            <div class="container-servicios">
+            <div class="container-servicios ">
                 <h3>Servicios</h3>
-                <a href="">Consegui actualizaciones</a>
-                <a href="">Productos</a>
+                <a href=" ">Consegui actualizaciones</a>
+                <a href=" ">Productos</a>
             </div>
 
-            <div class="container-nosotros">
+            <div class="container-nosotros ">
                 <h3>Nosotros</h3>
-                <div class="contenido-nosotros">
-                    <a href="">Equipo</a>
-                    <div class="container-follow">
+                <div class="contenido-nosotros ">
+                    <a href=" ">Equipo</a>
+                    <div class="container-follow ">
                         <p>Follow us</p>
-                        <a href="">
-                            <img src="icons/instagram.png" alt="instagram.png" class="i-instagram icono">
+                        <a href=" ">
+                            <img src="icons/instagram.png " alt="instagram.png " class="i-instagram icono ">
                         </a>
-                        <a href="">
-                            <img src="icons/facebook.png" alt="facebook.png" class="i-facebook icono">
+                        <a href=" ">
+                            <img src="icons/facebook.png " alt="facebook.png " class="i-facebook icono ">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-botton-footer">
-            <div class="institucional">
-                <img class="logo logo-footer" src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
+        <div class="container-botton-footer ">
+            <div class="institucional ">
+                <img class="logo logo-footer " src="./logo/logo_Mesa de trabajo 1.png " alt="logo.png ">
 
                 <!---->
-                <div class="container-legales">
-                    <div class="container-terminos">
-                        <a href="">Terminos y condiciones</a>
-                        <p class="barras"> | </p>
-                        <a href="">Politicas de privacidad</a>
-                        <p class="barras"> | </p>
-                        <a href="">Licencia</a>
+                <div class="container-legales ">
+                    <div class="container-terminos ">
+                        <a href=" ">Terminos y condiciones</a>
+                        <p class="barras "> | </p>
+                        <a href=" ">Politicas de privacidad</a>
+                        <p class="barras "> | </p>
+                        <a href=" ">Licencia</a>
                     </div>
 
-                    <p class="text-CR">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
+                    <p class="text-CR ">Copyrigth © RocketGames 2022 . Rocket Corpotarion</p>
 
                 </div>
             </div>
 
-            <div class="container-developers">
+            <div class="container-developers ">
 
                 <p>Powered by &nbsp</p>
-                <a href="">Grupo 17</a>
+                <a href=" ">Grupo 17</a>
             </div>
         </div>
     </footer>
 
-    <script src="js/rocketGames.js"></script>
+    <script src="js/rocketGames.js "></script>
+    <script src="js/tablero.js "></script>
+    <script src="js/casillero.js "></script>
+    <script src="js/juego.js "></script>
 
 </body>
 
