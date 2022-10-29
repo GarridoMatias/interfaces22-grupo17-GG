@@ -20,7 +20,6 @@ function refactorizarCanvas(e) {
     e.preventDefault();
     let nFilas = document.querySelector("#inp-filas-selected");
     imagenCasilla = document.querySelector('input[name="inp-casillero"]:checked').value;
-    console.log(imagenCasilla)
     filas = nFilas.value;
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
