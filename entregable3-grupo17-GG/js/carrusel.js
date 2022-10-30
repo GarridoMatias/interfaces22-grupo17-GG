@@ -1,5 +1,8 @@
 "use strict"
 
+// AGREGAR MARGIN LEFT A CLASE EN VEZ DE ETIQUETA PARA QUE NO SE ROMPA EN RESPONSIVO
+
+
 const carr = 4; // cada cuantas card mueve el carrusel
 
 // escuchando siguiente y anterior

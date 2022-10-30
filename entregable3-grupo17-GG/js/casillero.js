@@ -1,3 +1,5 @@
+"use strict"
+
 class Casillero {
 
     //Constructor de la clase 
@@ -41,7 +43,5 @@ class Casillero {
         this.img.onload = function() {
             ctx.drawImage(img, x, y, width, height);
         }
-
-
     }
 }

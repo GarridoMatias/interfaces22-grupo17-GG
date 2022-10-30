@@ -7,10 +7,16 @@ let widthWindow = window.innerWidth;
 let porsentajeDelWidth = (widthWindow * 80) / 100;
 canvas.width = porsentajeDelWidth;
 let cuadrilla = []; //MATRIZ CONTENEDORA DE CASILLEROS
+let pilaFichasJ1 = [];
+let pilaFichasJ2 = [];
 let filas = 4; //NUMERO DE FILAS STANDARD
 let imagenCasilla = "./images/piezaTablero.png"; //incia por defecto
-let totalfichas = filas * filas;
+let imagenFichaJ1 = "./images/piezaTablero.png"; // inicia por defecto
+let imagenFichaJ2 = "./images/piezaTablero.png"; // inicia por defecto
+let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
+let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
+let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 80));
 //IMAGEN DE FONDO DEL CANVAS
 
 
@@ -31,11 +37,15 @@ function refactorizarCanvas(e) {
 function inicializar() {
     let imageFondo = new Image();
     imageFondo.src = "./images/cargando.jpg";
-    imageFondo.onload = function() {
+    imageFondo.onload = function () {
         ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
         //INICIACION DEL TABLERO
         tablero.inicializar(imagenCasilla);
-        tablero.dibujar()
+        tablero.dibujar();
+        jugador1.inicializar(imagenFichaJ1);
+        jugador2.inicializar(imagenFichaJ2);
+        jugador1.dibujar();
+        jugador2.dibujar();
     };
 }
 
