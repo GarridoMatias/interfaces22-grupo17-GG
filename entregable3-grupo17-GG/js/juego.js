@@ -12,7 +12,7 @@ let pilaFichasJ2 = [];
 let filas = 4; //NUMERO DE FILAS STANDARD
 let imagenCasilla = "./images/piezaTablero.png"; //incia por defecto
 let imagenFichaJ1 = "./images/piezaTablero.png"; // inicia por defecto
-let imagenFichaJ2 = "./images/piezaTablero.png"; // inicia por defecto
+let imagenFichaJ2 = "./images/piezaTablero2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
@@ -26,18 +26,22 @@ function refactorizarCanvas(e) {
     e.preventDefault();
     let nFilas = document.querySelector("#inp-filas-selected");
     imagenCasilla = document.querySelector('input[name="inp-casillero"]:checked').value;
+    imagenFichaJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').value;
+    imagenFichaJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').value;
     filas = nFilas.value;
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     tablero.setFilas(filas);
     inicializar(imagenCasilla);
+    jugador1.inicializar(imagenFichaJ1);
+    jugador2.inicializar(imagenFichaJ2);
     closeDialogConfig();
 }
 
 function inicializar() {
     let imageFondo = new Image();
     imageFondo.src = "./images/cargando.jpg";
-    imageFondo.onload = function () {
+    imageFondo.onload = function() {
         ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
         //INICIACION DEL TABLERO
         tablero.inicializar(imagenCasilla);

@@ -28,7 +28,6 @@ class Tablero {
                 cuadrilla[i][j] = new Casillero(x, y, img, this.ctx);
             }
         }
-        console.log("imagen tablero", imagen)
     }
 
     dibujar() {

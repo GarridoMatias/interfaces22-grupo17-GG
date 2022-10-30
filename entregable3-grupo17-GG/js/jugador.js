@@ -27,9 +27,6 @@ class Jugador {
             img.src = imagen;
             this.pila[i] = new Ficha(xInit, y, img, this.ctx);
         }
-        console.log(this.pila);
-        console.log(this.fichas);
-        console.log(imagen)
     }
 
     dibujar() {
@@ -39,4 +36,3 @@ class Jugador {
     }
 
 }
-
