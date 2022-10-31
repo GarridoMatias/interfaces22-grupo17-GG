@@ -26,6 +26,9 @@ class Jugador {
             let img = new Image();
             img.src = imagen;
             this.pila[i] = new Ficha(xInit, y, img, this.ctx);
+            if (i > 0) {
+                this.pila[i].clickeable(25);
+            }
         }
     }
 
