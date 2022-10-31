@@ -55,8 +55,35 @@ function inicializar() {
 
 //FUNCIONES PARA ABRIR Y CERRAR EL DIALOGO de configuracion
 function OpenDialogConfig() {
-
     document.querySelector(".container-dialog-config").style.width = "80%";
+    let fichaSelectJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked');
+    let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha-j1");
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+
+        let seleccionado = b.getAttribute("id").split("-");
+        seleccionado[2] = "j2";
+        let nuevoid = seleccionado.join("-");
+
+        let activarOtro = fichaSelectJ1.getAttribute("id").split("-");
+        activarOtro[2] = "j2";
+        let nuevoidOtro = activarOtro.join("-");
+
+
+
+        document.querySelector(`#${nuevoid}`).checked = false;
+
+        document.querySelector(`#${nuevoidOtro}`).checked = true;
+
+
+
+
+        console.log(document.querySelector(`#${nuevoid}`));
+        console.log(document.querySelector(`#${nuevoidOtro}`));
+
+
+    }));
+    // let fichaSelectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
+
 }
 
 function closeDialogConfig() {
@@ -72,6 +99,7 @@ btnCloseDialogConfig.addEventListener("click", closeDialogConfig);
 //BOTON PARA CONFIMAR CAMBIOS DEL CANVAS
 let btnGuardar = document.querySelector("#btn-guardar-configuracion");
 btnGuardar.addEventListener("click", refactorizarCanvas);
+
 
 // let selectFichas1 = document.querySelector("#select-ficha-j1");
 // let selectFichas2 = document.querySelector("#select-ficha-j2");
