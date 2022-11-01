@@ -53,8 +53,6 @@ class Tablero {
 
             ficha.selected = false;
 
-            ficha.x = ficha.xi + 200;
-            ficha.y = ficha.yi;
             ficha.actualizarPos();
         }
     }

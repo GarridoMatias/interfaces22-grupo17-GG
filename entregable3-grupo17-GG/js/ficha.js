@@ -50,10 +50,11 @@ class Ficha {
     verificarSelect(e, x, y) {
         if (!this.selected) {
 
-            let xCursor = e.pageX - x;
-            let yCursor = e.pageY - y;
+            let xCursor = e.clientX - x;
+            let yCursor = e.clientY - y;
             if (xCursor > this.x && xCursor < this.x + 80 && yCursor > this.y && yCursor < this.y + 80) {
                 this.selected = true;
+                console.log(this)
             }
         }
     }
@@ -61,8 +62,8 @@ class Ficha {
     //Corrige la posición del mouse para que se desplace la ficha desde el centro  
     actualizarPos(x, y) {
         if (this.selected && !this.posicionada) {
-            this.x = x - 50;
-            this.y = y - 50;
+            this.x = x - 40;
+            this.y = y - 40;
         }
 
     }

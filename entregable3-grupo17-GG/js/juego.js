@@ -1,5 +1,11 @@
 "use strict";
 
+let imageFondo = new Image();
+imageFondo.src = "./images/cargando.jpg";
+imageFondo.onload = function() {
+    ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
+}
+
 //DECLARO VARIABLES
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
@@ -18,7 +24,6 @@ let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
 let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 160));
 //IMAGEN DE FONDO DEL CANVAS
-
 
 inicializarEventos();
 
@@ -42,37 +47,25 @@ function refactorizarCanvas(e) {
 
 function actualizar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let imageFondo = new Image();
-    imageFondo.src = "./images/cargando.jpg";
-    imageFondo.onload = function() {
-        ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
-        console.log(jugador1)
-        jugador1.dibujar(1, ctx);
-        jugador2.dibujar(1, ctx);
-        tablero.dibujar(1, ctx);
-    }
 
+    ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 
+    tablero.dibujar(1, ctx);
+    jugador1.dibujar(1, ctx);
+    jugador2.dibujar(1, ctx);
 }
 
 function iniciar() {
-    let imageFondo = new Image();
-    imageFondo.src = "./images/cargando.jpg";
-    imageFondo.onload = function() {
-        ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
-        //INICIACION DEL TABLERO
-        tablero.inicializar(imagenCasilla);
-        jugador1.inicializar(imagenFichaJ1);
-        jugador2.inicializar(imagenFichaJ2);
-        tablero.dibujar(0, ctx);
-        jugador1.dibujar(0, ctx);
-        jugador2.dibujar(0, ctx);
-    };
+    ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
+    //INICIACION DEL TABLERO
+    tablero.inicializar(imagenCasilla);
+    jugador1.inicializar(imagenFichaJ1);
+    jugador2.inicializar(imagenFichaJ2);
+    tablero.dibujar(0, ctx);
+    jugador1.dibujar(0, ctx);
+    jugador2.dibujar(0, ctx);
+
 }
-
-
-
-
 
 //FUNCIONES PARA ABRIR Y CERRAR EL DIALOGO de configuracion
 function OpenDialogConfig() {
@@ -114,7 +107,7 @@ btnGuardar.addEventListener("click", refactorizarCanvas);
 function inicializarEventos(params) {
     canvas.onmousedown = mouseDown;
     canvas.onmouseup = mouseUp;
-    // canvas.onmousemove = mouseMove;
+    canvas.onmousemove = mouseMove;
 }
 
 //Verifica qué ficha fue seleccionada cuando el botón del mouse es presionado
@@ -128,16 +121,17 @@ function mouseUp(params) {
 
     pilaFichasJ1.forEach(f => tablero.verificarCasillero(f));
     pilaFichasJ2.forEach(f => tablero.verificarCasillero(f));
-    actualizar();
+
 }
 
 //Mueve la ficha siguiendo la trayectoria del mouse
 function mouseMove(params) {
     if (pilaFichasJ1) {
-        let x = MouseEvent.pageX - canvas.offsetLeft;
-        let y = MouseEvent.pageY - canvas.offsetTop;
+        let x = event.clientX - canvas.offsetLeft;
+        let y = event.clientY - canvas.offsetTop;
         pilaFichasJ1.forEach(f => f.actualizarPos(x, y));
         pilaFichasJ2.forEach(f => f.actualizarPos(x, y));
+        actualizar();
 
     }
 }
