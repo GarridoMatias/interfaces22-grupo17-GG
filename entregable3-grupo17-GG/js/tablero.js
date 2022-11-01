@@ -70,8 +70,9 @@ class Tablero {
                     if (casilleroDisponible) {
                         this.cuadrilla[indiceCasilleroDisponible][j].ocupado = true;
 
-                        ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x;
-                        ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y;
+
+                        ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x + 9;
+                        ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y + 8;
                         // si era valida la posicion no se mueve mas
                         ficha.posicionada = true;
 

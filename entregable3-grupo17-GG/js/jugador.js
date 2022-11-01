@@ -1,35 +1,44 @@
 //CLASE JUGADOR
 
 class Jugador {
-    constructor(fichas, pila, ctx, ladoJugador) {
-        this.fichas = fichas;
+    constructor(pila, ctx, ladoJugador, canvasHeight, filas) {
+        this.fichas = ((filas * (filas + 1)) / 2);
         this.pila = pila;
         this.ctx = ctx;
         this.ladoJugador = ladoJugador;
+        this.canvasHeight = canvasHeight;
+        this.filas = filas;
     }
 
-    getFichas() {
-        return this.fichas;
-    }
-
-    setFichas(fichas) {
-        this.fichas = fichas;
+    setFilas(filas) {
+        this.filas = filas;
+        this.fichas = ((filas * (filas + 1)) / 2);
     }
 
     inicializar(imagen) {
+
+        let fichasPorColumna = this.fichas / 2;
+        let heightMax = this.canvasHeight / fichasPorColumna;
+        let distancia;
+        if (heightMax > 80) {
+            distancia = 80
+        } else {
+            distancia = (heightMax) - (80 - heightMax);
+        }
         //CALCULO DE X e Y INICIALES CON RESPECTO AL JUGADOR
         let xInit = this.ladoJugador;
         let yInit = 0;
 
+
         for (let i = 0; i < this.fichas; i++) {
             let x;
             let y = yInit;
-            if (i < 7) {
+            if (i < fichasPorColumna) {
                 x = xInit;
-                y = y + (i * 80);
-            } else if (i < 14) {
+                y = y + (i * distancia);
+            } else {
                 x = xInit + 80;
-                y = ((i - 7) * (80));
+                y = y + ((i - fichasPorColumna) * (distancia));
             }
 
             let img = new Image();

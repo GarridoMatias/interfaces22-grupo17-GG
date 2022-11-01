@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/cargando.jpg";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -22,8 +22,8 @@ let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
-let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
-let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 160));
+let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas);
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas);
 
 iniciar();
 inicializarEventos();
@@ -39,6 +39,8 @@ function refactorizarCanvas(e) {
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     tablero.setFilas(filas);
+    jugador1.setFilas(filas);
+    jugador2.setFilas(filas);
     tablero.inicializar(imagenCasilla);
     jugador1.inicializar(imagenFichaJ1);
     jugador2.inicializar(imagenFichaJ2);
@@ -72,7 +74,7 @@ function OpenDialogConfig() {
     document.querySelector(".container-dialog-config").style.width = "80%";
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha-j1");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let seleccionado = b.getAttribute("id").split("-");
         seleccionado[2] = "j2";
