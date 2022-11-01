@@ -45,7 +45,7 @@ function actualizar() {
     let imageFondo = new Image();
     imageFondo.src = "./images/cargando.jpg";
     imageFondo.onload = function() {
-
+        ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 
         jugador1.dibujar();
         jugador1.pila[1].drawImage();
