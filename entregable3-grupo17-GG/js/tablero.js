@@ -34,6 +34,7 @@ class Tablero {
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j <= this.filas; j++) {
                 cuadrilla[i][j].drawImage();
+
             }
         }
     }
@@ -45,5 +46,16 @@ class Tablero {
 
         return centroCanvas - centroTablero;
 
+    }
+
+    verificarCasillero(ficha) {
+        if (!ficha.posicionada && ficha.selected) {
+
+            ficha.selected = false;
+
+            ficha.x = ficha.xi + 200;
+            ficha.y = ficha.yi;
+            ficha.actualizarPos();
+        }
     }
 }

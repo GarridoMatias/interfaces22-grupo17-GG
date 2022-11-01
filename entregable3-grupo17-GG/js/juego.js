@@ -16,12 +16,13 @@ let imagenFichaJ2 = "./images/piezaTablero2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
-let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 80));
+let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 160));
 //IMAGEN DE FONDO DEL CANVAS
 
 
+inicializarEventos();
 
-inicializar();
+iniciar();
 
 function refactorizarCanvas(e) {
     e.preventDefault();
@@ -33,36 +34,46 @@ function refactorizarCanvas(e) {
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     tablero.setFilas(filas);
-    inicializar(imagenCasilla);
+    tablero.inicializar(imagenCasilla);
     jugador1.inicializar(imagenFichaJ1);
     jugador2.inicializar(imagenFichaJ2);
     closeDialogConfig();
 }
 
 function actualizar() {
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    tablero.setFilas(filas);
-    inicializar(imagenCasilla);
-    jugador1.inicializar(imagenFichaJ1);
-    jugador2.inicializar(imagenFichaJ2);
+    let imageFondo = new Image();
+    imageFondo.src = "./images/cargando.jpg";
+    imageFondo.onload = function() {
+
+
+        jugador1.dibujar();
+        jugador1.pila[1].drawImage();
+        jugador2.dibujar();
+        tablero.dibujar();
+    }
+
+
 }
 
-function inicializar() {
+function iniciar() {
     let imageFondo = new Image();
     imageFondo.src = "./images/cargando.jpg";
     imageFondo.onload = function() {
         ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
         //INICIACION DEL TABLERO
         tablero.inicializar(imagenCasilla);
-        tablero.dibujar();
         jugador1.inicializar(imagenFichaJ1);
         jugador2.inicializar(imagenFichaJ2);
+        tablero.dibujar();
         jugador1.dibujar();
         jugador2.dibujar();
-        inicializarEventos();
     };
 }
+
+
+
+
 
 //FUNCIONES PARA ABRIR Y CERRAR EL DIALOGO de configuracion
 function OpenDialogConfig() {
@@ -78,8 +89,6 @@ function OpenDialogConfig() {
         if (document.querySelector(`#${nuevoid}`).checked) {
             document.querySelector(`#${nuevoidOtro}`).checked = true;
         }
-        console.log(document.querySelector(`#${nuevoid}`));
-        console.log(document.querySelector(`#${nuevoidOtro}`));
         //controlar para que no sean iguales
 
     }));
@@ -106,7 +115,7 @@ btnGuardar.addEventListener("click", refactorizarCanvas);
 function inicializarEventos(params) {
     canvas.onmousedown = mouseDown;
     canvas.onmouseup = mouseUp;
-    canvas.onmousemove = mouseMove;
+    // canvas.onmousemove = mouseMove;
 }
 
 //Verifica qué ficha fue seleccionada cuando el botón del mouse es presionado
@@ -117,41 +126,19 @@ function mouseDown() {
 
 //Verifica si la ficha puede colocarse a partir del lugar donde el botón del mouse es soltado 
 function mouseUp(params) {
-    pilaFichasJ1.forEach(f => tablero.verificarColocable(f));
-    pilaFichasJ2.forEach(f => tablero.verificarColocable(f));
+
+    pilaFichasJ1.forEach(f => tablero.verificarCasillero(f));
+    pilaFichasJ2.forEach(f => tablero.verificarCasillero(f));
+    actualizar();
 }
 
 //Mueve la ficha siguiendo la trayectoria del mouse
 function mouseMove(params) {
-    if (inicializarEventos) {
-        let x = event.pageX - canvas.offsetLeft;
-        let y = event.pageY - canvas.offsetTop;
+    if (pilaFichasJ1) {
+        let x = MouseEvent.pageX - canvas.offsetLeft;
+        let y = MouseEvent.pageY - canvas.offsetTop;
         pilaFichasJ1.forEach(f => f.actualizarPos(x, y));
         pilaFichasJ2.forEach(f => f.actualizarPos(x, y));
-        actualizar();
+
     }
 }
-
-// let selectFichas1 = document.querySelector("#select-ficha-j1");
-// let selectFichas2 = document.querySelector("#select-ficha-j2");
-
-// let fichas = [];
-
-// fichas = [{
-//         "nombre": "Ficha 1",
-//         "src": "images/piezaTablero.png"
-//     },
-//     {
-//         "nombre": "Ficha 2",
-//         "src": "images/piezaTablero.png"
-//     },
-//     {
-//         "nombre": "Ficha 3",
-//         "src": "images/piezaTablero.png"
-//     },
-//     {
-//         "nombre": "Ficha 4",
-//         "src": "images/piezaTablero.png"
-//     },
-
-// ];

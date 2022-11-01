@@ -23,13 +23,7 @@ class Casillero {
         return this.y;
     }
 
-    //Crea el tableroSpot oculto arriba de la primera fila, donde se van a soltar las fichas
-    draw() {
-        this.ctx.beginPath();
-        this.ctx.arc(this.x + this.width / 2, this.y + this.width / 2, this.width / 2, 0.34, 2.79)
-        this.ctx.stroke();
 
-    }
 
     //Dibuja un tableroSpot
     drawImage() {

@@ -27,9 +27,7 @@ class Ficha {
     getY() {
         return this.y;
     }
-    clickeable(salto) {
-        this.yi = this.y + salto;
-    }
+
 
     //Dibuja una ficha
     drawImage() {
@@ -41,16 +39,19 @@ class Ficha {
         let yf = this.height;
 
         this.img.onload = function() {
+
             ctx.drawImage(img, x, y, xf, yf);
+
         }
     }
 
     //Verifica si en la posición donde fue clickeado el mouse hay una ficha
     verificarSelect(e, x, y) {
         if (!this.selected) {
+
             let xCursor = e.pageX - x;
             let yCursor = e.pageY - y;
-            if (xCursor > this.x && xCursor < this.x + 40 && yCursor > this.y && yCursor < this.y + 40) {
+            if (xCursor > this.x && xCursor < this.x + 80 && yCursor > this.y && yCursor < this.y + 80) {
                 this.selected = true;
             }
         }
@@ -62,5 +63,6 @@ class Ficha {
             this.x = x - 50;
             this.y = y - 50;
         }
+
     }
 }

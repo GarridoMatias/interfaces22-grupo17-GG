@@ -19,16 +19,22 @@ class Jugador {
     inicializar(imagen) {
         //CALCULO DE X e Y INICIALES CON RESPECTO AL JUGADOR
         let xInit = this.ladoJugador;
-        let yInit = 50;
+        let yInit = 0;
 
         for (let i = 0; i < this.fichas; i++) {
-            let y = yInit + (i * (25));
+            let x;
+            let y = yInit;
+            if (i < 7) {
+                x = xInit;
+                y = y + (i * 80);
+            } else if (i < 14) {
+                x = xInit + 80;
+                y = ((i - 7) * (80));
+            }
+
             let img = new Image();
             img.src = imagen;
-            this.pila[i] = new Ficha(xInit, y, img, this.ctx);
-            if (i > 0) {
-                this.pila[i].clickeable(25);
-            }
+            this.pila[i] = new Ficha(x, y, img, this.ctx);
         }
     }
 
@@ -36,6 +42,7 @@ class Jugador {
         for (let i = 0; i < this.fichas; i++) {
             this.pila[i].drawImage();
         }
+
     }
 
 }
