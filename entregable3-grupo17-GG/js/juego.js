@@ -46,11 +46,10 @@ function actualizar() {
     imageFondo.src = "./images/cargando.jpg";
     imageFondo.onload = function() {
         ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
-
-        jugador1.dibujar();
-        jugador1.pila[1].drawImage();
-        jugador2.dibujar();
-        tablero.dibujar();
+        console.log(jugador1)
+        jugador1.dibujar(1, ctx);
+        jugador2.dibujar(1, ctx);
+        tablero.dibujar(1, ctx);
     }
 
 
@@ -65,9 +64,9 @@ function iniciar() {
         tablero.inicializar(imagenCasilla);
         jugador1.inicializar(imagenFichaJ1);
         jugador2.inicializar(imagenFichaJ2);
-        tablero.dibujar();
-        jugador1.dibujar();
-        jugador2.dibujar();
+        tablero.dibujar(0, ctx);
+        jugador1.dibujar(0, ctx);
+        jugador2.dibujar(0, ctx);
     };
 }
 

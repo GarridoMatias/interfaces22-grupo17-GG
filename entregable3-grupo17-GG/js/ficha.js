@@ -30,18 +30,19 @@ class Ficha {
 
 
     //Dibuja una ficha
-    drawImage() {
-        let ctx = this.ctx;
+    drawImage(n, ctx) {
+
         let img = this.img;
         let x = this.x;
         let y = this.y;
         let xf = this.width;
         let yf = this.height;
-
-        this.img.onload = function() {
-
+        if (n == 0) {
+            this.img.onload = function() {
+                ctx.drawImage(img, x, y, xf, yf);
+            }
+        } else {
             ctx.drawImage(img, x, y, xf, yf);
-
         }
     }
 

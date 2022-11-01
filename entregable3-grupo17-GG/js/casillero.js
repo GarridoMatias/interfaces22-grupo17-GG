@@ -26,15 +26,17 @@ class Casillero {
 
 
     //Dibuja un tableroSpot
-    drawImage() {
-        let ctx = this.ctx;
+    drawImage(n, ctx) {
         let img = this.img;
         let x = this.x;
         let y = this.y;
         let width = this.width;
         let height = this.height;
-
-        this.img.onload = function() {
+        if (n == 0) {
+            this.img.onload = function() {
+                ctx.drawImage(img, x, y, width, height);
+            }
+        } else {
             ctx.drawImage(img, x, y, width, height);
         }
     }

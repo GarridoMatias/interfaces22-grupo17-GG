@@ -38,9 +38,9 @@ class Jugador {
         }
     }
 
-    dibujar() {
+    dibujar(n, ctx) {
         for (let i = 0; i < this.fichas; i++) {
-            this.pila[i].drawImage();
+            this.pila[i].drawImage(n, ctx);
         }
 
     }

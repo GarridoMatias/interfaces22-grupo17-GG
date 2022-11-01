@@ -30,10 +30,10 @@ class Tablero {
         }
     }
 
-    dibujar() {
+    dibujar(n, ctx) {
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j <= this.filas; j++) {
-                cuadrilla[i][j].drawImage();
+                cuadrilla[i][j].drawImage(n, ctx);
 
             }
         }
