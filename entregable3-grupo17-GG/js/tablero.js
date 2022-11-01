@@ -48,12 +48,47 @@ class Tablero {
 
     }
 
-    verificarCasillero(ficha) {
+    verificarCasillero(ficha, e, x) {
         if (!ficha.posicionada && ficha.selected) {
-
             ficha.selected = false;
+            let xCursor = e.clientX - x;
+            let dentroDelTablero = false;
 
-            ficha.actualizarPos();
+            for (let j = 0; j <= this.filas; j++) {
+
+                if (xCursor > this.cuadrilla[0][j].x && xCursor < this.cuadrilla[0][j].x + 80) {
+                    dentroDelTablero = true;
+                    let casilleroDisponible = false;
+                    let indiceCasilleroDisponible;
+
+                    for (let i = 0; i < this.filas; i++) {
+                        if (!this.cuadrilla[i][j].ocupado) {
+                            casilleroDisponible = true;
+                            indiceCasilleroDisponible = i;
+                        }
+                    }
+                    if (casilleroDisponible) {
+                        this.cuadrilla[indiceCasilleroDisponible][j].ocupado = true;
+
+                        ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x;
+                        ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y;
+                        // si era valida la posicion no se mueve mas
+                        ficha.posicionada = true;
+
+                    } else {
+                        console.log("casillero no disponible");
+                        ficha.x = ficha.xi;
+                        ficha.y = ficha.yi;
+
+
+                    }
+                }
+            }
+            if (!dentroDelTablero) {
+                ficha.x = ficha.xi;
+                ficha.y = ficha.yi;
+
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ class Ficha {
 
     //Verifica si en la posición donde fue clickeado el mouse hay una ficha
     verificarSelect(e, x, y) {
-        if (!this.selected) {
+        if (!this.selected && !this.posicionada) {
 
             let xCursor = e.clientX - x;
             let yCursor = e.clientY - y;
@@ -63,7 +63,8 @@ class Ficha {
     actualizarPos(x, y) {
         if (this.selected && !this.posicionada) {
             this.x = x - 40;
-            this.y = y - 40;
+            this.y = y - 60;
+            0
         }
 
     }

@@ -1,4 +1,5 @@
 "use strict";
+//IMAGEN DE FONDO DEL CANVAS
 
 let imageFondo = new Image();
 imageFondo.src = "./images/cargando.jpg";
@@ -23,11 +24,10 @@ let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let jugador1 = new Jugador((totalfichas / 2), pilaFichasJ1, ctx, 0);
 let jugador2 = new Jugador((totalfichas / 2), pilaFichasJ2, ctx, (canvas.width - 160));
-//IMAGEN DE FONDO DEL CANVAS
-
-inicializarEventos();
 
 iniciar();
+inicializarEventos();
+
 
 function refactorizarCanvas(e) {
     e.preventDefault();
@@ -119,8 +119,8 @@ function mouseDown() {
 //Verifica si la ficha puede colocarse a partir del lugar donde el botón del mouse es soltado 
 function mouseUp(params) {
 
-    pilaFichasJ1.forEach(f => tablero.verificarCasillero(f));
-    pilaFichasJ2.forEach(f => tablero.verificarCasillero(f));
+    pilaFichasJ1.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
+    pilaFichasJ2.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
 
 }
 
