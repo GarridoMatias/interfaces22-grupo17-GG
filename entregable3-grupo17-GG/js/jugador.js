@@ -36,7 +36,7 @@ class Jugador {
         }
         //CALCULO DE X e Y INICIALES CON RESPECTO AL JUGADOR
         let xInit = this.ladoJugador;
-        let yInit = 100;
+        let yInit = 0;
 
 
         for (let i = 0; i < this.fichas; i++) {

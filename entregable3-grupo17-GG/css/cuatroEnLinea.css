@@ -16,6 +16,10 @@
     -moz-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
 }
 
+.container-dialog-config .btn-destacado{
+    bottom: 5%;
+}
+
 .form-configuracion {
     display: flex;
     flex-direction: column;
@@ -68,6 +72,17 @@
     width: 50%;
     text-align: right;
     font-size: 1.5rem;
+}
+
+.fichas-jugadores-seleccion{
+    display: flex; 
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fichas-jugadores-seleccion p {
+    margin: 0 0 5px 0;
 }
 
 #value-filas-selected {
