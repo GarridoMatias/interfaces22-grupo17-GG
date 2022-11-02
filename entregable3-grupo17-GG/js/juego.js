@@ -43,9 +43,6 @@ function refactorizarCanvas(e) {
     jugador1.setFilas(filas);
     jugador2.setFilas(filas);
 
-
-
-
     tablero.inicializar(imagenCasilla);
     jugador1.inicializar(imagenFichaJ1);
     jugador2.inicializar(imagenFichaJ2);
@@ -82,24 +79,41 @@ function iniciar() {
 function OpenDialogConfig() {
     document.querySelector(".container-dialog-config").style.width = "80%";
     let nFilas = document.querySelector("#inp-filas-selected");
+    let selectJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').getAttribute("id");
+    let selectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
+    console.log(selectJ1);
+    console.log(selectJ2);
+
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
-    let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha-j1");
+    let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
     nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
-
+        let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
-        seleccionado[2] = "j2";
-        let nuevoid = seleccionado.join("-");
-        console.log(nuevoid)
-        if (document.querySelector(`#${nuevoid}`).checked) {
-            // document.querySelector(`#${nuevoidOtro}`).checked = true;
-            //    console.log('hago invisible a ', nuevoid)
-            //     document.querySelector(`.${nuevoid}`).style.visibility = 'hidden';
+        console.log(seleccionado);
+        console.log(selectJ1);
+        console.log(selectJ2);
+        if (seleccionado[2] == "j1") {
+            seleccionado[2] = "j2";
+            paraCambiar = selectJ1.split("-");
+            paraCambiar[2] = "j2";
+            paraCambiar = paraCambiar.join("-");
+
+
+        } else if (seleccionado[2] == "j2") {
+            seleccionado[2] = "j1";
+            paraCambiar = selectJ2.split("-");
+            paraCambiar[2] = "j1";
+            paraCambiar = paraCambiar.join("-");
+        }
+        let seleccionContraria = seleccionado.join("-");
+        if (document.querySelector(`#${seleccionContraria}`).checked) {
+            document.querySelector(`#${seleccionContraria}`).checked = false;
+            document.querySelector(`#${paraCambiar}`).checked = true;
         }
         //controlar para que no sean iguales
 
     }));
-    // let fichaSelectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
 
 }
 
