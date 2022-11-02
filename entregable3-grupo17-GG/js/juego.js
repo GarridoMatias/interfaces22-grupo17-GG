@@ -79,20 +79,18 @@ function iniciar() {
 function OpenDialogConfig() {
     document.querySelector(".container-dialog-config").style.width = "80%";
     let nFilas = document.querySelector("#inp-filas-selected");
+    //se guardan variables con las selecciones previas a cambiar
     let selectJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').getAttribute("id");
     let selectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
-    console.log(selectJ1);
-    console.log(selectJ2);
 
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
     nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
-        console.log(seleccionado);
-        console.log(selectJ1);
-        console.log(selectJ2);
+
         if (seleccionado[2] == "j1") {
             seleccionado[2] = "j2";
             paraCambiar = selectJ1.split("-");
@@ -141,8 +139,9 @@ function inicializarEventos(params) {
 
 //Verifica qué ficha fue seleccionada cuando el botón del mouse es presionado
 function mouseDown() {
-    pilaFichasJ1.forEach(f => f.verificarSelect(event, canvas.offsetLeft, canvas.offsetTop));
-    pilaFichasJ2.forEach(f => f.verificarSelect(event, canvas.offsetLeft, canvas.offsetTop));
+    let rect = canvas.getBoundingClientRect();
+    pilaFichasJ1.forEach(f => f.verificarSelect(event, rect.left, rect.top));
+    pilaFichasJ2.forEach(f => f.verificarSelect(event, rect.left, rect.top));
 }
 
 //Verifica si la ficha puede colocarse a partir del lugar donde el botón del mouse es soltado 
@@ -156,8 +155,9 @@ function mouseUp(params) {
 //Mueve la ficha siguiendo la trayectoria del mouse
 function mouseMove(params) {
     if (pilaFichasJ1) {
-        let x = event.clientX - canvas.offsetLeft;
-        let y = event.clientY - canvas.offsetTop;
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
         pilaFichasJ1.forEach(f => f.actualizarPos(x, y));
         pilaFichasJ2.forEach(f => f.actualizarPos(x, y));
         actualizar();
