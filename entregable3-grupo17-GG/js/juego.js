@@ -2,8 +2,8 @@
 //IMAGEN DE FONDO DEL CANVAS
 
 let imageFondo = new Image();
-imageFondo.src = "./images/cargando.jpg";
-imageFondo.onload = function() {
+imageFondo.src = "./images/fondo-juego.png";
+imageFondo.onload = function () {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -36,6 +36,7 @@ function refactorizarCanvas(e) {
     imagenFichaJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').value;
     imagenFichaJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').value;
     filas = nFilas.value;
+
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     tablero.setFilas(filas);
@@ -72,16 +73,20 @@ function iniciar() {
 //FUNCIONES PARA ABRIR Y CERRAR EL DIALOGO de configuracion
 function OpenDialogConfig() {
     document.querySelector(".container-dialog-config").style.width = "80%";
+    let nFilas = document.querySelector("#inp-filas-selected");
+    document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha-j1");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
 
         let seleccionado = b.getAttribute("id").split("-");
         seleccionado[2] = "j2";
         let nuevoid = seleccionado.join("-");
-
+        console.log(nuevoid)
         if (document.querySelector(`#${nuevoid}`).checked) {
-            document.querySelector(`#${nuevoidOtro}`).checked = true;
+           // document.querySelector(`#${nuevoidOtro}`).checked = true;
+        //    console.log('hago invisible a ', nuevoid)
+        //     document.querySelector(`.${nuevoid}`).style.visibility = 'hidden';
         }
         //controlar para que no sean iguales
 
