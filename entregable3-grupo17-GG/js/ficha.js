@@ -63,8 +63,8 @@ class Ficha {
     actualizarPos(x, y) {
         if (this.selected && !this.posicionada) {
             this.x = x - 40;
-            this.y = y - 60;
-            0
+            this.y = y - 40;
+
         }
 
     }
