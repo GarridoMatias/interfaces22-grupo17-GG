@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -42,9 +42,18 @@ function refactorizarCanvas(e) {
     tablero.setFilas(filas);
     jugador1.setFilas(filas);
     jugador2.setFilas(filas);
+
+
+
+
     tablero.inicializar(imagenCasilla);
     jugador1.inicializar(imagenFichaJ1);
     jugador2.inicializar(imagenFichaJ2);
+
+    tablero.dibujar(0, ctx);
+    jugador1.dibujar(0, ctx);
+    jugador2.dibujar(0, ctx);
+
     closeDialogConfig();
 }
 
@@ -52,7 +61,6 @@ function actualizar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
-
     tablero.dibujar(1, ctx);
     jugador1.dibujar(1, ctx);
     jugador2.dibujar(1, ctx);
@@ -77,16 +85,16 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha-j1");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let seleccionado = b.getAttribute("id").split("-");
         seleccionado[2] = "j2";
         let nuevoid = seleccionado.join("-");
         console.log(nuevoid)
         if (document.querySelector(`#${nuevoid}`).checked) {
-           // document.querySelector(`#${nuevoidOtro}`).checked = true;
-        //    console.log('hago invisible a ', nuevoid)
-        //     document.querySelector(`.${nuevoid}`).style.visibility = 'hidden';
+            // document.querySelector(`#${nuevoidOtro}`).checked = true;
+            //    console.log('hago invisible a ', nuevoid)
+            //     document.querySelector(`.${nuevoid}`).style.visibility = 'hidden';
         }
         //controlar para que no sean iguales
 

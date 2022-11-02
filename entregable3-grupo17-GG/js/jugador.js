@@ -12,18 +12,27 @@ class Jugador {
 
     setFilas(filas) {
         this.filas = filas;
-        this.fichas = ((filas * (filas + 1)) / 2);
+
+        this.fichas = ((this.filas * (parseInt(this.filas) + 1)) / 2);
+
+    }
+    getFichas() {
+        return this.fichas;
+    }
+
+    clear() {
+        this.pila = []
     }
 
     inicializar(imagen) {
 
-        let fichasPorColumna = this.fichas / 2;
-        let heightMax = this.canvasHeight / fichasPorColumna;
+        let fichasPorColumna = (this.fichas / 2);
+        let heightMax = this.canvasHeight / (fichasPorColumna + 1);
         let distancia;
         if (heightMax > 80) {
             distancia = 80
         } else {
-            distancia = (heightMax) - (80 - heightMax);
+            distancia = heightMax;
         }
         //CALCULO DE X e Y INICIALES CON RESPECTO AL JUGADOR
         let xInit = this.ladoJugador;
