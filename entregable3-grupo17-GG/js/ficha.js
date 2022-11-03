@@ -10,10 +10,10 @@ class Ficha {
         this.y = y;
         this.xi = x;
         this.yi = y;
-        this.xf = 80;
-        this.yf = 80;
-        this.width = 70;
-        this.height = 70;
+        this.xf = 55;
+        this.yf = 55;
+        this.fichaWidth = 55;
+        this.fichaHeight = 55;
         this.img = img;
         this.ctx = ctx;
         this.jugador = jugador;
@@ -36,8 +36,8 @@ class Ficha {
         let img = this.img;
         let x = this.x;
         let y = this.y;
-        let xf = this.width;
-        let yf = this.height;
+        let xf = this.fichaWidth;
+        let yf = this.fichaHeight;
         if (n == 0) {
             this.img.onload = function() {
                 ctx.drawImage(img, x, y, xf, yf);
@@ -53,7 +53,7 @@ class Ficha {
 
             let xCursor = e.clientX - x;
             let yCursor = e.clientY - y;
-            if (xCursor > this.x && xCursor < this.x + 80 && yCursor > this.y && yCursor < this.y + 80) {
+            if (xCursor > this.x && xCursor < this.x + this.fichaWidth && yCursor > this.y && yCursor < this.y + this.fichaHeight) {
                 this.selected = true;
             }
         }
@@ -62,8 +62,8 @@ class Ficha {
     //Corrige la posición del mouse para que se desplace la ficha desde el centro  
     actualizarPos(x, y) {
         if (this.selected && !this.posicionada) {
-            this.x = x - 40;
-            this.y = y - 40;
+            this.x = x - (this.fichaWidth / 2);
+            this.y = y - (this.fichaHeight / 2);
 
         }
 

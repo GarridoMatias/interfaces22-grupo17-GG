@@ -3,9 +3,11 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
+
+const timer = 15;
 
 //DECLARO VARIABLES
 let canvas = document.querySelector("#canvas");
@@ -24,13 +26,13 @@ let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
-let tiempo = 30;
+let tiempo = timer;
 let intervalo;
 let j1 = "Jugador 1";
 let j2 = "Jugador 2";
 let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
 let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 210), canvas.height, filas, j2);
-let ganador = "Magali";
+let jugadorDeTurno = j1;
 
 iniciar();
 inicializarEventos();
@@ -58,41 +60,46 @@ function refactorizarCanvas(e) {
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
 
-    closeDialogConfig();
-
-    tiempo = 5;
-    ganador="";
-    if(intervalo){
-       clearInterval(intervalo);
+    tiempo = timer;
+    if (intervalo) {
+        clearInterval(intervalo);
     }
-    intervalo = setInterval(decrementarTiempo,1000);
+    intervalo = setInterval(decrementarTiempo, 1000);
+
+    closeDialogConfig();
 }
 
-function decrementarTiempo(){
-    if(tiempo>0){
+function decrementarTiempo() {
+    if (tiempo > 0) {
         tiempo--;
         actualizar();
-     }
+    }
 }
 
-function mostrarTiempo(){
-    if(tiempo>0){
-        let minutes = Math.floor(tiempo/60);
-        let segundos = tiempo % 60;
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        segundos = segundos < 10 ? "0" + segundos : segundos;
-        ctx.font = "3rem Arial";
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(`${minutes} : ${segundos}`, canvas.width/2 - 80, 50); 
-     }else{
-        finDePartida();
-     }
+function mostrarTiempo() {
+    if (!tablero.ganador) {
+        if (tiempo > 0) {
+            let minutes = Math.floor(tiempo / 60);
+            let segundos = tiempo % 60;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+            ctx.font = "3rem Arial";
+            ctx.fillStyle = "#ffffff";
+            ctx.fillText(`${minutes} : ${segundos}`, canvas.width / 2 - 80, 50);
+        } else {
+            finDePartida();
+            jugadorDeTurno = null;
+        }
+    } else {
+        ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 200, 60);
+        jugadorDeTurno = null;
+    }
 }
 
-function finDePartida(){   
+function finDePartida() {
     ctx.font = "30px Arial";
     ctx.fillStyle = "white";
-    ctx.fillText("Se termino el tiempo :( , juego empatado ",canvas.width/2 - 280, 35);   
+    ctx.fillText("Se termino el tiempo :( , juego empatado ", canvas.width / 2 - 280, 35);
     //  jugadorDeTurno="";
 }
 
@@ -115,12 +122,12 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
-    tiempo = 5;
-    ganador="";
-    if(intervalo){
-       clearInterval(intervalo);
+
+    if (intervalo) {
+        clearInterval(intervalo);
     }
-    intervalo = setInterval(decrementarTiempo,1000);
+    intervalo = setInterval(decrementarTiempo, 1000);
+
 
 }
 
@@ -135,7 +142,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
@@ -189,15 +196,32 @@ function inicializarEventos(params) {
 //Verifica qué ficha fue seleccionada cuando el botón del mouse es presionado
 function mouseDown() {
     let rect = canvas.getBoundingClientRect();
-    pilaFichasJ1.forEach(f => f.verificarSelect(event, rect.left, rect.top));
-    pilaFichasJ2.forEach(f => f.verificarSelect(event, rect.left, rect.top));
+    if (jugadorDeTurno == j1) {
+        pilaFichasJ1.forEach(f => f.verificarSelect(event, rect.left, rect.top));
+
+    } else if (jugadorDeTurno == j2) {
+        pilaFichasJ2.forEach(f => f.verificarSelect(event, rect.left, rect.top));
+    }
 }
 
 //Verifica si la ficha puede colocarse a partir del lugar donde el botón del mouse es soltado 
 function mouseUp(params) {
+    if (jugadorDeTurno == j1) {
+        pilaFichasJ1.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
+        if (tablero.ultimoMovimiento == j1) {
+            jugadorDeTurno = j2;
+        }
 
-    pilaFichasJ1.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
-    pilaFichasJ2.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
+
+    } else if (jugadorDeTurno == j2) {
+        pilaFichasJ2.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
+        if (tablero.ultimoMovimiento == j2) {
+            jugadorDeTurno = j1;
+        }
+
+
+    }
+
 
 }
 

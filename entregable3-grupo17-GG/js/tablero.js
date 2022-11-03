@@ -8,7 +8,10 @@ class Tablero {
         this.cuadrilla = cuadrilla;
         this.filas = filas;
         this.columnasY = filas;
-        this.filasX = filas - 1
+        this.filasX = filas - 1;
+        this.ganador = null;
+        this.unidadCasillero = 65;
+        this.ultimoMovimiento = null;
     }
 
     setFilas(filas) {
@@ -23,8 +26,8 @@ class Tablero {
         for (let i = 0; i < filas; i++) {
             this.cuadrilla[i] = [];
             for (let j = 0; j <= filas; j++) {
-                let x = xInit + (j * (85));
-                let y = yInit + (i * (85));
+                let x = xInit + (j * (this.unidadCasillero));
+                let y = yInit + (i * (this.unidadCasillero));
                 let img = new Image();
                 img.src = imagen;
                 cuadrilla[i][j] = new Casillero(x, y, img, this.ctx);
@@ -44,7 +47,7 @@ class Tablero {
     calcularInit(medida, filas) {
         let centroCanvas = medida / 2;
 
-        let centroTablero = (filas * 85) / 2;
+        let centroTablero = (filas * this.unidadCasillero) / 2;
 
         return centroCanvas - centroTablero;
 
@@ -87,11 +90,13 @@ class Tablero {
         if (this.lineaHorizontal(i, j)) {
             console.log("gane en X");
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
-            this.ctx.fillText(`¡Gano ${ganador} !`,this.canvas.width/2 - 100,60);
+            this.ganador = ganador;
+
         } else if (this.lineaVertical(i, j)) {
             console.log("gane en Y");
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
-            this.ctx.fillText(`¡Gano ${ganador} !`,this.canvas.width/2 - 100,60);
+            this.ganador = ganador;
+
         }
     }
 
@@ -103,7 +108,7 @@ class Tablero {
 
             for (let j = 0; j <= this.filas; j++) {
 
-                if (xCursor > this.cuadrilla[0][j].x && xCursor < this.cuadrilla[0][j].x + 80) {
+                if (xCursor > this.cuadrilla[0][j].x && xCursor < this.cuadrilla[0][j].x + this.unidadCasillero) {
                     dentroDelTablero = true;
                     let casilleroDisponible = false;
                     let indiceCasilleroDisponible;
@@ -118,12 +123,13 @@ class Tablero {
                         this.cuadrilla[indiceCasilleroDisponible][j].ocupado = true;
 
 
-                        ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x + 9;
-                        ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y + 8;
+                        ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x + 7;
+                        ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y + 5;
                         // si era valida la posicion no se mueve mas
                         this.cuadrilla[indiceCasilleroDisponible][j].fichaOcupa = ficha;
                         ficha.posicionada = true;
                         this.verificarJugada(indiceCasilleroDisponible, j);
+                        this.ultimoMovimiento = ficha.jugador;
 
                     } else {
                         console.log("casillero no disponible");
