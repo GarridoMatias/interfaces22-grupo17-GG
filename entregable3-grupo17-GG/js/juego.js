@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function() {
+imageFondo.onload = function () {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -22,8 +22,13 @@ let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
-let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, "Matias");
-let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas, "Magali");
+let tiempo = 30;
+let intervalo;
+let j1 = "Jugador 1";
+let j2 = "Jugador 2";
+let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas, j2);
+let ganador;
 
 iniciar();
 inicializarEventos();
@@ -52,6 +57,45 @@ function refactorizarCanvas(e) {
     jugador2.dibujar(0, ctx);
 
     closeDialogConfig();
+
+    tiempo = 30;
+    ganador="";
+    if(intervalo){
+       clearInterval(intervalo);
+    }
+    intervalo = setInterval(DisminuirTiempo,1000);
+}
+
+function decrementarTiempo(){
+    if(tiempo>0){
+        tiempo--;
+        actualizar();
+     }
+}
+
+function mostrarTiempo(){
+    if(tiempo>0){
+        let minutes = Math.floor(tiempo/60);
+        let segundos = tiempo % 60;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+        ctx.font = "3rem Arial";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(`${minutes} : ${segundos}`, 570, 50); 
+     }else{
+        finDePartida();
+     }
+}
+
+function finDePartida(){   
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white";
+     if(ganador){
+        ctx.fillText(`¡Gano ${ganador} !`,750,60);
+     }else{
+        ctx.fillText("Juego empatado",750,60);        
+     }
+    //  jugadorDeTurno="";
 }
 
 function actualizar() {
@@ -61,6 +105,7 @@ function actualizar() {
     tablero.dibujar(1, ctx);
     jugador1.dibujar(1, ctx);
     jugador2.dibujar(1, ctx);
+    mostrarTiempo();
 }
 
 function iniciar() {
@@ -72,6 +117,12 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+    tiempo = 30;
+    ganador="";
+    if(intervalo){
+       clearInterval(intervalo);
+    }
+    intervalo = setInterval(decrementarTiempo,1000);
 
 }
 
@@ -86,7 +137,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
