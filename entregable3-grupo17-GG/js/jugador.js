@@ -26,12 +26,16 @@ class Jugador {
     }
 
     inicializar(imagen) {
-
-        let fichasPorColumna = (this.fichas / 2);
+        let fichasPorColumna;
+        if (this.fichas > 20){
+            fichasPorColumna = (this.fichas / 3);
+        } else {
+            fichasPorColumna = (this.fichas / 2);
+        }
         let heightMax = this.canvasHeight / (fichasPorColumna + 1);
         let distancia;
-        if (heightMax > 80) {
-            distancia = 80
+        if (heightMax > 70) {
+            distancia = 70
         } else {
             distancia = heightMax;
         }
@@ -46,9 +50,12 @@ class Jugador {
             if (i < fichasPorColumna) {
                 x = xInit;
                 y = y + (i * distancia);
-            } else {
-                x = xInit + 80;
+            } else if  (i < fichasPorColumna*2){
+                x = xInit + 70;
                 y = y + ((i - fichasPorColumna) * (distancia));
+            } else {
+                x = xInit + 140;
+                y = y + ((i - fichasPorColumna*2) * (distancia));
             }
 
             let img = new Image();

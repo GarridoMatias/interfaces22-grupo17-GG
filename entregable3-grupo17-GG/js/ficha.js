@@ -12,8 +12,8 @@ class Ficha {
         this.yi = y;
         this.xf = 80;
         this.yf = 80;
-        this.width = 80;
-        this.height = 80;
+        this.width = 70;
+        this.height = 70;
         this.img = img;
         this.ctx = ctx;
         this.jugador = jugador;

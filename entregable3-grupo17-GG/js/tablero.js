@@ -9,7 +9,6 @@ class Tablero {
         this.filas = filas;
         this.columnasY = filas;
         this.filasX = filas - 1
-
     }
 
     setFilas(filas) {
@@ -24,8 +23,8 @@ class Tablero {
         for (let i = 0; i < filas; i++) {
             this.cuadrilla[i] = [];
             for (let j = 0; j <= filas; j++) {
-                let x = xInit + (j * (100));
-                let y = yInit + (i * (100));
+                let x = xInit + (j * (85));
+                let y = yInit + (i * (85));
                 let img = new Image();
                 img.src = imagen;
                 cuadrilla[i][j] = new Casillero(x, y, img, this.ctx);
@@ -45,7 +44,7 @@ class Tablero {
     calcularInit(medida, filas) {
         let centroCanvas = medida / 2;
 
-        let centroTablero = (filas * 100) / 2;
+        let centroTablero = (filas * 85) / 2;
 
         return centroCanvas - centroTablero;
 
@@ -87,10 +86,12 @@ class Tablero {
     verificarJugada(i, j) {
         if (this.lineaHorizontal(i, j)) {
             console.log("gane en X");
-            console.log((this.cuadrilla[i][j].fichaOcupa.jugador) + "Gano");
+            let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
+            this.ctx.fillText(`¡Gano ${ganador} !`,this.canvas.width/2 - 100,60);
         } else if (this.lineaVertical(i, j)) {
             console.log("gane en Y");
-            console.log((this.cuadrilla[i][j].fichaOcupa.jugador) + "Gano");
+            let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
+            this.ctx.fillText(`¡Gano ${ganador} !`,this.canvas.width/2 - 100,60);
         }
     }
 

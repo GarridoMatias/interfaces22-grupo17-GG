@@ -11,8 +11,10 @@ imageFondo.onload = function () {
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 let widthWindow = window.innerWidth;
+let heightWindow = window.innerHeight;
 let porsentajeDelWidth = (widthWindow * 80) / 100;
 canvas.width = porsentajeDelWidth;
+canvas.height = heightWindow - 180;
 let cuadrilla = []; //MATRIZ CONTENEDORA DE CASILLEROS
 let pilaFichasJ1 = [];
 let pilaFichasJ2 = [];
@@ -27,8 +29,8 @@ let intervalo;
 let j1 = "Jugador 1";
 let j2 = "Jugador 2";
 let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
-let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas, j2);
-let ganador;
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 210), canvas.height, filas, j2);
+let ganador = "Magali";
 
 iniciar();
 inicializarEventos();
@@ -58,12 +60,12 @@ function refactorizarCanvas(e) {
 
     closeDialogConfig();
 
-    tiempo = 30;
+    tiempo = 5;
     ganador="";
     if(intervalo){
        clearInterval(intervalo);
     }
-    intervalo = setInterval(DisminuirTiempo,1000);
+    intervalo = setInterval(decrementarTiempo,1000);
 }
 
 function decrementarTiempo(){
@@ -81,7 +83,7 @@ function mostrarTiempo(){
         segundos = segundos < 10 ? "0" + segundos : segundos;
         ctx.font = "3rem Arial";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(`${minutes} : ${segundos}`, 570, 50); 
+        ctx.fillText(`${minutes} : ${segundos}`, canvas.width/2 - 80, 50); 
      }else{
         finDePartida();
      }
@@ -90,11 +92,7 @@ function mostrarTiempo(){
 function finDePartida(){   
     ctx.font = "30px Arial";
     ctx.fillStyle = "white";
-     if(ganador){
-        ctx.fillText(`¡Gano ${ganador} !`,750,60);
-     }else{
-        ctx.fillText("Juego empatado",750,60);        
-     }
+    ctx.fillText("Se termino el tiempo :( , juego empatado ",canvas.width/2 - 280, 35);   
     //  jugadorDeTurno="";
 }
 
@@ -117,7 +115,7 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
-    tiempo = 30;
+    tiempo = 5;
     ganador="";
     if(intervalo){
        clearInterval(intervalo);

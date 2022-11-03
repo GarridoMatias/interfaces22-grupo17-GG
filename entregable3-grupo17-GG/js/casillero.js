@@ -7,8 +7,8 @@ class Casillero {
         this.ocupado = false;
         this.x = x;
         this.y = y;
-        this.width = 100;
-        this.height = 100;
+        this.width = 85;
+        this.height = 85;
         this.img = img;
         this.ctx = ctx;
         this.fichaOcupa = null;
