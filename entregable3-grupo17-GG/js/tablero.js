@@ -7,6 +7,9 @@ class Tablero {
         this.ctx = ctx;
         this.cuadrilla = cuadrilla;
         this.filas = filas;
+        this.columnasY = filas;
+        this.filasX = filas - 1
+
     }
 
     setFilas(filas) {
@@ -48,6 +51,49 @@ class Tablero {
 
     }
 
+    lineaHorizontal(i, j) {
+        let posicionesCubiertas = 0;
+        for (let x = 0; x <= this.filas; x++) {
+            if (this.cuadrilla[i][x].ocupado && this.cuadrilla[i][x].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
+                posicionesCubiertas++;
+            } else {
+                posicionesCubiertas = 0
+            }
+            if (posicionesCubiertas >= this.filas) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    lineaVertical(i, j) {
+        let posicionesCubiertas = 0;
+        for (let y = 0; y < this.filas; y++) {
+            if (this.cuadrilla[y][j].ocupado && this.cuadrilla[y][j].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
+                posicionesCubiertas++;
+
+            } else {
+                posicionesCubiertas = 0
+            }
+            if (posicionesCubiertas >= this.filas) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    verificarJugada(i, j) {
+        if (this.lineaHorizontal(i, j)) {
+            console.log("gane en X");
+            console.log((this.cuadrilla[i][j].fichaOcupa.jugador) + "Gano");
+        } else if (this.lineaVertical(i, j)) {
+            console.log("gane en Y");
+            console.log((this.cuadrilla[i][j].fichaOcupa.jugador) + "Gano");
+        }
+    }
+
     verificarCasillero(ficha, e, x) {
         if (!ficha.posicionada && ficha.selected) {
             ficha.selected = false;
@@ -74,7 +120,9 @@ class Tablero {
                         ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x + 9;
                         ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y + 8;
                         // si era valida la posicion no se mueve mas
+                        this.cuadrilla[indiceCasilleroDisponible][j].fichaOcupa = ficha;
                         ficha.posicionada = true;
+                        this.verificarJugada(indiceCasilleroDisponible, j);
 
                     } else {
                         console.log("casillero no disponible");

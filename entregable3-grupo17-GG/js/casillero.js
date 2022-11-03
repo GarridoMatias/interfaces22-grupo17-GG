@@ -11,6 +11,7 @@ class Casillero {
         this.height = 100;
         this.img = img;
         this.ctx = ctx;
+        this.fichaOcupa = null;
     }
 
     //Devuelve la coordenada x del tableroSpot

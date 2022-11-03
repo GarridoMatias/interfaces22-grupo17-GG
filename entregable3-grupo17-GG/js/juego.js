@@ -22,8 +22,8 @@ let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
-let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas);
-let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas);
+let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, "Matias");
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 160), canvas.height, filas, "Magali");
 
 iniciar();
 inicializarEventos();

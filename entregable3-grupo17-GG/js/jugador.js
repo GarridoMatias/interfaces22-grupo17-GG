@@ -1,13 +1,14 @@
 //CLASE JUGADOR
 
 class Jugador {
-    constructor(pila, ctx, ladoJugador, canvasHeight, filas) {
+    constructor(pila, ctx, ladoJugador, canvasHeight, filas, nombre) {
         this.fichas = ((filas * (filas + 1)) / 2);
         this.pila = pila;
         this.ctx = ctx;
         this.ladoJugador = ladoJugador;
         this.canvasHeight = canvasHeight;
         this.filas = filas;
+        this.nombre = nombre;
     }
 
     setFilas(filas) {
@@ -52,7 +53,7 @@ class Jugador {
 
             let img = new Image();
             img.src = imagen;
-            this.pila[i] = new Ficha(x, y, img, this.ctx);
+            this.pila[i] = new Ficha(x, y, img, this.ctx, this.nombre);
         }
     }
 

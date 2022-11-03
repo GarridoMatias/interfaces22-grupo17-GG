@@ -3,7 +3,7 @@
 
 class Ficha {
     //Constructor de la clase 
-    constructor(x, y, img, ctx) {
+    constructor(x, y, img, ctx, jugador) {
         this.selected = false;
         this.posicionada = false;
         this.x = x;
@@ -16,6 +16,7 @@ class Ficha {
         this.height = 80;
         this.img = img;
         this.ctx = ctx;
+        this.jugador = jugador;
     }
 
     //Devuelve la coordenada x de la ficha
@@ -54,7 +55,6 @@ class Ficha {
             let yCursor = e.clientY - y;
             if (xCursor > this.x && xCursor < this.x + 80 && yCursor > this.y && yCursor < this.y + 80) {
                 this.selected = true;
-                console.log(this)
             }
         }
     }
