@@ -31,7 +31,7 @@ let intervalo;
 let j1 = "Jugador 1";
 let j2 = "Jugador 2";
 let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
-let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 210), canvas.height, filas, j2);
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 165), canvas.height, filas, j2);
 let jugadorDeTurno = j1;
 
 iniciar();
