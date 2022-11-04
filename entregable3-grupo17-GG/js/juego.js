@@ -3,11 +3,11 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function() {
+imageFondo.onload = function () {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
-const timer = 15;
+const timer = 100;
 
 //DECLARO VARIABLES
 let canvas = document.querySelector("#canvas");
@@ -85,7 +85,7 @@ function mostrarTiempo() {
             segundos = segundos < 10 ? "0" + segundos : segundos;
             ctx.font = "3rem Arial";
             ctx.fillStyle = "#ffffff";
-            ctx.fillText(`${minutes} : ${segundos}`, canvas.width / 2 - 80, 50);
+            ctx.fillText(`${minutes} : ${segundos}`, canvas.width / 2 - 80, 40);
         } else {
             finDePartida();
             jugadorDeTurno = null;
@@ -100,17 +100,24 @@ function finDePartida() {
     ctx.font = "30px Arial";
     ctx.fillStyle = "white";
     ctx.fillText("Se termino el tiempo :( , juego empatado ", canvas.width / 2 - 280, 35);
-    //  jugadorDeTurno="";
+}
+
+function mostrarJugadorDeTurno() {
+    if (jugadorDeTurno) {
+        ctx.font = "1.2rem Arial";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
+    }
 }
 
 function actualizar() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
     tablero.dibujar(1, ctx);
     jugador1.dibujar(1, ctx);
     jugador2.dibujar(1, ctx);
     mostrarTiempo();
+    mostrarJugadorDeTurno();
 }
 
 function iniciar() {
@@ -142,7 +149,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");

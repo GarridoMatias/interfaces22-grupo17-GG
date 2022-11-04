@@ -81,9 +81,13 @@
     width: 100%;
 }
 
-.fichas-jugadores-seleccion p {
-    margin: 0 0 5px 0;
+.fichas-jugadores-seleccion input{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 5px;
 }
+
 
 #value-filas-selected {
     width: 30%;
