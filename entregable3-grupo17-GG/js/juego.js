@@ -44,6 +44,8 @@ function refactorizarCanvas(e) {
     imagenCasilla = document.querySelector('input[name="inp-casillero"]:checked').value;
     imagenFichaJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').value;
     imagenFichaJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').value;
+    j1 = document.querySelector('input[name="inp-nombre-j1"]').value;
+    j2 = document.querySelector('input[name="inp-nombre-j2"]').value;
     filas = nFilas.value;
 
     //limpiar canvas
@@ -52,20 +54,24 @@ function refactorizarCanvas(e) {
     jugador1.setFilas(filas);
     jugador2.setFilas(filas);
 
-    tablero.inicializar(imagenCasilla);
-    jugador1.inicializar(imagenFichaJ1);
-    jugador2.inicializar(imagenFichaJ2);
+    jugador1.setNombre(j1);
+    jugador2.setNombre(j2);
 
-    tablero.dibujar(0, ctx);
-    jugador1.dibujar(0, ctx);
-    jugador2.dibujar(0, ctx);
-
+    // tablero.inicializar(imagenCasilla);
+    // jugador1.inicializar(imagenFichaJ1);
+    // jugador2.inicializar(imagenFichaJ2);
+    
+    // tablero.dibujar(0, ctx);
+    // jugador1.dibujar(0, ctx);
+    // jugador2.dibujar(0, ctx);
+    iniciar();
     tiempo = timer;
     if (intervalo) {
         clearInterval(intervalo);
     }
     intervalo = setInterval(decrementarTiempo, 1000);
 
+    jugadorDeTurno = j1;
     closeDialogConfig();
 }
 
