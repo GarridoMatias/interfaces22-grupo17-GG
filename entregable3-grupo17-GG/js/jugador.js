@@ -10,7 +10,7 @@ class Jugador {
         this.filas = filas;
         this.nombre = nombre;
         this.unidadFicha = 55;
-        this.width = ladoJugador;
+        // this.width = ladoJugador;
     }
 
     setFilas(filas) {
@@ -23,9 +23,10 @@ class Jugador {
         return this.fichas;
     }
 
-    setNombre(nombre){
+    setNombre(nombre) {
         this.nombre = nombre;
     }
+
     clear() {
         this.pila = []
     }
@@ -34,14 +35,14 @@ class Jugador {
         let fichasPorColumna;
         if (this.fichas > 20) {
             fichasPorColumna = (this.fichas / 3);
-            if(this.width > 0){
-                this.ladoJugador = this.width - 165;
-            }
+            // if (this.ladoJugador !== 0) {
+            //     this.ladoJugador = this.width - 165;
+            // }
         } else {
             fichasPorColumna = (this.fichas / 2);
-            if(this.width > 0){
-                this.ladoJugador = this.width - 110;
-            }
+            // if(this.width > 0){
+            //     this.ladoJugador = this.width - 110;
+            // }
         }
         let heightMax = this.canvasHeight / (fichasPorColumna + 1);
         let distancia;

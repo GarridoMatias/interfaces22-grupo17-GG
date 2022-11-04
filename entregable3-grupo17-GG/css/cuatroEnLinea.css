@@ -86,8 +86,8 @@
     border-radius: 5px;
     padding: 5px;
     margin: 0 5px;
+    color: var(--secondary-color);
 }
-
 
 #value-filas-selected {
     width: 30%;
