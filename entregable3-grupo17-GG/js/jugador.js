@@ -22,6 +22,10 @@ class Jugador {
         return this.fichas;
     }
 
+    setNombre(nombre){
+        this.nombre = nombre;
+    }
+
     clear() {
         this.pila = []
     }

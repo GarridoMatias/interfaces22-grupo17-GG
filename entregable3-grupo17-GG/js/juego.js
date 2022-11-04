@@ -44,6 +44,8 @@ function refactorizarCanvas(e) {
     imagenCasilla = document.querySelector('input[name="inp-casillero"]:checked').value;
     imagenFichaJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').value;
     imagenFichaJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').value;
+    j1 = document.querySelector('input[name="inp-nombre-j1"]').value;
+    j2 = document.querySelector('input[name="inp-nombre-j2"]').value;
     filas = nFilas.value;
 
     //limpiar canvas
@@ -51,6 +53,9 @@ function refactorizarCanvas(e) {
     tablero.setFilas(filas);
     jugador1.setFilas(filas);
     jugador2.setFilas(filas);
+
+    jugador1.nombre = j1;
+    jugador2.nombre = j2;
 
     tablero.inicializar(imagenCasilla);
     jugador1.inicializar(imagenFichaJ1);
@@ -65,7 +70,6 @@ function refactorizarCanvas(e) {
         clearInterval(intervalo);
     }
     intervalo = setInterval(decrementarTiempo, 1000);
-
     closeDialogConfig();
 }
 
@@ -104,6 +108,7 @@ function finDePartida() {
 
 function mostrarJugadorDeTurno() {
     if (jugadorDeTurno) {
+        console.log('mi jugador de turno', jugadorDeTurno)
         ctx.font = "1.2rem Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
