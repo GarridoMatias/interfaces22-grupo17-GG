@@ -31,7 +31,7 @@ let intervalo;
 let j1 = "Jugador 1";
 let j2 = "Jugador 2";
 let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
-let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 165), canvas.height, filas, j2);
+let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width), canvas.height, filas, j2);
 let jugadorDeTurno = j1;
 
 iniciar();
@@ -69,6 +69,7 @@ function refactorizarCanvas(e) {
     if (intervalo) {
         clearInterval(intervalo);
     }
+    console.log(jugadorDeTurno)
     intervalo = setInterval(decrementarTiempo, 1000);
     closeDialogConfig();
 }
@@ -108,7 +109,6 @@ function finDePartida() {
 
 function mostrarJugadorDeTurno() {
     if (jugadorDeTurno) {
-        console.log('mi jugador de turno', jugadorDeTurno)
         ctx.font = "1.2rem Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
