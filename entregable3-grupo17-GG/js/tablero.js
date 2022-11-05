@@ -54,61 +54,66 @@ class Tablero {
     }
 
     lineaHorizontal(i, j) {
-        let posicionesCubiertas = 0;
+        let contador;
+
         for (let x = 0; x <= this.filas; x++) {
             if (this.cuadrilla[i][x].ocupado && this.cuadrilla[i][x].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
-                posicionesCubiertas++;
+                contador++;
+
             } else {
-                posicionesCubiertas = 0
+                contador = 0;
             }
-            if (posicionesCubiertas >= this.filas) {
-                return true;
-            }
+        }
+        if (contador == filas) {
+            return true;
         }
         return false;
     }
 
     lineaVertical(i, j) {
-        let posicionesCubiertas = 0;
+        let cumple = false;
         for (let y = 0; y < this.filas; y++) {
             if (this.cuadrilla[y][j].ocupado && this.cuadrilla[y][j].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
-                posicionesCubiertas++;
+
+                cumple = true;
             } else {
-                posicionesCubiertas = 0
-            }
-            if (posicionesCubiertas >= this.filas) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return cumple;
     }
 
     diagonales(i, j) {
+        let jugadorActual = this.cuadrilla[i][j].fichaOcupa.jugador;
         if (i === 0) {
             if (j <= 1) {
                 for (let x = 0; x <= this.filas - 1; x++) {
-                    if (parseInt(j) <= this.filas) {
-                        console.log(this.cuadrilla[i + x][j + x].fichaOcupa.jugador)
-                        if (!this.cuadrilla[i + x][j + x].fichaOcupa.jugador) {
+                    if (this.cuadrilla[i + x][j + x].fichaOcupa) {
+                        if (this.cuadrilla[i + x][j + x].fichaOcupa.jugador != jugadorActual) {
                             return false;
                         }
                     } else {
                         return false;
                     }
+
                 }
 
+                return true;
+
             } else if (j >= (this.filas - 1)) {
+
                 for (let x = 0; x <= this.filas - 1; x++) {
                     if ((parseInt(j) - x) >= 0) {
-                        if (!this.cuadrilla[i + x][j - x].fichaOcupa.jugador) {
+                        if (this.cuadrilla[i + x][j - x].fichaOcupa.jugador != jugadorActual) {
                             return false;
                         }
                     } else {
                         return false;
                     }
                 }
+                return true;
             }
-            return true;
+            return false;
         } else {
             return false;
         }
@@ -118,14 +123,19 @@ class Tablero {
         if (this.lineaHorizontal(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
+            console.log("gane horizontal")
 
         } else if (this.lineaVertical(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
+            console.log("gane vertical")
+
 
         } else if (this.diagonales(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
+            console.log("gane DIAGONAL")
+
         }
     }
 
@@ -157,8 +167,9 @@ class Tablero {
                         // si era valida la posicion no se mueve mas
                         this.cuadrilla[indiceCasilleroDisponible][j].fichaOcupa = ficha;
                         ficha.posicionada = true;
-                        this.verificarJugada(indiceCasilleroDisponible, j);
                         this.ultimoMovimiento = ficha.jugador;
+                        this.verificarJugada(indiceCasilleroDisponible, j);
+                        console.log(indiceCasilleroDisponible, j)
 
                     } else {
                         console.log("casillero no disponible");

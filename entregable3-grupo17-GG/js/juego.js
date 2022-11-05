@@ -7,6 +7,8 @@ imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
+
+
 const timer = 100;
 
 //DECLARO VARIABLES
@@ -24,6 +26,12 @@ let filas = 4; //NUMERO DE FILAS STANDARD
 let imagenCasilla = "./images/piezaTablero.png"; //incia por defecto
 let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
+
+let imagenReinicio = new Image();
+imagenReinicio.src = "./images/reiniciar.png"; // buscar img de reinicoi
+let btnReinicio = new Ficha(canvas.width / 2 + 100, 500, imagenReinicio, ctx, "btn-reinicio");
+btnReinicio.fichaWidth = 30;
+btnReinicio.fichaHeight = 30;
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let tiempo;
@@ -32,8 +40,7 @@ let j1 = "Jugador 1";
 let j2 = "Jugador 2";
 let jugador1 = new Jugador(pilaFichasJ1, ctx, 0, canvas.height, filas, j1);
 let jugador2 = new Jugador(pilaFichasJ2, ctx, (canvas.width - 165), canvas.height, filas, j2);
-let jugadorDeTurno = j1;
-
+let jugadorDeTurno;
 iniciar();
 inicializarEventos();
 
@@ -59,7 +66,7 @@ function refactorizarCanvas(e) {
     jugador1.setNombre(j1);
     jugador2.setNombre(j2);
 
-    jugadorDeTurno = j1;
+
 
     iniciar();
 
@@ -88,7 +95,7 @@ function mostrarTiempo() {
             jugadorDeTurno = null;
         }
     } else {
-        ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 200, 60);
+        ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 200, 25);
         jugadorDeTurno = null;
 
     }
@@ -105,6 +112,7 @@ function mostrarJugadorDeTurno() {
         ctx.font = "1.2rem Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
+
     }
 }
 
@@ -114,19 +122,27 @@ function actualizar() {
     tablero.dibujar(1, ctx);
     jugador1.dibujar(1, ctx);
     jugador2.dibujar(1, ctx);
+    btnReinicio.drawImage(1, ctx);
     mostrarTiempo();
     mostrarJugadorDeTurno();
 }
 
 function iniciar() {
+    jugadorDeTurno = j1;
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
     //INICIACION DEL TABLERO
     tablero.inicializar(imagenCasilla);
+    tablero.ultimoMovimiento = null;
+    tablero.ganador = null;
     jugador1.inicializar(imagenFichaJ1);
     jugador2.inicializar(imagenFichaJ2);
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+
+    btnReinicio.drawImage(0, ctx);
+    btnReinicio.selected = false;
+
     tiempo = timer;
     mostrarTiempo();
     mostrarJugadorDeTurno();
@@ -201,40 +217,54 @@ function inicializarEventos(params) {
     canvas.onmousemove = mouseMove;
 }
 
+function verificarReinicio(e, x, y) {
+    let xCursor = e.clientX - x;
+    let yCursor = e.clientY - y;
+    if (xCursor > btnReinicio.x && xCursor < btnReinicio.x + btnReinicio.fichaWidth && yCursor > btnReinicio.y && yCursor < btnReinicio.y + btnReinicio.fichaHeight) {
+
+        btnReinicio.selected = true;
+    }
+
+}
+
 //Verifica qué ficha fue seleccionada cuando el botón del mouse es presionado
 function mouseDown() {
     let rect = canvas.getBoundingClientRect();
+    verificarReinicio(event, rect.left, rect.top);
+
     if (jugadorDeTurno == j1) {
         pilaFichasJ1.forEach(f => f.verificarSelect(event, rect.left, rect.top));
 
     } else if (jugadorDeTurno == j2) {
         pilaFichasJ2.forEach(f => f.verificarSelect(event, rect.left, rect.top));
     }
+
+
 }
 
 //Verifica si la ficha puede colocarse a partir del lugar donde el botón del mouse es soltado 
-function mouseUp(params) {
-    if (jugadorDeTurno == j1) {
+function mouseUp() {
+    if (btnReinicio.selected) {
+        iniciar();
+        return;
+    } else if (jugadorDeTurno == j1) {
+
         pilaFichasJ1.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
         if (tablero.ultimoMovimiento == j1) {
             jugadorDeTurno = j2;
         }
-
-
     } else if (jugadorDeTurno == j2) {
         pilaFichasJ2.forEach(f => tablero.verificarCasillero(f, event, canvas.offsetLeft));
         if (tablero.ultimoMovimiento == j2) {
             jugadorDeTurno = j1;
         }
-
-
     }
 
 
 }
 
 //Mueve la ficha siguiendo la trayectoria del mouse
-function mouseMove(params) {
+function mouseMove() {
     if (pilaFichasJ1) {
         let rect = canvas.getBoundingClientRect();
         let x = event.clientX - rect.left;
