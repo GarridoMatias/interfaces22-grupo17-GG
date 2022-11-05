@@ -1,9 +1,7 @@
 "use strict"
 
-// AGREGAR MARGIN LEFT A CLASE EN VEZ DE ETIQUETA PARA QUE NO SE ROMPA EN RESPONSIVO
-
-
 const carr = 4; // cada cuantas card mueve el carrusel
+let categorias = ['recomendados', 'favoritos', 'multijugador'];
 
 // escuchando siguiente y anterior
 let slideControlNext = document.querySelectorAll(".slide-control-next");
@@ -11,16 +9,32 @@ let slideControlPrev = document.querySelectorAll(".slide-control-prev");
 
 //para todos los "siguientes" separamos del ID la categoria al la cual corresponde
 //y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
-slideControlNext.forEach(b => b.addEventListener("click", function() {
+slideControlNext.forEach(b => b.addEventListener("click", function () {
     let categoria = b.getAttribute("id").split("-")[2];
     slideNext(categoria);
 }));
 //para todos los "anteriores"  separamos del ID la categoria al la cual corresponde
 //y a esta categoria la pasamos por parametro a la funcion encargada de mover el carrusel
-slideControlPrev.forEach(b => b.addEventListener("click", function() {
+slideControlPrev.forEach(b => b.addEventListener("click", function () {
     let categoria = b.getAttribute("id").split("-")[2];
     slidePrev(categoria);
 }));
+
+// Detectamos un cambio en el tamaño de la pantalla para que no se rompa el carrusel
+window.addEventListener("resize", function () {
+    categorias.forEach(categoria => {
+        document.querySelector(`#container-cards-${categoria}`).style.marginLeft = '0px';
+        document.querySelector(`#id-prev-${categoria}`).style.visibility = 'hidden';
+        document.querySelector(`#id-prev-${categoria}`).style.display = 'none';
+        if (screen.width > 1023) {
+            document.querySelector(`#id-next-${categoria}`).style.visibility = 'visible';
+            document.querySelector(`#id-next-${categoria}`).style.display = 'block';
+        } else {
+            document.querySelector(`#id-next-${categoria}`).style.visibility = 'hidden';
+            document.querySelector(`#id-next-${categoria}`).style.display = 'none';
+        }
+    });
+});
 
 //le pasamos por parametro a que carrusel corresponde para calcular los tamanios
 function slideNext(categoria) {
