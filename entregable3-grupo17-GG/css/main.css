@@ -437,11 +437,15 @@ footer a:hover {
     margin: 0 5px;
 }
 
-.breadcrumb p:hover {
+.breadcrumb-p-actual{
+    opacity: 0.5;
+}
+
+.breadcrumb a p:hover {
     color: var(--primary-color);
 }
 
-.breadcrumb p:active {
+.breadcrumb a p:active {
     opacity: 0.5;
 }
 

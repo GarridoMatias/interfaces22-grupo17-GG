@@ -9,6 +9,9 @@
 .container-banner {
     background-color: #131313;
     display: flex;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.80);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.80);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.80);
 }
 
 .img-lanzamiento {
@@ -61,6 +64,10 @@
 
 .container-estreno p {
     text-align: justify;
+}
+
+.titulo-juego-lanzamiento{
+    margin-bottom: 5px
 }
 
 .titulo-fecha-lanzamiento {
