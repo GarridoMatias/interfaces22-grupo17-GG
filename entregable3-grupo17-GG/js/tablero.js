@@ -39,27 +39,21 @@ class Tablero {
         for (let i = 0; i < this.filas; i++) {
             for (let j = 0; j <= this.filas; j++) {
                 cuadrilla[i][j].drawImage(n, ctx);
-
             }
         }
     }
 
     calcularInit(medida, filas) {
         let centroCanvas = medida / 2;
-
         let centroTablero = (filas * this.unidadCasillero) / 2;
-
         return centroCanvas - centroTablero;
-
     }
 
     lineaHorizontal(i, j) {
         let contador;
-
         for (let x = 0; x <= this.filas; x++) {
             if (this.cuadrilla[i][x].ocupado && this.cuadrilla[i][x].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
                 contador++;
-
             } else {
                 contador = 0;
             }
@@ -74,7 +68,6 @@ class Tablero {
         let cumple = false;
         for (let y = 0; y < this.filas; y++) {
             if (this.cuadrilla[y][j].ocupado && this.cuadrilla[y][j].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
-
                 cumple = true;
             } else {
                 return false;
@@ -95,13 +88,9 @@ class Tablero {
                     } else {
                         return false;
                     }
-
-                }
-
+                }                
                 return true;
-
             } else if (j >= (this.filas - 1)) {
-
                 for (let x = 0; x <= this.filas - 1; x++) {
                     if ((parseInt(j) - x) >= 0) {
                         if (this.cuadrilla[i + x][j - x].fichaOcupa.jugador != jugadorActual) {
@@ -122,20 +111,15 @@ class Tablero {
     verificarJugada(i, j) {
         if (this.lineaHorizontal(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
-            this.ganador = ganador;
-            console.log("gane horizontal")
+            this.ganador = ganador;           
 
         } else if (this.lineaVertical(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
-            console.log("gane vertical")
-
-
+            
         } else if (this.diagonales(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
-            console.log("gane DIAGONAL")
-
         }
     }
 
@@ -160,8 +144,6 @@ class Tablero {
                     }
                     if (casilleroDisponible) {
                         this.cuadrilla[indiceCasilleroDisponible][j].ocupado = true;
-
-
                         ficha.x = this.cuadrilla[indiceCasilleroDisponible][j].x + 7;
                         ficha.y = this.cuadrilla[indiceCasilleroDisponible][j].y + 5;
                         // si era valida la posicion no se mueve mas
@@ -169,14 +151,9 @@ class Tablero {
                         ficha.posicionada = true;
                         this.ultimoMovimiento = ficha.jugador;
                         this.verificarJugada(indiceCasilleroDisponible, j);
-                        console.log(indiceCasilleroDisponible, j)
-
                     } else {
-                        console.log("casillero no disponible");
                         ficha.x = ficha.xi;
                         ficha.y = ficha.yi;
-
-
                     }
                 }
             }

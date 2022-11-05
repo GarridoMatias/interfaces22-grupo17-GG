@@ -10,15 +10,14 @@ class Jugador {
         this.filas = filas;
         this.nombre = nombre;
         this.unidadFicha = 55;
-        // this.width = ladoJugador;
+        this.widthLJ = ladoJugador;
     }
 
     setFilas(filas) {
         this.filas = filas;
-
         this.fichas = ((this.filas * (parseInt(this.filas) + 1)) / 2);
-
     }
+
     getFichas() {
         return this.fichas;
     }
@@ -34,15 +33,13 @@ class Jugador {
     inicializar(imagen) {
         let fichasPorColumna;
         if (this.fichas > 20) {
-            fichasPorColumna = (this.fichas / 3);
-            // if (this.ladoJugador !== 0) {
-            //     this.ladoJugador = this.width - 165;
-            // }
+            fichasPorColumna = (this.fichas / 3);  
+            this.ladoJugador = this.widthLJ;            
         } else {
             fichasPorColumna = (this.fichas / 2);
-            // if(this.width > 0){
-            //     this.ladoJugador = this.width - 110;
-            // }
+            if (parseInt(this.widthLJ) === 0) {
+                this.ladoJugador = this.widthLJ + 80;
+            }
         }
         let heightMax = this.canvasHeight / (fichasPorColumna + 1);
         let distancia;
@@ -52,9 +49,15 @@ class Jugador {
             distancia = heightMax;
         }
         //CALCULO DE X e Y INICIALES CON RESPECTO AL JUGADOR
-        let xInit = this.ladoJugador;
-        let yInit = 0;
-
+        let xInit = this.ladoJugador;   
+        let yInit;    
+        if (this.fichas > 22) {
+            yInit = 5;      
+        } else if (this.fichas > 14){
+            yInit = 20;
+        } else {
+            yInit = 100;
+        }
 
         for (let i = 0; i < this.fichas; i++) {
             let x;
@@ -80,7 +83,6 @@ class Jugador {
         for (let i = 0; i < this.fichas; i++) {
             this.pila[i].drawImage(n, ctx);
         }
-
     }
-
+    
 }

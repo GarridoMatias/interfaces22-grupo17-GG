@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function() {
+imageFondo.onload = function () {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -73,6 +73,12 @@ function refactorizarCanvas(e) {
     closeDialogConfig();
 }
 
+
+function mostrarCantFilas(filas) {
+    let x = filas;
+    document.querySelector("#value-filas-selected").innerHTML = filas + ' en linea';
+}
+
 function decrementarTiempo() {
     if (tiempo > 0) {
         tiempo--;
@@ -95,7 +101,7 @@ function mostrarTiempo() {
             jugadorDeTurno = null;
         }
     } else {
-        ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 200, 25);
+        ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 80, 25);
         jugadorDeTurno = null;
 
     }
@@ -166,7 +172,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
