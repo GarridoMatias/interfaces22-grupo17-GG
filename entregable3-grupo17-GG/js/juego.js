@@ -26,7 +26,7 @@ let imagenFichaJ1 = "./images/ficha1.png"; // inicia por defecto
 let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
-let tiempo = timer;
+let tiempo;
 let intervalo;
 let j1 = "Jugador 1";
 let j2 = "Jugador 2";
@@ -127,6 +127,7 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+    tiempo = timer;
     mostrarTiempo();
     mostrarJugadorDeTurno();
 

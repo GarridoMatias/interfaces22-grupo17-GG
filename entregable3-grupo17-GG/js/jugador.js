@@ -32,7 +32,6 @@ class Jugador {
     }
 
     inicializar(imagen) {
-        console.log("entre")
         let fichasPorColumna;
         if (this.fichas > 20) {
             fichasPorColumna = (this.fichas / 3);

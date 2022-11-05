@@ -108,7 +108,6 @@ class Tablero {
                     }
                 }
             }
-            console.log('gano');
             return true;
         } else {
             return false;
@@ -126,7 +125,6 @@ class Tablero {
 
         } else if (this.diagonales(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
-            console.log('gano');
             this.ganador = ganador;
         }
     }
