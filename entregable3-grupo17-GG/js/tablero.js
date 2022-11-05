@@ -48,6 +48,11 @@ class Tablero {
         let centroTablero = (filas * this.unidadCasillero) / 2;
         return centroCanvas - centroTablero;
     }
+    posicionUltimaFila() {
+        let yInicial = this.calcularInit(this.canvas.height, this.filas);
+        let yFinal = yInicial + (this.filas * this.unidadCasillero);
+        return yFinal;
+    }
 
     lineaHorizontal(i, j) {
         let contador = 0;

@@ -29,9 +29,9 @@ let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 
 let imagenReinicio = new Image();
 imagenReinicio.src = "./images/reiniciar.png"; // buscar img de reinicoi
-let btnReinicio = new Ficha(canvas.width / 2 + 100, 490, imagenReinicio, ctx, "btn-reinicio");
-btnReinicio.fichaWidth = 40;
-btnReinicio.fichaHeight = 40;
+
+let btnReinicio;
+
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let tiempo;
@@ -111,15 +111,22 @@ function finDePartida() {
     ctx.font = "30px Arial";
     ctx.fillStyle = "white";
     ctx.fillText("Se termino el tiempo :( , juego empatado ", canvas.width / 2 - 280, 35);
+
 }
 
 function mostrarJugadorDeTurno() {
     if (jugadorDeTurno) {
         ctx.font = "1.2rem Arial";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
+
+        ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, calcularFinTabla());
 
     }
+}
+
+function calcularFinTabla() {
+    let posicionDebajoTabla = tablero.posicionUltimaFila() + 30;
+    return posicionDebajoTabla;
 }
 
 function actualizar() {
@@ -145,6 +152,10 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+
+    btnReinicio = new Ficha(canvas.width / 2 + 100, calcularFinTabla() - 22, imagenReinicio, ctx, "btn-reinicio");
+    btnReinicio.fichaWidth = 30;
+    btnReinicio.fichaHeight = 30;
 
     btnReinicio.drawImage(0, ctx);
     btnReinicio.selected = false;
