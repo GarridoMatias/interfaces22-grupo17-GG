@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -172,7 +172,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
@@ -196,6 +196,10 @@ function OpenDialogConfig() {
             document.querySelector(`#${paraCambiar}`).checked = true;
         }
         //controlar para que no sean iguales
+
+        //seteo nuevamente el estado anterior
+        selectJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').getAttribute("id");
+        selectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
 
     }));
 
