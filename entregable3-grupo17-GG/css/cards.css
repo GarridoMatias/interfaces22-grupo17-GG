@@ -217,20 +217,37 @@
 }
 
 .btn-carrito {
+    top: 35%;
     padding: 0;
+    font-size: 16px;
+}
+
+.btn-carrito,
+.btn-agregar-carrito{
     margin: 0;
     color: #ffffff;
     border-radius: 5px;
-    font-size: 16px;
     background-color: var(--paleta4-color);
-    top: 35%;
     right: 5%;
     z-index: 100;
 }
 
+.btn-agregar-carrito{
+    position: absolute;
+    top: 40%;
+    padding: 15px;
+}
+
+.btn-agregar-carrito:hover,
 .btn-carrito:hover {
     background-color: #ffffff;
     color: var(--paleta4-color);
+}
+
+
+.btn-agregar-carrito:active,
+.btn-carrito:hover {
+   transform: scale(1.1);
 }
 
 .btn-valor {
@@ -400,7 +417,7 @@
     }
 
     .contenido-info-dialogo p {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .header-info-dialogo h4 {

@@ -211,7 +211,7 @@ let juegos = {
         "img": "./images/011juego-amongus.webp",
         "descripcion": "Los miembros de la tripulación pueden ganar completando todas las misiones o detectando y votando a los impostores en el barco. Los impostores pueden usar el sabotaje para provocar el caos, lo que facilita matar enemigos y obtener mejores excusas.",
         "precio": "$1300",
-        "estado": "Play",
+        "estado": "Agregar al carrito",
         "url": "./juego.html"
     }
 }
