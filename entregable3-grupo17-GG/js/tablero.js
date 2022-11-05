@@ -50,36 +50,41 @@ class Tablero {
     }
 
     lineaHorizontal(i, j) {
-        let contador;
+        let contador = 0;
         for (let x = 0; x <= this.filas; x++) {
             if (this.cuadrilla[i][x].ocupado && this.cuadrilla[i][x].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
                 contador++;
+            } else if (contador === this.filas) {
+                return true;
             } else {
-                contador = 0;
+                contador = 0;;
             }
         }
-        if (contador == filas) {
+        if (contador >= this.filas) {
             return true;
         }
         return false;
     }
 
     lineaVertical(i, j) {
-        let cumple = false;
-        for (let y = 0; y < this.filas; y++) {
-            if (this.cuadrilla[y][j].ocupado && this.cuadrilla[y][j].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
-                cumple = true;
-            } else {
-                return false;
+        if (i === 0) {
+            let cumple = false;
+            for (let y = 0; y < this.filas; y++) {
+                if (this.cuadrilla[y][j].ocupado && this.cuadrilla[y][j].fichaOcupa.jugador == this.cuadrilla[i][j].fichaOcupa.jugador) {
+                    cumple = true;
+                } else {
+                    return false;
+                }
             }
+            return cumple;
         }
-        return cumple;
+        return false;
     }
 
     diagonales(i, j) {
         let jugadorActual = this.cuadrilla[i][j].fichaOcupa.jugador;
         if (i === 0) {
-            if (j <= 1) {
+            if (j <= 1) { //diagonal de derecha a izquierda 
                 for (let x = 0; x <= this.filas - 1; x++) {
                     if (this.cuadrilla[i + x][j + x].fichaOcupa) {
                         if (this.cuadrilla[i + x][j + x].fichaOcupa.jugador != jugadorActual) {
@@ -88,12 +93,17 @@ class Tablero {
                     } else {
                         return false;
                     }
-                }                
+                }
                 return true;
-            } else if (j >= (this.filas - 1)) {
+
+            } else if (j >= (this.filas - 1)) { //diagonal de izquierda a derecha
                 for (let x = 0; x <= this.filas - 1; x++) {
                     if ((parseInt(j) - x) >= 0) {
-                        if (this.cuadrilla[i + x][j - x].fichaOcupa.jugador != jugadorActual) {
+                        if (this.cuadrilla[i + x][j - x].fichaOcupa) {
+                            if (this.cuadrilla[i + x][j - x].fichaOcupa.jugador != jugadorActual) {
+                                return false;
+                            }
+                        } else {
                             return false;
                         }
                     } else {
@@ -111,15 +121,16 @@ class Tablero {
     verificarJugada(i, j) {
         if (this.lineaHorizontal(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
-            this.ganador = ganador;           
+            this.ganador = ganador;
 
         } else if (this.lineaVertical(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
-            
+
         } else if (this.diagonales(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
+
         }
     }
 
