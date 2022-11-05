@@ -29,9 +29,9 @@ let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 
 let imagenReinicio = new Image();
 imagenReinicio.src = "./images/reiniciar.png"; // buscar img de reinicoi
-let btnReinicio = new Ficha(canvas.width / 2 + 100, 500, imagenReinicio, ctx, "btn-reinicio");
-btnReinicio.fichaWidth = 30;
-btnReinicio.fichaHeight = 30;
+let btnReinicio = new Ficha(canvas.width / 2 + 100, 490, imagenReinicio, ctx, "btn-reinicio");
+btnReinicio.fichaWidth = 40;
+btnReinicio.fichaHeight = 40;
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let tiempo;
