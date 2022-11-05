@@ -83,34 +83,34 @@ class Tablero {
         return false;
     }
 
-    diagonales(i, j){
-        if(i === 0){ 
-           if (j <= 1){         
-                for(let x = 0; x <= this.filas - 1; x++){              
-                    if (parseInt(j) <= this.filas){
-                        console.log(this.cuadrilla[i+x][j+x].fichaOcupa.jugador)
-                        if(!this.cuadrilla[i+x][j+x].fichaOcupa.jugador){                           
+    diagonales(i, j) {
+        if (i === 0) {
+            if (j <= 1) {
+                for (let x = 0; x <= this.filas - 1; x++) {
+                    if (parseInt(j) <= this.filas) {
+                        console.log(this.cuadrilla[i + x][j + x].fichaOcupa.jugador)
+                        if (!this.cuadrilla[i + x][j + x].fichaOcupa.jugador) {
                             return false;
-                        } 
+                        }
                     } else {
                         return false;
-                    }       
+                    }
                 }
-        
+
             } else if (j >= (this.filas - 1)) {
-                for(let x = 0; x <= this.filas - 1; x++){              
-                    if ((parseInt(j) - x) >= 0){
-                        if(!this.cuadrilla[i+x][j-x].fichaOcupa.jugador){                           
+                for (let x = 0; x <= this.filas - 1; x++) {
+                    if ((parseInt(j) - x) >= 0) {
+                        if (!this.cuadrilla[i + x][j - x].fichaOcupa.jugador) {
                             return false;
-                        } 
+                        }
                     } else {
                         return false;
-                    }       
-                }            
+                    }
+                }
             }
             console.log('gano');
             return true;
-        } else{
+        } else {
             return false;
         }
     }
@@ -124,13 +124,10 @@ class Tablero {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             this.ganador = ganador;
 
-        } 
-        else if (this.diagonales(i, j)){
+        } else if (this.diagonales(i, j)) {
             let ganador = this.cuadrilla[i][j].fichaOcupa.jugador;
             console.log('gano');
             this.ganador = ganador;
-        } else {
-            console.log(this.diagonales(i,j));
         }
     }
 
@@ -163,7 +160,6 @@ class Tablero {
                         this.cuadrilla[indiceCasilleroDisponible][j].fichaOcupa = ficha;
                         ficha.posicionada = true;
                         this.verificarJugada(indiceCasilleroDisponible, j);
-                        console.log(indiceCasilleroDisponible, j)
                         this.ultimoMovimiento = ficha.jugador;
 
                     } else {

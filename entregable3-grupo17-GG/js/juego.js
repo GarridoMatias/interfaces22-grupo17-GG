@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -52,36 +52,17 @@ function refactorizarCanvas(e) {
     //limpiar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     tablero.setFilas(filas);
+    tablero.ganador = null;
     jugador1.setFilas(filas);
     jugador2.setFilas(filas);
+
     jugador1.setNombre(j1);
     jugador2.setNombre(j2);
 
-
-    tablero.inicializar(imagenCasilla);
-    jugador1.inicializar(imagenFichaJ1);
-    jugador2.inicializar(imagenFichaJ2);
-
-    tablero.dibujar(0, ctx);
-    jugador1.dibujar(0, ctx);
-    jugador2.dibujar(0, ctx);
-
-    // tablero.inicializar(imagenCasilla);
-    // jugador1.inicializar(imagenFichaJ1);
-    // jugador2.inicializar(imagenFichaJ2);
-    
-    // tablero.dibujar(0, ctx);
-    // jugador1.dibujar(0, ctx);
-    // jugador2.dibujar(0, ctx);
-    iniciar();
-    tiempo = timer;
-    if (intervalo) {
-        clearInterval(intervalo);
-    }
-    console.log(jugadorDeTurno)
-    intervalo = setInterval(decrementarTiempo, 1000);
-
     jugadorDeTurno = j1;
+
+    iniciar();
+
     closeDialogConfig();
 }
 
@@ -109,6 +90,7 @@ function mostrarTiempo() {
     } else {
         ctx.fillText(`¡Gano ${tablero.ganador} !`, canvas.width / 2 - 200, 60);
         jugadorDeTurno = null;
+
     }
 }
 
@@ -145,6 +127,8 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+    mostrarTiempo();
+    mostrarJugadorDeTurno();
 
     if (intervalo) {
         clearInterval(intervalo);
@@ -165,7 +149,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
