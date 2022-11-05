@@ -225,9 +225,11 @@ p {
 /*footer*/
 
 footer {
-    margin-top: 10vh;
-    /*este es el rectangulo blanco que se ven en juego.html*/
     width: 100%;
+}
+
+.footer-main{
+    margin-top:10vh;
 }
 
 footer h3,
