@@ -62,11 +62,15 @@
     color: black;
 }
 
+.titulo-personajes {
+    margin: 2% 5%;
+}
+
 .container-estreno p {
     text-align: justify;
 }
 
-.titulo-juego-lanzamiento{
+.titulo-juego-lanzamiento {
     margin-bottom: 5px
 }
 
@@ -77,14 +81,14 @@
 }
 
 .titulo-historia {
-    font-size: 20px;
+    font-size: 30px;
     color: rgba(0, 0, 0, 0.70);
     margin: 0;
 }
 
 .titulo-descripcion,
 .titulo-sinopsis {
-    font-size: 20px;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.70);
     margin: 0;
 }
