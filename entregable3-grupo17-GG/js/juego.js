@@ -3,7 +3,7 @@
 
 let imageFondo = new Image();
 imageFondo.src = "./images/fondo-juego.png";
-imageFondo.onload = function () {
+imageFondo.onload = function() {
     ctx.drawImage(imageFondo, 0, 0, canvas.width, canvas.height);
 }
 
@@ -29,9 +29,9 @@ let imagenFichaJ2 = "./images/ficha2.png"; // inicia por defecto
 
 let imagenReinicio = new Image();
 imagenReinicio.src = "./images/reiniciar.png"; // buscar img de reinicoi
-let btnReinicio = new Ficha(canvas.width / 2 + 100, 490, imagenReinicio, ctx, "btn-reinicio");
-btnReinicio.fichaWidth = 40;
-btnReinicio.fichaHeight = 40;
+
+let btnReinicio;
+
 let totalfichas = filas * (filas + 1);
 let tablero = new Tablero(canvas, ctx, cuadrilla, filas);
 let tiempo;
@@ -111,15 +111,22 @@ function finDePartida() {
     ctx.font = "30px Arial";
     ctx.fillStyle = "white";
     ctx.fillText("Se termino el tiempo :( , juego empatado ", canvas.width / 2 - 280, 35);
+
 }
 
 function mostrarJugadorDeTurno() {
     if (jugadorDeTurno) {
         ctx.font = "1.2rem Arial";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, 520);
+
+        ctx.fillText(`Juega: ${jugadorDeTurno}`, canvas.width / 2 - 80, calcularFinTabla());
 
     }
+}
+
+function calcularFinTabla() {
+    let posicionDebajoTabla = tablero.posicionUltimaFila() + 30;
+    return posicionDebajoTabla;
 }
 
 function actualizar() {
@@ -145,6 +152,10 @@ function iniciar() {
     tablero.dibujar(0, ctx);
     jugador1.dibujar(0, ctx);
     jugador2.dibujar(0, ctx);
+
+    btnReinicio = new Ficha(canvas.width / 2 + 100, calcularFinTabla() - 22, imagenReinicio, ctx, "btn-reinicio");
+    btnReinicio.fichaWidth = 30;
+    btnReinicio.fichaHeight = 30;
 
     btnReinicio.drawImage(0, ctx);
     btnReinicio.selected = false;
@@ -172,7 +183,7 @@ function OpenDialogConfig() {
     document.querySelector("#value-filas-selected").innerHTML = nFilas.value + ' en linea';
 
     let nuevaSeleccionadaJ1 = document.querySelectorAll(".class-inp-ficha");
-    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function () {
+    nuevaSeleccionadaJ1.forEach(b => b.addEventListener("click", function() {
 
         let paraCambiar;
         let seleccionado = b.getAttribute("id").split("-");
@@ -196,6 +207,10 @@ function OpenDialogConfig() {
             document.querySelector(`#${paraCambiar}`).checked = true;
         }
         //controlar para que no sean iguales
+
+        //seteo nuevamente el estado anterior
+        selectJ1 = document.querySelector('input[name="inp-ficha-j1"]:checked').getAttribute("id");
+        selectJ2 = document.querySelector('input[name="inp-ficha-j2"]:checked').getAttribute("id");
 
     }));
 

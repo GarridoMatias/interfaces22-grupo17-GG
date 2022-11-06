@@ -10,8 +10,7 @@ class Ficha {
         this.y = y;
         this.xi = x;
         this.yi = y;
-        this.xf = 55;
-        this.yf = 55;
+
         this.fichaWidth = 55;
         this.fichaHeight = 55;
         this.img = img;
