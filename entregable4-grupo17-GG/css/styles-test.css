@@ -1,15 +1,68 @@
-.menu-hamburguesa {
-    width: 30px;
-    height: 20px;
+.hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 10px;
+    position: absolute;
+    margin: 0 45%;
+    margin-bottom: 40px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
 }
 
-.line {
-    width: 100%;
-    height: 3px;
-    border-radius: 20%;
-    background-color: white;
+@media screen and (min-width:480px) {
+    .hamburger-menu {
+        position: relative;
+        margin: 0;
+        margin-left: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+.bar,
+.bar:after,
+.bar:before {
+    width: 30px;
+    height: 5px;
+}
+
+.bar {
+    position: relative;
+    transform: translateY(25px);
+    background: white;
+    transition: all 0ms 300ms;
+}
+
+.bar.animate {
+    background: rgba(255, 255, 255, 0);
+}
+
+.bar:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    background: white;
+    transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background: white;
+    transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
