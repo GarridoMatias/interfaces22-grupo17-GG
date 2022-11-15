@@ -16,28 +16,33 @@
 <body>
 
     <header class="container-header">
-        <a href="javascript:void(0)" id="btn-sidebar-menu">
-            <img src="./icons/menu.png" class="i-menu">
-        </a>
+
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+        </div>
+
         <a href="index.html" class="logo">
             <img src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
         </a>
         <div class="container-accesos-user">
-            <a href="javascript:void(0)"><img src="./icons/user.png" class="i-user icono"></a>
-            <a href="javascript:void(0)"><img src="./icons/carrito1.png" class="i-carrito icono"></a>
+            <a href=""><img src="./icons/user.png" class="i-user icono"></a>
+            <a href=""><img src="./icons/carrito1.png" class="i-carrito icono"></a>
         </div>
     </header>
 
     <div id="sidebar-menu" class="sidebar-menu">
+
         <div id="contenido-menu" class="contenido-menu">
-            <a href="javascript:void(0)" id="btn-close-menu" class="close-menu">x</a>
-            <h4 class="titulo-menu">Rocket Games</h4>
-            <div class="seccion-menu">
+
+            <h4 class="seccion-menu  titulo-menu seccion-menu-titulo">Rocket Games</h4>
+
+            <div class="seccion-menu seccion-menu-config">
                 <h2>Juegos</h2>
                 <a href="">Destacados</a>
                 <a href="">Ajustes del juego</a>
             </div>
-            <div class="seccion-menu">
+
+            <div class="seccion-menu seccion-menu-categorias">
                 <h2>Categorias</h2>
                 <a href="">Accion</a>
                 <a href="">Aventura</a>
@@ -46,17 +51,18 @@
                 <a href="">Infantiles</a>
                 <a href="">Más jugados</a>
             </div>
+
             <div class="seccion-menu seccion-menu-perfil">
                 <a href="">Perfil</a>
                 <a href="">Configuración de cuenta</a>
                 <a href="">Cerrar sesión</a>
             </div>
+
             <div class="seccion-menu-blog">
                 <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog Rocket Games</a>
             </div>
         </div>
     </div>
-
 
     <section class="container-juego">
         <div class="breadcrumb">
@@ -413,7 +419,7 @@
         </div>
     </footer>
 
-    <script src="js/menu.js "></script>
+    <script src="js/menuAnimado.js"></script>
     <script src="js/tablero.js "></script>
     <script src="js/casillero.js "></script>
     <script src="js/ficha.js"></script>

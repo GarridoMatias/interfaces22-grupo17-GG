@@ -20,9 +20,11 @@
     </div>
     <div id="id-div-contenido">
         <header class="container-header">
-            <a href="javascript:void(0)" id="btn-sidebar-menu">
-                <img src="./icons/menu.png" class="i-menu">
-            </a>
+
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+            </div>
+
             <a href="index.html" class="logo">
                 <img src="./logo/logo_Mesa de trabajo 1.png" alt="logo.png">
             </a>
@@ -33,15 +35,18 @@
         </header>
 
         <div id="sidebar-menu" class="sidebar-menu">
+
             <div id="contenido-menu" class="contenido-menu">
-                <a href="javascript:void(0)" id="btn-close-menu" class="close-menu">x</a>
-                <h4 class="titulo-menu">Rocket Games</h4>
-                <div class="seccion-menu">
+
+                <h4 class="seccion-menu  titulo-menu seccion-menu-titulo">Rocket Games</h4>
+
+                <div class="seccion-menu seccion-menu-config">
                     <h2>Juegos</h2>
                     <a href="">Destacados</a>
                     <a href="">Ajustes del juego</a>
                 </div>
-                <div class="seccion-menu">
+
+                <div class="seccion-menu seccion-menu-categorias">
                     <h2>Categorias</h2>
                     <a href="">Accion</a>
                     <a href="">Aventura</a>
@@ -50,11 +55,13 @@
                     <a href="">Infantiles</a>
                     <a href="">Más jugados</a>
                 </div>
+
                 <div class="seccion-menu seccion-menu-perfil">
                     <a href="">Perfil</a>
                     <a href="">Configuración de cuenta</a>
                     <a href="">Cerrar sesión</a>
                 </div>
+
                 <div class="seccion-menu-blog">
                     <a href="" class="blog-rocket"><img class="i-blog" src="./icons/blog.png" alt="icon-blog.png">Blog Rocket Games</a>
                 </div>
@@ -348,7 +355,9 @@
                         <a id="id-anchor-juego-dialogo" href="" id="btn-play" class="btn-play btn-play-dialog">
                             <img src="./icons/play-circle.png" class="i-play-dialog">Play</a>
                         <img id="id-img-dialogo" class="img-dialogo-info" alt="imagen.jpg">
-                        <a href="javascript:void(0)"><p id="id-carrito-dialogo" class="btn-agregar-carrito"></p></a>
+                        <a href="javascript:void(0)">
+                            <p id="id-carrito-dialogo" class="btn-agregar-carrito"></p>
+                        </a>
                     </div>
 
                     <div class="contenido-info-dialogo">
@@ -431,7 +440,7 @@
         </footer>
 
     </div>
-    <script src="js/menu.js"></script>
+    <script src="js/menuAnimado.js"></script>
     <script src="js/dialog.js"></script>
     <script src="js/carrusel.js"></script>
     <script src="js/preloader.js"></script>
