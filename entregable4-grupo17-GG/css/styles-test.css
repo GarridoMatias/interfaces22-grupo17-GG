@@ -1,3 +1,32 @@
+@keyframes desplazamiento {
+    from {
+        margin-left: 200%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+.seccion-menu-titulo,
+.seccion-menu-config,
+.seccion-menu-categorias,
+.seccion-menu-perfil {
+    animation-duration: 0.5s;
+    animation-name: desplazamiento;
+}
+
+.seccion-menu-config {
+    animation-duration: 1s;
+}
+
+.seccion-menu-categorias {
+    animation-duration: 2s;
+}
+
+.seccion-menu-perfil {
+    animation-duration: 3s;
+}
+
 .hamburger-menu {
     display: flex;
     flex-direction: column;
