@@ -141,7 +141,7 @@
 
 .dialogo-info-juego {
     width: 0;
-    height: 68vh;
+    height: 80vh;
     position: fixed;
     z-index: 10000;
     background-color: var(--primary-color);
@@ -230,13 +230,13 @@
     color: #ffffff;
     border-radius: 5px;
     background-color: var(--paleta4-color);
-    right: 5%;
+    right: 20%;
     z-index: 100;
 }
 
 .btn-agregar-carrito {
     position: absolute;
-    top: 40%;
+    top: 35%;
     padding: 15px;
 }
 
@@ -376,6 +376,11 @@
     .container-cards-juegos-mmo,
     .container-cards-juegos-personaje {
         overflow: visible;
+    }
+
+    .btn-agregar-carrito{
+        right: 5%;
+        top: 40%;
     }
 }
 

@@ -17,6 +17,7 @@ function openDialog(juego) {
     document.querySelector("#id-precio-dialogo").innerHTML = juego.precio;
     document.querySelector("#id-descripcion-dialogo").innerHTML = juego.descripcion;
     document.querySelector("#id-anchor-juego-dialogo").href = juego.url;
+    document.querySelector("#container-oscurecer").style.opacity = '0.5';
     if(juego.precio === 'Gratis' || juego.precio === 'Ya compraste este juego'){
         document.querySelector("#id-anchor-juego-dialogo").style.visibility = 'visible';
     } else {
@@ -36,4 +37,5 @@ function openDialog(juego) {
 
 function closeDialog() {
     document.querySelector("#dialogo-info-juego").style.width = "0";
+    document.querySelector("#container-oscurecer").style.opacity = '1';
 }
