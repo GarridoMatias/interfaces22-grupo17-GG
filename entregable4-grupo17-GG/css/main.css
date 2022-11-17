@@ -56,8 +56,8 @@ body {
 /*logo*/
 
 .logo img {
-    width: 120px;
-    margin: 1% 0 0 5%;
+    width: 130px;
+    margin: 1% 0 0 45%;
 }
 
 a {
@@ -356,11 +356,10 @@ footer a:hover {
 }
 
 #contenido-menu {
-    margin-top: 10%;
     margin-left: 0;
     transition: margin-left .4s;
     display: flex;
-    height: 90vh;
+    height: 70vh;
     justify-content: space-around;
     flex-direction: column;
 }
@@ -381,7 +380,7 @@ footer a:hover {
     margin-bottom: 2%;
     display: flex;
     flex-direction: column;
-    padding: 1.3rem;
+    padding: 0.3rem 1.3rem;
 }
 
 .seccion-menu-perfil {
@@ -389,7 +388,8 @@ footer a:hover {
 }
 
 .seccion-menu h2 {
-    margin-bottom: 1%;
+    margin: 0;
+    padding: 0;
 }
 
 .seccion-menu a {
@@ -464,7 +464,7 @@ footer a:hover {
         text-align: center;
     }
     #contenido-menu {
-        height: 80vh;
+        height: 70vh;
     }
     .close-menu {
         font-size: 2.3rem;
@@ -626,6 +626,9 @@ footer a:hover {
 @media screen and (min-width:1200px) {
     .sidebar-menu {
         width: 25%;
+    }
+    .seccion-menu {
+        padding: 0.4rem 1.3rem;
     }
     .container-legales {
         width: 60%;
