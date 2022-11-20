@@ -67,12 +67,12 @@
 }
 
 .titulo-juego-lanzamiento {
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    font-size: 80px;
 }
 
 .titulo-fecha-lanzamiento {
     text-align: center;
-    width: 50%;
     margin: 0;
 }
 
@@ -280,21 +280,39 @@ ul {
     }
 }
 
+/*PARALLAX*/
 
-/* 
-.card-lanzamiento {
-    overflow: hidden;
-    scroll-snap-align: center;
-    width: 25%;
-    height: 100%;
-    object-fit: cover;
-    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.53);
-    -webkit-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.53);
-    -moz-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.53);
+.parallax{
+  background-image: url('../images/starciticenpage-100.jpg');
+  height: 100vh; 
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(20%);
 }
 
-.img-destacadas:hover {
+.container-hero-texto{
+    opacity: 1;
+    position: absolute;
+    top: 5%;
+    z-index: 1;
     width: 100%;
-    height: 100%;
-    filter: brightness(100%);
-} */
+    text-align: center;
+    transition: opacity 0.8s;
+}
+
+.difuminado{
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.container-fecha-lanzamiento{    
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    background-color: #ffffff;
+    z-index: 1;
+}
