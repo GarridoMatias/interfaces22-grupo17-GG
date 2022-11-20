@@ -65,6 +65,21 @@ body {
     margin: 1% 0 0 45%;
 }
 
+.logo.sticky img {
+    width: 100px;
+    transition: width 0.2s ease-in;
+}
+
+.logo.sticky {
+    margin: 41%;
+    transition: margin 0.4s ease-in;
+}
+
+.icono.sticky {
+    width: 20px;
+    height: 20px;
+}
+
 a {
     text-decoration: none;
 }
@@ -154,21 +169,6 @@ p {
 .container-header.sticky {
     height: 6vh;
     transition: height 0.5s ease-in;
-}
-
-.logo.sticky img {
-    width: 100px;
-    transition: width 0.2s ease-in;
-}
-
-.logo.sticky {
-    margin: 41%;
-    transition: margin 0.4s ease-in;
-}
-
-.icono.sticky {
-    width: 20px;
-    height: 20px;
 }
 
 .container-accesos-user {
