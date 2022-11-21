@@ -54,12 +54,15 @@
 
 .t-informacion,
 .titulo-fecha-lanzamiento,
-.titulo-historia,
-.p-historia,
 .titulo-personajes,
 .titulo-apodo,
 .titulo-nombre {
     color: black;
+}
+
+.titulo-historia,
+.p-historia {
+    color: #ffffff;
 }
 
 .container-estreno p {
@@ -77,8 +80,7 @@
 }
 
 .titulo-historia {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.70);
+    font-size: 35px;
     margin: 0;
 }
 
@@ -97,6 +99,8 @@
 
 .p-historia {
     width: 90%;
+    text-align: justify;
+    font-size: 21px;
 }
 
 .p-descripcion,
@@ -111,7 +115,11 @@
 }
 
 .container-historia {
-    width: 50%;
+    position: absolute;
+    width: 45%;
+    right: 5%;
+    top: 47%;
+    z-index: 1;
 }
 
 .container-objetivo-lanzamiento {
@@ -206,8 +214,12 @@ ul {
 }
 
 .carrusel {
+    opacity: 0;
     display: flex;
     justify-content: center;
+    position: absolute;
+    z-index: 10;
+    top: 30%;
 }
 
 .card-lanzamiento-figura {
@@ -293,6 +305,10 @@ ul {
   filter: brightness(20%);
 }
 
+.container-hero{
+    background-color: #2b2e30;
+}
+
 .container-hero-texto{
     opacity: 1;
     position: absolute;
@@ -308,11 +324,60 @@ ul {
     transition: opacity 0.8s;
 }
 
-.container-fecha-lanzamiento{    
+.container-introduccion-lanzamiento{
     opacity: 0;
-    width: 100%;
     position: absolute;
     top: 20%;
-    background-color: #ffffff;
     z-index: 1;
+    background-color: #ffffffeb;
+    width: 100%;
+}
+
+.container-fecha-lanzamiento{    
+    opacity: 0;
+    width: 40%;
+    position: absolute;
+    top: 47%;
+    padding: 40px 0;
+    background-color: #ffffff;
+    z-index: 2;
+    border-radius: 10px;
+    left: 5%;
+
+    box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
+    -webkit-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
+    -moz-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
+    
+}
+
+.trasladar{
+    animation-duration: 0.8s;
+    animation-name: trasladar;
+}
+
+@keyframes trasladar{
+    from {
+        rigth: 0%;
+    }
+
+    to{
+        rigth: 10%;
+    }
+}
+
+
+.dimensionar{
+    animation-duration: 1s;
+    animation-name: dimensionar;
+    animation-fill-mode: forwards;
+}
+
+@keyframes dimensionar{
+    from {
+        transform: scale(0.5);
+    }
+
+    to{
+        transform: scale(1);
+    }
 }
