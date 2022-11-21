@@ -43,7 +43,6 @@ window.onscroll = function() {
         difuminar();
         dimensionar();
         viewFechaLanzamiento();  
-        trasladar();
     }
 }
 
@@ -70,7 +69,7 @@ function difuminar() {
 
     if (window.pageYOffset > 1000) {
       historia.style.opacity = 1;
-    } else {
+    } else if (window.pageYOffset < 1500) {
       historia.style.opacity = 0;
       historia.classList.add("difuminado");
     }
@@ -85,7 +84,7 @@ function dimensionar(){
     carrusel.classList.remove("dimensionar");
   }
 
-  if (window.pageYOffset > 1000) {
+  if (window.pageYOffset > 900) {
     historia.classList.add("dimensionar");
   } else {
     historia.classList.remove("dimensionar");
@@ -93,15 +92,16 @@ function dimensionar(){
 }
 
 function viewFechaLanzamiento() {
-  if (window.pageYOffset > 350) {
+  if (window.pageYOffset > 500) {
     fechaLanzamiento.style.opacity = 1;
-    let posFechaLanzamiento = 1200 - (scrollY);
+    let posFechaLanzamiento = 1300 - (scrollY);
     fechaLanzamiento.style.left = `${posFechaLanzamiento}px`    
   } else {
     fechaLanzamiento.style.opacity = 0;
   }
 
-  if (window.pageYOffset > 1050) {
+  console.log(window.pageYOffset)
+  if (window.pageYOffset > 1200) {
     fechaLanzamiento.style.left = `5%`
   }
 }
