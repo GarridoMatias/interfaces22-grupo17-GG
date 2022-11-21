@@ -32,7 +32,7 @@ if (document.querySelector(".container-hero-texto")) {
     textoHero = document.querySelector(".container-hero-texto");
     fechaLanzamiento = document.querySelector(".container-fecha-lanzamiento");
     introduccion = document.querySelector(".container-introduccion-lanzamiento");
-    carrusel = document.querySelector(".carrusel");
+    carrusel = document.querySelector(".carrusel-lanzamiento");
     historia = document.querySelector(".container-historia");
 }
 
