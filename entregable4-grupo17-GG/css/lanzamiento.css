@@ -60,8 +60,9 @@
     color: black;
 }
 
-.titulo-personajes{
+.titulo-personajes {
     margin: 5%;
+    text-align: center;
 }
 
 .titulo-historia,
@@ -98,7 +99,7 @@
     font-size: 2.3rem;
 }
 
-.titulo-descripcion{
+.titulo-descripcion {
     font-size: 3rem;
 }
 
@@ -120,7 +121,7 @@
     margin-top: 10px;
 }
 
-.p-descripcion{
+.p-descripcion {
     font-size: 2rem;
 }
 
@@ -165,11 +166,10 @@
     width: 180px
 }
 
-.seccion-personajes{
+.seccion-personajes {
     width: 100%;
     height: 65vh;
 }
-
 
 .personaje {
     display: flex;
@@ -216,7 +216,7 @@ img.img-personaje {
     border-radius: 20px
 }
 
-.p-sinopsis{
+.p-sinopsis {
     font-size: 26px;
     text-align: justify;
     width: auto;
@@ -322,24 +322,25 @@ ul {
     }
 }
 
+
 /*PARALLAX*/
 
-.parallax{
-  background-image: url('../images/starciticenpage-100.jpg');
-  height: 90vh; 
-  width: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: brightness(20%);
+.parallax {
+    background-image: url('../images/starciticenpage-100.jpg');
+    height: 90vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(20%);
 }
 
-.container-hero{
+.container-hero {
     background-color: #2b2e30;
 }
 
-.container-hero-texto{
+.container-hero-texto {
     opacity: 1;
     position: absolute;
     top: 5%;
@@ -349,12 +350,12 @@ ul {
     transition: opacity 0.8s;
 }
 
-.difuminado{
+.difuminado {
     opacity: 0;
     transition: opacity 0.8s;
 }
 
-.container-introduccion-lanzamiento{
+.container-introduccion-lanzamiento {
     opacity: 0;
     position: absolute;
     top: 15%;
@@ -363,7 +364,7 @@ ul {
     width: 100%;
 }
 
-.container-fecha-lanzamiento{    
+.container-fecha-lanzamiento {
     opacity: 0;
     width: 40%;
     position: absolute;
@@ -373,74 +374,67 @@ ul {
     z-index: 2;
     border-radius: 10px;
     left: 5%;
-
     box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
     -webkit-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
     -moz-box-shadow: 2px 0px 41px -11px rgba(0, 0, 0, 0.65) inset;
-    
 }
 
-.trasladar{
-    animation-duration: 2s;
-    animation-name: trasladar;
+.trasladar {
+    animation: trasladar 2s ease-out;
 }
 
-@keyframes trasladar{
+@keyframes trasladar {
     from {
-        transform: translateY(150px);
+        transform: translateX(2000px)translateY(-150px);
     }
-
-    to{
-        transform: translateY(0px);
+    to {
+        transform: translateX(0px) translateY(0px);
     }
 }
 
-
-.dimensionar{
+.dimensionar {
     animation-duration: 1s;
     animation-name: dimensionar;
     animation-fill-mode: forwards;
 }
 
-@keyframes dimensionar{
+@keyframes dimensionar {
     from {
         transform: scale(0.5);
     }
-
-    to{
+    to {
         transform: scale(1);
     }
 }
 
-
-.container-objetivo-lanzamiento{
+.container-objetivo-lanzamiento {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;  
+    width: 100%;
     background-color: #14191D;
 }
 
-.stickyScroll{
+.stickyScroll {
     position: sticky;
     width: 50%;
     height: 100%;
     top: 15%;
 }
 
-.textoScroll{
+.textoScroll {
     width: 50%;
 }
 
-.descripcion-lanzamiento:last-of-type{
-margin-bottom: auto;
-padding: 0;
+.descripcion-lanzamiento:last-of-type {
+    margin-bottom: auto;
+    padding: 0;
 }
 
-.descripcion-lanzamiento:first-of-type{
+.descripcion-lanzamiento:first-of-type {
     padding: 45% 0;
 }
 
-.descripcion-lanzamiento{
+.descripcion-lanzamiento {
     height: 380px;
     color: #ffffff;
     margin: 25px 50px 100px 50px;
@@ -449,25 +443,20 @@ padding: 0;
     font-size: xx-large;
 }
 
-
-.img{
+.img {
     height: 500px;
-    margin: 15% 0 15% 5%;   
+    margin: 15% 0 15% 5%;
 }
 
-.img:last-of-type{
+.img:last-of-type {
     margin-bottom: auto;
-  }
-  
-  .oculto{
+}
+
+.oculto {
     opacity: 0;
-  }
-  
-  .img-oculta{
+}
+
+.img-oculta {
     display: none;
     visibility: hidden;
-  }
-  
-
-  
- 
+}

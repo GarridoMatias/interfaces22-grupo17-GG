@@ -34,6 +34,7 @@ let apodo
 let nombre
 let sinopsis
 let roles
+let cardsPersonajes
 
 if (document.querySelector(".container-hero-texto")) {
     textoHero = document.querySelector(".container-hero-texto");
@@ -48,6 +49,8 @@ if (document.querySelector(".container-hero-texto")) {
     nombre = document.querySelectorAll(".titulo-nombre");
     sinopsis = document.querySelector(".sinopsis");
     roles = document.querySelector(".roles");
+
+    cardsPersonajes = document.querySelectorAll(".card-juego-personaje");
 }
 
 window.onscroll = function() {
@@ -56,13 +59,13 @@ window.onscroll = function() {
     if (textoHero) {
         difuminar();
         dimensionar();
-        viewFechaLanzamiento();  
+        viewFechaLanzamiento();
         scrollDescripcion();
         trasladar();
     }
 }
 
-function difuminar() {  
+function difuminar() {
     if (window.pageYOffset > 150) {
         textoHero.classList.add("difuminado");
     } else {
@@ -70,151 +73,149 @@ function difuminar() {
     }
 
     if (window.pageYOffset > 200) {
-      introduccion.style.opacity = 1;
+        introduccion.style.opacity = 1;
     } else {
-      introduccion.style.opacity = 0;
-      introduccion.classList.add("difuminado");
+        introduccion.style.opacity = 0;
+        introduccion.classList.add("difuminado");
     }
 
     if (window.pageYOffset > 320) {
-      carrusel.style.opacity = 1;
+        carrusel.style.opacity = 1;
     } else {
-      carrusel.style.opacity = 0;
-      carrusel.classList.add("difuminado");
+        carrusel.style.opacity = 0;
+        carrusel.classList.add("difuminado");
     }
 
     if (window.pageYOffset > 1000) {
-      historia.style.opacity = 1;
+        historia.style.opacity = 1;
     } else if (window.pageYOffset < 1500) {
-      historia.style.opacity = 0;
-      historia.classList.add("difuminado");
+        historia.style.opacity = 0;
+        historia.classList.add("difuminado");
     }
 
-    if(window.pageYOffset > 4000){
-      personajes.style.opacity = 1;
+    if (window.pageYOffset > 4000) {
+        personajes.style.opacity = 1;
     } else {
-      personajes.style.opacity = 0;
-      personajes.classList.add("difuminado");
+        personajes.style.opacity = 0;
+        personajes.classList.add("difuminado");
     }
 
-    if(window.pageYOffset > 4250){
-      apodo.forEach(function(a){
-        a.style.opacity = 1;
-      })
-    } else { apodo.forEach(function(a){
-      a.style.opacity = 0;
-      a.classList.add("difuminado");
-      })
-      nombre.forEach(function(n){
-        n.style.opacity = 0;
-        n.classList.add("difuminado");
-      })  
+    if (window.pageYOffset > 4250) {
+        apodo.forEach(function(a) {
+            a.style.opacity = 1;
+        })
+    } else {
+        apodo.forEach(function(a) {
+            a.style.opacity = 0;
+            a.classList.add("difuminado");
+        })
+        nombre.forEach(function(n) {
+            n.style.opacity = 0;
+            n.classList.add("difuminado");
+        })
     }
 
-    if(window.pageYOffset > 4300){
-      nombre.forEach(function(n){
-        n.style.opacity = 1;
-      })  
-    }  
+    if (window.pageYOffset > 4300) {
+        nombre.forEach(function(n) {
+            n.style.opacity = 1;
+        })
+    }
 
-  
+
     if (window.pageYOffset > 4700) {
-      sinopsis.style.opacity = 1;
+        sinopsis.style.opacity = 1;
     } else {
-      sinopsis.classList.add("difuminado");
-      roles.classList.add("difuminado");
-      sinopsis.style.opacity = 0;
-      roles.style.opacity = 0;
+        sinopsis.classList.add("difuminado");
+        roles.classList.add("difuminado");
+        sinopsis.style.opacity = 0;
+        roles.style.opacity = 0;
     }
-  
+
     if (window.pageYOffset > 4900) {
-      roles.style.opacity = 1;
-    }   
+        roles.style.opacity = 1;
+    }
 }
 
-function dimensionar(){
-  if (window.pageYOffset > 300) {
-    carrusel.classList.add("dimensionar");
-  } else {
-    carrusel.classList.remove("dimensionar");
-  }
+function dimensionar() {
+    if (window.pageYOffset > 300) {
+        carrusel.classList.add("dimensionar");
+    } else {
+        carrusel.classList.remove("dimensionar");
+    }
 
-  if (window.pageYOffset > 900) {
-    historia.classList.add("dimensionar");
-  } else {
-    historia.classList.remove("dimensionar");
-  }
+    if (window.pageYOffset > 900) {
+        historia.classList.add("dimensionar");
+    } else {
+        historia.classList.remove("dimensionar");
+    }
 
-  if (window.pageYOffset > 4700) {
-    sinopsis.classList.add("dimensionar");
-  } else {
-    sinopsis.classList.remove("dimensionar");
-    roles.classList.remove("dimensionar");
-  }
+    if (window.pageYOffset > 4700) {
+        sinopsis.classList.add("dimensionar");
+    } else {
+        sinopsis.classList.remove("dimensionar");
+        roles.classList.remove("dimensionar");
+    }
 
-  if (window.pageYOffset > 4900) {
-    roles.classList.add("dimensionar");
-  } 
+    if (window.pageYOffset > 4900) {
+        roles.classList.add("dimensionar");
+    }
 }
 
 function viewFechaLanzamiento() {
-  if (window.pageYOffset > 500) {
-    fechaLanzamiento.style.opacity = 1;
-    let posFechaLanzamiento = 1300 - (scrollY);
-    fechaLanzamiento.style.left = `${posFechaLanzamiento}px`    
-  } else {
-    fechaLanzamiento.style.opacity = 0;
-  }
+    if (window.pageYOffset > 500) {
+        fechaLanzamiento.style.opacity = 1;
+        let posFechaLanzamiento = 1300 - (scrollY);
+        fechaLanzamiento.style.left = `${posFechaLanzamiento}px`
+    } else {
+        fechaLanzamiento.style.opacity = 0;
+    }
 
-  if (window.pageYOffset > 1200) {
-    fechaLanzamiento.style.left = `5%`
-  }
+    if (window.pageYOffset > 1200) {
+        fechaLanzamiento.style.left = `5%`
+    }
 }
 
 function scrollDescripcion() {
-  textos.forEach(function(t){
-      t.classList.add("oculto")
-  })
-  images.forEach(function(t){
-      t.classList.add("img-oculta")
-  })
-  if(window.pageYOffset < 2200){
-    textos[0].classList.remove("oculto");
-    images[0].classList.remove("img-oculta");
-  }
-  else if(window.pageYOffset > 2150 && window.pageYOffset < 3000){
-    textos[1].classList.remove("oculto");
-    images[1].classList.remove("img-oculta");
-  }else if(window.pageYOffset > 3000 && window.pageYOffset < 3600){
-    textos[2].classList.remove("oculto")
-    images[2].classList.remove("img-oculta");
-  }else{
-    textos[3].classList.remove("oculto");
-    images[3].classList.remove("img-oculta");
-  }
+    textos.forEach(function(t) {
+        t.classList.add("oculto")
+    })
+    images.forEach(function(t) {
+        t.classList.add("img-oculta")
+    })
+    if (window.pageYOffset < 2200) {
+        textos[0].classList.remove("oculto");
+        images[0].classList.remove("img-oculta");
+    } else if (window.pageYOffset > 2150 && window.pageYOffset < 3000) {
+        textos[1].classList.remove("oculto");
+        images[1].classList.remove("img-oculta");
+    } else if (window.pageYOffset > 3000 && window.pageYOffset < 3600) {
+        textos[2].classList.remove("oculto")
+        images[2].classList.remove("img-oculta");
+    } else {
+        textos[3].classList.remove("oculto");
+        images[3].classList.remove("img-oculta");
+    }
 
 }
 
 function trasladar() {
-  if(window.pageYOffset > 4150){
-    apodo.forEach(function(a){
-      a.classList.add("trasladar")
-  })
-  } else {
-      apodo.forEach(function(a){
-        a.classList.remove("trasladar")
-    })
-      nombre.forEach(function(n){
-        n.classList.remove("trasladar")
-    })
-  }
+    console.log(window.pageYOffset)
+    let size = cardsPersonajes.length;
+    if (window.pageYOffset > 4000) {
 
-  if(window.pageYOffset > 4350){
-    nombre.forEach(function(n){
-      n.classList.add("trasladar")
-    })
-  } 
+        cardsPersonajes.forEach(function(a) {
+            a.classList.add("trasladar")
+        })
+    } else {
+        cardsPersonajes.forEach(function(a) {
+            a.classList.remove("trasladar")
+        })
+
+    }
 }
+
+
+
 
 function stickyHeader() {
     if (window.pageYOffset > header.scrollTop) {
