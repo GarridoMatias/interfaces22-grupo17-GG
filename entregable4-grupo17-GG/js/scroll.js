@@ -101,23 +101,23 @@ function difuminar() {
       apodo.forEach(function(a){
         a.style.opacity = 1;
       })
-    } else {
-      apodo.forEach(function(a){
-        a.style.opacity = 0;
-        a.classList.add("difuminado");
+    } else { apodo.forEach(function(a){
+      a.style.opacity = 0;
+      a.classList.add("difuminado");
       })
       nombre.forEach(function(n){
         n.style.opacity = 0;
         n.classList.add("difuminado");
       })  
     }
-      
+
     if(window.pageYOffset > 4300){
       nombre.forEach(function(n){
         n.style.opacity = 1;
       })  
-    }
+    }  
 
+  
     if (window.pageYOffset > 4700) {
       sinopsis.style.opacity = 1;
     } else {
