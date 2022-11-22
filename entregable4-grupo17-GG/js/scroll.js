@@ -27,6 +27,8 @@ let fechaLanzamiento
 let introduccion
 let carrusel
 let historia
+let images
+let textos
 
 if (document.querySelector(".container-hero-texto")) {
     textoHero = document.querySelector(".container-hero-texto");
@@ -34,6 +36,8 @@ if (document.querySelector(".container-hero-texto")) {
     introduccion = document.querySelector(".container-introduccion-lanzamiento");
     carrusel = document.querySelector(".carrusel-lanzamiento");
     historia = document.querySelector(".container-historia");
+    images = document.querySelectorAll(".img");
+    textos = document.querySelectorAll(".descripcion-lanzamiento");
 }
 
 window.onscroll = function() {
@@ -43,6 +47,7 @@ window.onscroll = function() {
         difuminar();
         dimensionar();
         viewFechaLanzamiento();  
+        scrollDescripcion();
     }
 }
 
@@ -100,10 +105,34 @@ function viewFechaLanzamiento() {
     fechaLanzamiento.style.opacity = 0;
   }
 
-  console.log(window.pageYOffset)
   if (window.pageYOffset > 1200) {
     fechaLanzamiento.style.left = `5%`
   }
+}
+
+function scrollDescripcion() {
+  textos.forEach(function(t){
+      t.classList.add("oculto")
+  })
+  images.forEach(function(t){
+      t.classList.add("img-oculta")
+  })
+  console.log(window.pageYOffset)
+  if(window.pageYOffset<2200){
+    textos[0].classList.remove("oculto");
+    images[0].classList.remove("img-oculta");
+  }
+  else if(window.pageYOffset >= 2150 && window.pageYOffset < 3000){
+    textos[1].classList.remove("oculto");
+    images[1].classList.remove("img-oculta");
+  }else if(window.pageYOffset >=3000 && window.pageYOffset < 3600){
+    textos[2].classList.remove("oculto")
+    images[2].classList.remove("img-oculta");
+  }else{
+    textos[3].classList.remove("oculto");
+    images[3].classList.remove("img-oculta");
+  }
+
 }
 
 function stickyHeader() {

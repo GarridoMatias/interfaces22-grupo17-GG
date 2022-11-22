@@ -86,11 +86,17 @@
 
 .titulo-descripcion,
 .titulo-sinopsis {
-    font-size: 20px;
     color: rgba(255, 255, 255, 0.70);
     margin: 0;
 }
 
+.titulo-sinopsis {
+    font-size: 20px;
+}
+
+.titulo-descripcion{
+    font-size: 3rem;
+}
 .titulo-roles {
     margin: 0;
     font-size: 38px;
@@ -109,6 +115,10 @@
     margin-top: 10px;
 }
 
+.p-descripcion{
+    font-size: 2rem;
+}
+
 .container-estreno {
     margin: 10vh 0 10vh 0;
     display: flex;
@@ -118,7 +128,7 @@
     position: absolute;
     width: 45%;
     right: 5%;
-    top: 35%;
+    top: 30%;
     z-index: 1;
 }
 
@@ -134,8 +144,8 @@
 }
 
 .img-lore {
-    width: 45%;
-    margin: 25px 5% 25px 0;
+    width: 100%;
+    margin: 30px 0 30px 0;
 }
 
 .container-personajes {
@@ -213,7 +223,7 @@ ul {
     margin: 0;
 }
 
-.carrusel {
+.carrusel-lanzamiento {
     opacity: 0;
     display: flex;
     justify-content: center;
@@ -337,7 +347,7 @@ ul {
     opacity: 0;
     width: 40%;
     position: absolute;
-    top: 35%;
+    top: 30%;
     padding: 40px 0;
     background-color: #ffffff;
     z-index: 2;
@@ -407,11 +417,11 @@ padding: 0;
 }
 
 .descripcion-lanzamiento:first-of-type{
-    padding: 25% 0;
+    padding: 45% 0;
 }
 
 .descripcion-lanzamiento{
-    height: 300px;
+    height: 380px;
     color: #ffffff;
     margin: 25px 50px 100px 50px;
     transition: opacity .4s ease-in-out;
@@ -421,9 +431,8 @@ padding: 0;
 
 
 .img{
-    height: 350px;
-    margin: 15% 0 10% 5%;   
-    background-color: #ffffff0f;
+    height: 500px;
+    margin: 15% 0 15% 5%;   
 }
 
 .img:last-of-type{
@@ -434,8 +443,9 @@ padding: 0;
     opacity: 0;
   }
   
-  .imgOculta{
+  .img-oculta{
     display: none;
+    visibility: hidden;
   }
   
 
