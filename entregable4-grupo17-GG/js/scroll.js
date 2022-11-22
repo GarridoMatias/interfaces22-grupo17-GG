@@ -178,7 +178,6 @@ function scrollDescripcion() {
   images.forEach(function(t){
       t.classList.add("img-oculta")
   })
-  console.log(window.pageYOffset)
   if(window.pageYOffset < 2200){
     textos[0].classList.remove("oculto");
     images[0].classList.remove("img-oculta");
