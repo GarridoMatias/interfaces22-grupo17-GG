@@ -20,6 +20,7 @@ function openMenu() {
     }
 }
 
+let parallax2 = document.querySelector(".parallax2");
 let header = document.querySelector(".container-header");
 let contenidoHeader = document.querySelectorAll(".c-header");
 let textoHero
@@ -66,6 +67,17 @@ window.onscroll = function() {
 }
 
 function difuminar() {
+
+  if (window.pageYOffset > 50) {
+    parallax2.style.opacity = 1;
+    parallax2.classList.add("difuminado")
+  } 
+
+  if (window.pageYOffset > 400) {
+    parallax2.classList.remove("difuminado")
+  } 
+
+
     if (window.pageYOffset > 150) {
         textoHero.classList.add("difuminado");
     } else {
@@ -100,7 +112,9 @@ function difuminar() {
         personajes.classList.add("difuminado");
     }
 
-    if (window.pageYOffset > 4250) {
+    console.log(window.pageYOffset)
+
+    if (window.pageYOffset > 4400) {
         apodo.forEach(function(a) {
             a.style.opacity = 1;
         })
@@ -115,7 +129,7 @@ function difuminar() {
         })
     }
 
-    if (window.pageYOffset > 4300) {
+    if (window.pageYOffset > 4400) {
         nombre.forEach(function(n) {
             n.style.opacity = 1;
         })
@@ -199,23 +213,49 @@ function scrollDescripcion() {
 }
 
 function trasladar() {
-    console.log(window.pageYOffset)
-    let size = cardsPersonajes.length;
-    if (window.pageYOffset > 4000) {
+  console.log(window.pageYOffset)
+  let size = cardsPersonajes.length;
 
-        cardsPersonajes.forEach(function(a) {
-            a.classList.add("trasladar")
-        })
-    } else {
-        cardsPersonajes.forEach(function(a) {
-            a.classList.remove("trasladar")
-        })
+  if (window.pageYOffset > 50) {
+      parallax2.classList.add("trasladarTop")
+  } 
 
-    }
+  if (window.pageYOffset > 400) {
+    parallax2.classList.remove("trasladarTop")
+  } 
+
+  if (window.pageYOffset > 3500) {
+
+      cardsPersonajes.forEach(function(a) {
+          a.classList.add("trasladar")
+      })
+  } else {
+      cardsPersonajes.forEach(function(a) {
+          a.classList.remove("trasladar")
+      })
+
+  }
+
+  if (window.pageYOffset > 4350) {
+    apodo.forEach(function(a) {
+        a.classList.add("trasladarTop");
+    })
+  } else{
+    apodo.forEach(function(a) {
+      a.classList.remove("trasladarTop");
+    })
+  }
+
+  if (window.pageYOffset > 4450) {
+      nombre.forEach(function(n) {
+        n.classList.add("trasladarTop");
+      })
+  } else{
+    nombre.forEach(function(n) {
+      n.classList.remove("trasladarTop");
+    })
+  }
 }
-
-
-
 
 function stickyHeader() {
     if (window.pageYOffset > header.scrollTop) {
@@ -227,5 +267,4 @@ function stickyHeader() {
         header.classList.remove("sticky");
         document.querySelector("#sidebar-menu").style.top = "10vh";
     }
-
 }
