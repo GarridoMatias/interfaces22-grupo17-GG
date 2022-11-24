@@ -510,7 +510,7 @@ ul {
   
   @keyframes pelea  {
     0%{
-      background-position-x: 0;
+      background-position-x: 8px;
     }
     100%{
       background-position-x: -1300px;
