@@ -395,10 +395,10 @@ ul {
 
 @keyframes trasladar {
     from {
-        transform: translateX(2000px)translateY(-150px);
+        transform: translateX(2000px);
     }
     to {
-        transform: translateX(0px) translateY(0px);
+        transform: translateX(0px);
     }
 }
 
@@ -499,39 +499,38 @@ ul {
   }
   
   .spritesheet{
-    background: url(../images/nave.png);
+    background: url(../images/spritesheet.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100px;
-    width: 150px; 
-    animation: walk 2s steps(10) infinite;
+    height: 80px;
+    width: 60px; 
+    animation: pelea 2s steps(10) infinite;
     
   }
   
-  @keyframes walk  {
+  @keyframes pelea  {
     0%{
       background-position-x: 0;
     }
     100%{
-      background-position-x: -696px;
+      background-position-x: -1300px;
     }
 }
   
     .spritesheet2{
-        background: url(../images/nave.png);
+        background: url(../images/spritesheet.png);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100px;
-        width: 200px;
-        animation: medialuna 1s steps(5) infinite;
-        
+        height: 80px;
+        width: 60px; 
+        animation: pelea2 2s steps(10) infinite;
       }
       
-      @keyframes medialuna  {
+      @keyframes pelea2  {
         0%{
             background-position-x: 0;
           }
           100%{
-            background-position-x: -576px;
+            background-position-x: -1500px;
           }
     }
