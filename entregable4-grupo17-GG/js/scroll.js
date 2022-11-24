@@ -68,14 +68,14 @@ window.onscroll = function() {
 
 function difuminar() {
 
-  if (window.pageYOffset > 50) {
-    parallax2.style.opacity = 1;
-    parallax2.classList.add("difuminado")
-  } 
+    if (window.pageYOffset > 50) {
+        parallax2.style.opacity = 1;
+        parallax2.classList.add("difuminado")
+    }
 
-  if (window.pageYOffset > 400) {
-    parallax2.classList.remove("difuminado")
-  } 
+    if (window.pageYOffset > 400) {
+        parallax2.classList.remove("difuminado")
+    }
 
 
     if (window.pageYOffset > 150) {
@@ -100,12 +100,12 @@ function difuminar() {
 
     if (window.pageYOffset > 1000) {
         historia.style.opacity = 1;
-    } else if (window.pageYOffset < 1500) {
+    } else {
         historia.style.opacity = 0;
         historia.classList.add("difuminado");
     }
 
-    if (window.pageYOffset > 4000) {
+    if (window.pageYOffset > 4060) {
         personajes.style.opacity = 1;
     } else {
         personajes.style.opacity = 0;
@@ -114,26 +114,31 @@ function difuminar() {
 
     console.log(window.pageYOffset)
 
-    if (window.pageYOffset > 4400) {
+    if (window.pageYOffset > 4350) {
         apodo.forEach(function(a) {
             a.style.opacity = 1;
         })
+
     } else {
         apodo.forEach(function(a) {
             a.style.opacity = 0;
             a.classList.add("difuminado");
         })
-        nombre.forEach(function(n) {
-            n.style.opacity = 0;
-            n.classList.add("difuminado");
-        })
+
     }
 
     if (window.pageYOffset > 4400) {
         nombre.forEach(function(n) {
             n.style.opacity = 1;
         })
+    } else {
+        nombre.forEach(function(n) {
+            n.style.opacity = 0;
+            n.classList.add("difuminado");
+        })
     }
+
+
 
 
     if (window.pageYOffset > 4700) {
@@ -213,48 +218,86 @@ function scrollDescripcion() {
 }
 
 function trasladar() {
-  console.log(window.pageYOffset)
-  let size = cardsPersonajes.length;
+    console.log(window.pageYOffset)
+    let size = cardsPersonajes.length;
 
-  if (window.pageYOffset > 50) {
-      parallax2.classList.add("trasladarTop")
-  } 
+    if (window.pageYOffset > 50) {
+        parallax2.classList.add("trasladarTop")
+    }
 
-  if (window.pageYOffset > 400) {
-    parallax2.classList.remove("trasladarTop")
-  } 
+    if (window.pageYOffset > 400) {
+        parallax2.classList.remove("trasladarTop")
+    }
+    if (window.pageYOffset > 4050) {
+        document.querySelector(".titulo-personajes").classList.add("trasladarTop");
+    } else {
+        document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
+    }
 
-  if (window.pageYOffset > 3500) {
+    if (window.pageYOffset > 4250) {
 
-      cardsPersonajes.forEach(function(a) {
-          a.classList.add("trasladar")
-      })
-  } else {
-      cardsPersonajes.forEach(function(a) {
-          a.classList.remove("trasladar")
-      })
+        cardsPersonajes.forEach(function(a) {
+            a.classList.remove("oculto");
+            a.classList.add("trasladar")
+        })
 
-  }
 
-  if (window.pageYOffset > 4350) {
-    apodo.forEach(function(a) {
-        a.classList.add("trasladarTop");
-    })
-  } else{
-    apodo.forEach(function(a) {
-      a.classList.remove("trasladarTop");
-    })
-  }
+    } else if (window.pageYOffset < 4150) {
+        cardsPersonajes.forEach(function(a) {
+            a.classList.add("oculto");
+            a.classList.remove("trasladar")
+        })
 
-  if (window.pageYOffset > 4450) {
-      nombre.forEach(function(n) {
-        n.classList.add("trasladarTop");
-      })
-  } else{
-    nombre.forEach(function(n) {
-      n.classList.remove("trasladarTop");
-    })
-  }
+    }
+
+    //es por aca!
+    // let posFechaLanzamiento = 4500 - (scrollY);
+    // console.log("aca" + scrollY)
+
+    // if (window.pageYOffset > 4250) {
+    //     document.querySelector("#id-personaje-1").style.left = `${posFechaLanzamiento}px`;
+    // }
+    // if (window.pageYOffset > 4360) {
+    //     posFechaLanzamiento += 100;
+    //     document.querySelector("#id-personaje-2").style.left = `${posFechaLanzamiento}px`
+    // }
+    // if (window.pageYOffset > 4470) {
+    //     posFechaLanzamiento += 200;
+    //     document.querySelector("#id-personaje-3").style.left = `${posFechaLanzamiento}px`
+    // }
+    // if (window.pageYOffset > 4580) {
+    //     posFechaLanzamiento += 300;
+    //     document.querySelector("#id-personaje-4").style.left = `${posFechaLanzamiento}px`
+    // }
+
+
+
+
+    if (window.pageYOffset > 4350) {
+        apodo.forEach(function(a) {
+            a.classList.remove("oculto")
+            a.classList.add("trasladarTop");
+        })
+    } else {
+        apodo.forEach(function(a) {
+            a.classList.add("oculto");
+            a.classList.remove("trasladarTop");
+        })
+    }
+
+    if (window.pageYOffset > 4400) {
+        nombre.forEach(function(n) {
+            n.classList.remove("oculto")
+            n.classList.add("trasladarTop");
+        })
+    } else {
+        nombre.forEach(function(n) {
+            n.classList.add("oculto");
+
+            n.classList.remove("trasladarTop");
+        })
+    }
+
 }
 
 function stickyHeader() {

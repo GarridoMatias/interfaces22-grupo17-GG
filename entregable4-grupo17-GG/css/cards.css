@@ -313,8 +313,7 @@
     }
     .container-cards-juegos,
     .container-cards-juegos-fav,
-    .container-cards-juegos-mmo,
-    .container-cards-juegos-personaje {
+    .container-cards-juegos-mmo {
         height: 25vh;
     }
     .card-juego-recomendados,
@@ -325,6 +324,9 @@
         flex: 0 0 30%;
         height: auto;
     }
+    /* .card-juego-personaje {
+        position: absolute;
+    } */
     .contenido-info-dialogo p {
         font-size: 25px;
     }
@@ -384,9 +386,6 @@
     .container-cards-juegos-fav,
     .container-cards-juegos-mmo {
         height: 25vh;
-    }
-    .container-cards-juegos-personaje {
-        height: 30vh;
     }
     .card-juego-recomendados,
     .card-juego-favoritos,
