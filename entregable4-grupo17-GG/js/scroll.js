@@ -20,6 +20,7 @@ function openMenu() {
     }
 }
 
+let nave = document.querySelector(".parallax-1-1");
 let parallax2 = document.querySelector(".parallax2");
 let header = document.querySelector(".container-header");
 let contenidoHeader = document.querySelectorAll(".c-header");
@@ -70,12 +71,16 @@ function difuminar() {
 
   if (window.pageYOffset > 50) {
     parallax2.style.opacity = 1;
-    parallax2.classList.add("difuminado")
+    parallax2.classList.remove("difuminado")
   } 
 
   if (window.pageYOffset > 400) {
+    parallax2.style.opacity = 0;
+    parallax2.classList.add("difuminado")
+  } else {
+    parallax2.style.opacity = 1;
     parallax2.classList.remove("difuminado")
-  } 
+  }
 
 
     if (window.pageYOffset > 150) {
@@ -217,11 +222,12 @@ function trasladar() {
   let size = cardsPersonajes.length;
 
   if (window.pageYOffset > 50) {
-      parallax2.classList.add("trasladarTop")
+      parallax2.classList.add("moveStars")
+      nave.classList.add("moveNave")
   } 
 
   if (window.pageYOffset > 400) {
-    parallax2.classList.remove("trasladarTop")
+    parallax2.classList.remove("moveStars")
   } 
 
   if (window.pageYOffset > 3500) {

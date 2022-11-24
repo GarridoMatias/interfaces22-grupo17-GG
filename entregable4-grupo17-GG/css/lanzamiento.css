@@ -332,7 +332,7 @@ ul {
 /*PARALLAX*/
 
 .parallax {
-    background-image: url('../images/starciticenpage-100.jpg');
+    background-image: url('../images/parallax1.png');
     height: 90vh;
     width: 100%;
     background-attachment: fixed;
@@ -341,6 +341,7 @@ ul {
     background-size: cover;
     filter: brightness(20%);
 }
+
 
 .parallax2{
     opacity: 0;
@@ -413,6 +414,23 @@ ul {
     to {
         transform: translateY(0px);
     }
+}
+
+.moveStars {
+    animation: stars 10s ease-out infinite;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(200px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.moveNave{
+    animation: stars 2s ease-out infinite;
 }
 
 .dimensionar {
