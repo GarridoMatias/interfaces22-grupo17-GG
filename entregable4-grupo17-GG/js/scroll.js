@@ -234,41 +234,70 @@ function trasladar() {
         document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
     }
 
-    if (window.pageYOffset > 4250) {
+    // if (window.pageYOffset > 4230) {
 
-        cardsPersonajes.forEach(function(a) {
-            a.classList.remove("oculto");
-            a.classList.add("trasladar")
-        })
+    //     cardsPersonajes.forEach(function(a) {
+    //         a.classList.remove("oculto");
+    //         // a.classList.add("trasladar")
+    //     })
 
 
-    } else if (window.pageYOffset < 4150) {
+    // } else if (window.pageYOffset < 4230) {
+    //     cardsPersonajes.forEach(function(a) {
+    //         // a.classList.add("oculto");
+    //         // a.classList.remove("trasladar")
+    //     })
+
+    // }
+
+    let posFechaLanzamiento = 4491 - (scrollY);
+    console.log("aca" + posFechaLanzamiento)
+    if (window.pageYOffset > 4250 && window.pageYOffset < 4850) {
+        if (window.pageYOffset > 4250) {
+            document.querySelector("#id-personaje-1").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${posFechaLanzamiento}px`;
+
+        }
+        if (window.pageYOffset > 4270) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-2").classList.remove("oculto");
+            document.querySelector("#id-personaje-2").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4290) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-3").classList.remove("oculto");
+            document.querySelector("#id-personaje-3").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4310) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-4").classList.remove("oculto");
+            document.querySelector("#id-personaje-4").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4330) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-5").classList.remove("oculto");
+            document.querySelector("#id-personaje-5").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4340) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-6").classList.remove("oculto");
+            document.querySelector("#id-personaje-6").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4360) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-7").classList.remove("oculto");
+            document.querySelector("#id-personaje-7").style.left = `${posFechaLanzamiento}px`
+        }
+        if (window.pageYOffset > 4380) {
+            posFechaLanzamiento += 255;
+            document.querySelector("#id-personaje-8").classList.remove("oculto");
+            document.querySelector("#id-personaje-8").style.left = `${posFechaLanzamiento}px`
+        }
+    } else {
         cardsPersonajes.forEach(function(a) {
             a.classList.add("oculto");
-            a.classList.remove("trasladar")
         })
-
     }
-
-    //es por aca!
-    // let posFechaLanzamiento = 4500 - (scrollY);
-    // console.log("aca" + scrollY)
-
-    // if (window.pageYOffset > 4250) {
-    //     document.querySelector("#id-personaje-1").style.left = `${posFechaLanzamiento}px`;
-    // }
-    // if (window.pageYOffset > 4360) {
-    //     posFechaLanzamiento += 100;
-    //     document.querySelector("#id-personaje-2").style.left = `${posFechaLanzamiento}px`
-    // }
-    // if (window.pageYOffset > 4470) {
-    //     posFechaLanzamiento += 200;
-    //     document.querySelector("#id-personaje-3").style.left = `${posFechaLanzamiento}px`
-    // }
-    // if (window.pageYOffset > 4580) {
-    //     posFechaLanzamiento += 300;
-    //     document.querySelector("#id-personaje-4").style.left = `${posFechaLanzamiento}px`
-    // }
 
 
 

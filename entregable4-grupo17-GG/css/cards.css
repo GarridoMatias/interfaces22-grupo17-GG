@@ -324,9 +324,9 @@
         flex: 0 0 30%;
         height: auto;
     }
-    /* .card-juego-personaje {
+    .card-juego-personaje {
         position: absolute;
-    } */
+    }
     .contenido-info-dialogo p {
         font-size: 25px;
     }
