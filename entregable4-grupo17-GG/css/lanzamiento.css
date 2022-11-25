@@ -185,7 +185,6 @@
     margin-top: 5px;
     margin-bottom: 0;
     font-weight: 400;
-    opacity: 0;
 }
 
 .titulo-apodo {
@@ -194,11 +193,6 @@
 
 .titulo-nombre {
     font-size: 25px;
-}
-
-.titulo-apodo,
-.titulo-nombre{
-    opacity: 0;
 }
 
 img.img-personaje {
@@ -391,7 +385,7 @@ ul {
 }
 
 .trasladar {
-    animation: trasladar 2s ease-out;
+    animation: trasladar 1s ease-out;
 }
 
 @keyframes trasladar {
@@ -502,9 +496,10 @@ ul {
     visibility: hidden;
 }
 
+
 /*Spritesheet*/
 
-.spritesheets{
+.spritesheets {
     width: 100%;
     display: flex;
     align-items: center;

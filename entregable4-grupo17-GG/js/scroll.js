@@ -105,12 +105,12 @@ function difuminar() {
 
     if (window.pageYOffset > 1000) {
         historia.style.opacity = 1;
-    } else if (window.pageYOffset < 1500) {
+    } else {
         historia.style.opacity = 0;
         historia.classList.add("difuminado");
     }
 
-    if (window.pageYOffset > 4000) {
+    if (window.pageYOffset > 4060) {
         personajes.style.opacity = 1;
     } else {
         personajes.style.opacity = 0;
@@ -119,26 +119,31 @@ function difuminar() {
 
     console.log(window.pageYOffset)
 
-    if (window.pageYOffset > 4400) {
+    if (window.pageYOffset > 4350) {
         apodo.forEach(function(a) {
             a.style.opacity = 1;
         })
+
     } else {
         apodo.forEach(function(a) {
             a.style.opacity = 0;
             a.classList.add("difuminado");
         })
-        nombre.forEach(function(n) {
-            n.style.opacity = 0;
-            n.classList.add("difuminado");
-        })
+
     }
 
     if (window.pageYOffset > 4400) {
         nombre.forEach(function(n) {
             n.style.opacity = 1;
         })
+    } else {
+        nombre.forEach(function(n) {
+            n.style.opacity = 0;
+            n.classList.add("difuminado");
+        })
     }
+
+
 
 
     if (window.pageYOffset > 4700) {
@@ -218,8 +223,8 @@ function scrollDescripcion() {
 }
 
 function trasladar() {
-  console.log(window.pageYOffset)
-  let size = cardsPersonajes.length;
+    console.log(window.pageYOffset)
+    let size = cardsPersonajes.length;
 
   if (window.pageYOffset > 50) {
       parallax2.classList.add("moveStars")
@@ -230,37 +235,164 @@ function trasladar() {
     parallax2.classList.remove("moveStars")
   } 
 
-  if (window.pageYOffset > 3500) {
 
-      cardsPersonajes.forEach(function(a) {
-          a.classList.add("trasladar")
-      })
-  } else {
-      cardsPersonajes.forEach(function(a) {
-          a.classList.remove("trasladar")
-      })
-
-  }
-
-  if (window.pageYOffset > 4350) {
-    apodo.forEach(function(a) {
-        a.classList.add("trasladarTop");
+    document.querySelector("#id-next-personaje").style.visibility = "hidden";
+    cardsPersonajes.forEach(function(a) {
+        a.style.left = "2400px"
     })
-  } else{
-    apodo.forEach(function(a) {
-      a.classList.remove("trasladarTop");
-    })
-  }
 
-  if (window.pageYOffset > 4450) {
-      nombre.forEach(function(n) {
-        n.classList.add("trasladarTop");
-      })
-  } else{
-    nombre.forEach(function(n) {
-      n.classList.remove("trasladarTop");
-    })
-  }
+    let pos = 1750;
+    let tamanioCard = 250;
+
+    if (window.pageYOffset > 4050 && window.pageYOffset < 4850) {
+        if (window.pageYOffset > 4050) {
+            document.querySelector("#id-personaje-1").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos}px`;
+
+        }
+        if (window.pageYOffset > 4080) {
+
+            document.querySelector("#id-personaje-2").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-250}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos}px`;
+        }
+        if (window.pageYOffset > 4110) {
+
+            document.querySelector("#id-personaje-3").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-500}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos}px`;
+        }
+        if (window.pageYOffset > 4140) {
+
+            document.querySelector("#id-personaje-4").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos}px`;
+        }
+        if (window.pageYOffset > 4170) {
+
+            document.querySelector("#id-personaje-5").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos}px`;
+        }
+        if (window.pageYOffset > 4200) {
+
+            document.querySelector("#id-personaje-6").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos}px`;
+        }
+        if (window.pageYOffset > 4230) {
+
+            document.querySelector("#id-personaje-7").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-1500}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-6").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-7").style.left = `${pos}px`;
+
+        }
+        if (window.pageYOffset > 4260) {
+            document.querySelector("#id-personaje-8").classList.remove("oculto");
+            document.querySelector("#id-personaje-1").style.left = `${pos-1750}px`;
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1500}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-6").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-7").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-7").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-8").style.left = `${pos}px`;
+            document.querySelector("#id-personaje-8").classList.add("trasladarCard")
+            if (document.querySelector("#container-cards-personaje").style.marginLeft === "0px" ||
+                !document.querySelector("#container-cards-personaje").style.marginLeft) {
+                document.querySelector("#id-next-personaje").style.visibility = "visible";
+
+            }
+        }
+        if (window.pageYOffset < 4260) {
+            document.querySelector("#container-cards-personaje").style.marginLeft = "0px";
+            document.querySelector("#id-prev-personaje").style.visibility = "hidden";
+            document.querySelector("#id-next-personaje").style.visibility = "hidden";
+        }
+
+    } else {
+
+        cardsPersonajes.forEach(function(a) {
+            a.classList.add("oculto");
+            a.style.left = "2300px"
+        })
+        document.querySelector("#container-cards-personaje").style.marginLeft = "0px";
+        document.querySelector("#id-prev-personaje").style.visibility = "hidden";
+        document.querySelector("#id-next-personaje").style.visibility = "hidden";
+
+    }
+
+
+
+
+    if (window.pageYOffset > 4350) {
+        apodo.forEach(function(a) {
+            a.classList.remove("oculto")
+            a.classList.add("trasladarTop");
+        })
+    } else {
+        apodo.forEach(function(a) {
+            a.classList.add("oculto");
+            a.classList.remove("trasladarTop");
+        })
+    }
+
+    if (window.pageYOffset > 4380) {
+        nombre.forEach(function(n) {
+            n.classList.remove("oculto")
+            n.classList.add("trasladarTop");
+        })
+    } else {
+        nombre.forEach(function(n) {
+            n.classList.add("oculto");
+
+            n.classList.remove("trasladarTop");
+        })
+    }
+
 }
 
 function stickyHeader() {
