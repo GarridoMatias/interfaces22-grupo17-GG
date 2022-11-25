@@ -83,7 +83,7 @@ function difuminar() {
   }
 
 
-    if (window.pageYOffset > 150) {
+    if (window.pageYOffset > 350) {
         textoHero.classList.add("difuminado");
     } else {
         textoHero.classList.remove("difuminado");
@@ -228,13 +228,12 @@ function trasladar() {
 
   if (window.pageYOffset > 50) {
       parallax2.classList.add("moveStars")
-      nave.classList.add("moveNave")
   } 
 
   if (window.pageYOffset > 400) {
     parallax2.classList.remove("moveStars")
+    // nave.classList.add("moveNave")
   } 
-
 
     document.querySelector("#id-next-personaje").style.visibility = "hidden";
     cardsPersonajes.forEach(function(a) {
