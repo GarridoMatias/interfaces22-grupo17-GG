@@ -69,7 +69,7 @@ window.onscroll = function() {
 
 function difuminar() {
 
-<<<<<<< HEAD
+
     if (window.scrollY > 50) {
         parallax2.style.opacity = 1;
         parallax2.classList.add("difuminado")
@@ -78,20 +78,18 @@ function difuminar() {
     if (window.scrollY > 400) {
         parallax2.classList.remove("difuminado")
     }
-=======
-  if (window.pageYOffset > 50) {
-    parallax2.style.opacity = 1;
-    parallax2.classList.remove("difuminado")
-  } 
+    if (window.pageYOffset > 50) {
+        parallax2.style.opacity = 1;
+        parallax2.classList.remove("difuminado")
+    }
 
-  if (window.pageYOffset > 400) {
-    parallax2.style.opacity = 0;
-    parallax2.classList.add("difuminado")
-  } else {
-    parallax2.style.opacity = 1;
-    parallax2.classList.remove("difuminado")
-  }
->>>>>>> bbf9cbe8d892719bf0a1a663e014340eee7480e2
+    if (window.pageYOffset > 400) {
+        parallax2.style.opacity = 0;
+        parallax2.classList.add("difuminado")
+    } else {
+        parallax2.style.opacity = 1;
+        parallax2.classList.remove("difuminado")
+    }
 
 
     if (window.scrollY > 150) {
@@ -237,7 +235,7 @@ function trasladar() {
     console.log(window.scrollY)
     let size = cardsPersonajes.length;
 
-<<<<<<< HEAD
+
     if (window.scrollY > 50) {
         parallax2.classList.add("trasladarTop")
     }
@@ -250,16 +248,15 @@ function trasladar() {
     } else {
         document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
     }
-=======
-  if (window.pageYOffset > 50) {
-      parallax2.classList.add("moveStars")
-      nave.classList.add("moveNave")
-  } 
 
-  if (window.pageYOffset > 400) {
-    parallax2.classList.remove("moveStars")
-  } 
->>>>>>> bbf9cbe8d892719bf0a1a663e014340eee7480e2
+    if (window.pageYOffset > 50) {
+        parallax2.classList.add("moveStars")
+    }
+
+    if (window.pageYOffset > 400) {
+        parallax2.classList.remove("moveStars")
+            // nave.classList.add("moveNave")
+    }
 
 
     document.querySelector("#id-next-personaje").style.visibility = "hidden";
