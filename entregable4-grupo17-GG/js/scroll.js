@@ -241,7 +241,8 @@ function trasladar() {
     })
 
     let pos = 1750;
-    console.log("aca" + pos)
+    let tamanioCard = 250;
+
     if (window.pageYOffset > 4050 && window.pageYOffset < 4850) {
         if (window.pageYOffset > 4050) {
             document.querySelector("#id-personaje-1").classList.remove("oculto");
@@ -322,7 +323,6 @@ function trasladar() {
 
         }
         if (window.pageYOffset > 4260) {
-
             document.querySelector("#id-personaje-8").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-1750}px`;
             document.querySelector("#id-personaje-1").classList.add("trasladarCard")
@@ -339,12 +339,21 @@ function trasladar() {
             document.querySelector("#id-personaje-7").style.left = `${pos-250}px`;
             document.querySelector("#id-personaje-7").classList.add("trasladarCard")
             document.querySelector("#id-personaje-8").style.left = `${pos}px`;
-            if (window.pageYOffset < 4440)
+            document.querySelector("#id-personaje-8").classList.add("trasladarCard")
+            if (document.querySelector("#container-cards-personaje").style.marginLeft === "0px" ||
+                !document.querySelector("#container-cards-personaje").style.marginLeft) {
                 document.querySelector("#id-next-personaje").style.visibility = "visible";
 
-
+            }
         }
+        if (window.pageYOffset < 4260) {
+            document.querySelector("#container-cards-personaje").style.marginLeft = "0px";
+            document.querySelector("#id-prev-personaje").style.visibility = "hidden";
+            document.querySelector("#id-next-personaje").style.visibility = "hidden";
+        }
+
     } else {
+
         cardsPersonajes.forEach(function(a) {
             a.classList.add("oculto");
             a.style.left = "2300px"
