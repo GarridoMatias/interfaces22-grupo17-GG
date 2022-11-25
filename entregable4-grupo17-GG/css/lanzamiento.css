@@ -326,7 +326,7 @@ ul {
 /*PARALLAX*/
 
 .parallax {
-    background-image: url('../images/starciticenpage-100.jpg');
+    background-image: url('../images/parallax1.png');
     height: 90vh;
     width: 100%;
     background-attachment: fixed;
@@ -336,7 +336,8 @@ ul {
     filter: brightness(20%);
 }
 
-.parallax2 {
+
+.parallax2{
     opacity: 0;
 }
 
@@ -389,10 +390,10 @@ ul {
 
 @keyframes trasladar {
     from {
-        transform: translateX(2000px)translateY(-150px);
+        transform: translateX(2000px);
     }
     to {
-        transform: translateX(0px) translateY(0px);
+        transform: translateX(0px);
     }
 }
 
@@ -407,6 +408,23 @@ ul {
     to {
         transform: translateY(0px);
     }
+}
+
+.moveStars {
+    animation: stars 10s ease-out infinite;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(200px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.moveNave{
+    animation: stars 2s ease-out infinite;
 }
 
 .dimensionar {
@@ -491,44 +509,44 @@ ul {
     top: 13%;
     z-index: 10;
     background-color: #ffffff0a;
-}
-
-.spritesheet {
-    background: url(../images/nave.png);
+  }
+  
+  .spritesheet{
+    background: url(../images/spritesheet.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100px;
-    width: 150px;
-    animation: walk 2s steps(10) infinite;
+    height: 80px;
+    width: 60px; 
+    animation: pelea 1.5s steps(20) infinite;
+    
+  }
+  
+  @keyframes pelea  {
+    0%{
+      background-position-x: 8px;
+    }
+    100%{
+      background-position-x: -1300px;
+    }
 }
 
-@keyframes walk {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -696px;
-    }
-}
-
-.spritesheet2 {
-    background: url(../images/nave.png);
+.spritesheet2{
+    background: url(../images/spritesheet2.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100px;
-    width: 200px;
-    animation: medialuna 1s steps(5) infinite;
-}
-
-@keyframes medialuna {
-    0% {
-        background-position-x: 0;
+    height: 80px;
+    width: 60px; 
+    animation: pelea2 1.8s steps(8) infinite;
+    
+  }
+  
+  @keyframes pelea2  {
+    0%{
+      background-position-x: 0px;
     }
-    100% {
-        background-position-x: -576px;
+    100%{
+      background-position-x: -600px;
     }
 }
-
-.trasladarCard {
-    transition: left .7s ease-in-out;
-}
+  
+  
