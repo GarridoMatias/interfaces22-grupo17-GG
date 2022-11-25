@@ -425,7 +425,6 @@
 }
 
 .slide-control-prev {
-    display: none;
     visibility: hidden;
     position: absolute;
     left: 0;

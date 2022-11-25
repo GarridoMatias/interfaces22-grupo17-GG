@@ -234,69 +234,125 @@ function trasladar() {
         document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
     }
 
-    // if (window.pageYOffset > 4230) {
 
-    //     cardsPersonajes.forEach(function(a) {
-    //         a.classList.remove("oculto");
-    //         // a.classList.add("trasladar")
-    //     })
+    document.querySelector("#id-next-personaje").style.visibility = "hidden";
+    cardsPersonajes.forEach(function(a) {
+        a.style.left = "2400px"
+    })
 
-
-    // } else if (window.pageYOffset < 4230) {
-    //     cardsPersonajes.forEach(function(a) {
-    //         // a.classList.add("oculto");
-    //         // a.classList.remove("trasladar")
-    //     })
-
-    // }
-
-    let posFechaLanzamiento = 4491 - (scrollY);
-    console.log("aca" + posFechaLanzamiento)
-    if (window.pageYOffset > 4250 && window.pageYOffset < 4850) {
-        if (window.pageYOffset > 4250) {
+    let pos = 1750;
+    console.log("aca" + pos)
+    if (window.pageYOffset > 4050 && window.pageYOffset < 4850) {
+        if (window.pageYOffset > 4050) {
             document.querySelector("#id-personaje-1").classList.remove("oculto");
-            document.querySelector("#id-personaje-1").style.left = `${posFechaLanzamiento}px`;
+            document.querySelector("#id-personaje-1").style.left = `${pos}px`;
 
         }
-        if (window.pageYOffset > 4270) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4080) {
+
             document.querySelector("#id-personaje-2").classList.remove("oculto");
-            document.querySelector("#id-personaje-2").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-250}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos}px`;
         }
-        if (window.pageYOffset > 4290) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4110) {
+
             document.querySelector("#id-personaje-3").classList.remove("oculto");
-            document.querySelector("#id-personaje-3").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-500}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos}px`;
         }
-        if (window.pageYOffset > 4310) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4140) {
+
             document.querySelector("#id-personaje-4").classList.remove("oculto");
-            document.querySelector("#id-personaje-4").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos}px`;
         }
-        if (window.pageYOffset > 4330) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4170) {
+
             document.querySelector("#id-personaje-5").classList.remove("oculto");
-            document.querySelector("#id-personaje-5").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos}px`;
         }
-        if (window.pageYOffset > 4340) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4200) {
+
             document.querySelector("#id-personaje-6").classList.remove("oculto");
-            document.querySelector("#id-personaje-6").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos}px`;
         }
-        if (window.pageYOffset > 4360) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4230) {
+
             document.querySelector("#id-personaje-7").classList.remove("oculto");
-            document.querySelector("#id-personaje-7").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-1500}px`
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-6").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-7").style.left = `${pos}px`;
+
         }
-        if (window.pageYOffset > 4380) {
-            posFechaLanzamiento += 255;
+        if (window.pageYOffset > 4260) {
+
             document.querySelector("#id-personaje-8").classList.remove("oculto");
-            document.querySelector("#id-personaje-8").style.left = `${posFechaLanzamiento}px`
+            document.querySelector("#id-personaje-1").style.left = `${pos-1750}px`;
+            document.querySelector("#id-personaje-1").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-2").style.left = `${pos-1500}px`
+            document.querySelector("#id-personaje-2").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-3").style.left = `${pos-1250}px`
+            document.querySelector("#id-personaje-3").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-4").style.left = `${pos-1000}px`
+            document.querySelector("#id-personaje-4").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-5").style.left = `${pos-750}px`
+            document.querySelector("#id-personaje-5").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-6").style.left = `${pos-500}px`;
+            document.querySelector("#id-personaje-6").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-7").style.left = `${pos-250}px`;
+            document.querySelector("#id-personaje-7").classList.add("trasladarCard")
+            document.querySelector("#id-personaje-8").style.left = `${pos}px`;
+            if (window.pageYOffset < 4440)
+                document.querySelector("#id-next-personaje").style.visibility = "visible";
+
+
         }
     } else {
         cardsPersonajes.forEach(function(a) {
             a.classList.add("oculto");
+            a.style.left = "2300px"
         })
+        document.querySelector("#container-cards-personaje").style.marginLeft = "0px";
+        document.querySelector("#id-prev-personaje").style.visibility = "hidden";
+        document.querySelector("#id-next-personaje").style.visibility = "hidden";
+
     }
 
 
@@ -314,7 +370,7 @@ function trasladar() {
         })
     }
 
-    if (window.pageYOffset > 4400) {
+    if (window.pageYOffset > 4380) {
         nombre.forEach(function(n) {
             n.classList.remove("oculto")
             n.classList.add("trasladarTop");

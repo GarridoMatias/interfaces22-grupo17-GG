@@ -528,3 +528,7 @@ ul {
         background-position-x: -576px;
     }
 }
+
+.trasladarCard {
+    transition: left .7s ease-in-out;
+}
