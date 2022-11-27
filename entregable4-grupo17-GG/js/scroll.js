@@ -126,7 +126,6 @@ function difuminar() {
         personajes.classList.add("difuminado");
     }
 
-    console.log(window.scrollY)
 
     if (window.scrollY > 4350) {
         apodo.forEach(function(a) {
