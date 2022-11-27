@@ -61,8 +61,8 @@
 }
 
 .titulo-personajes {
-    margin: 5%;
-    text-align: center;
+    position: absolute;
+    left: 537px;
 }
 
 .titulo-historia,
@@ -169,7 +169,7 @@
 .seccion-personajes {
     width: 100%;
     height: 65vh;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 .personaje {
@@ -420,6 +420,10 @@ ul {
 
 .trasladarCard {
     transition: left .7s ease-in-out;
+}
+
+.trasladarTitte {
+    transition: top .7s ease-in-out;
 }
 
 .moveStars {

@@ -243,11 +243,11 @@ function trasladar() {
     if (window.scrollY > 400) {
         parallax2.classList.remove("trasladarTop")
     }
-    if (window.scrollY > 4050) {
-        document.querySelector(".titulo-personajes").classList.add("trasladarTop");
-    } else {
-        document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
-    }
+    // if (window.scrollY > 4050) {
+    //     document.querySelector(".titulo-personajes").classList.add("trasladarTop");
+    // } else {
+    //     document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
+    // }
 
     if (window.pageYOffset > 50) {
         parallax2.classList.add("moveStars")
@@ -269,11 +269,16 @@ function trasladar() {
 
     if (window.scrollY > 4050 && window.scrollY < 4850) {
         if (window.scrollY > 4050) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `200px`;
+
             document.querySelector("#id-personaje-1").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos}px`;
 
         }
         if (window.scrollY > 4080) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `150px`;
 
             document.querySelector("#id-personaje-2").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-250}px`
@@ -281,6 +286,8 @@ function trasladar() {
             document.querySelector("#id-personaje-2").style.left = `${pos}px`;
         }
         if (window.scrollY > 4110) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `140px`;
 
             document.querySelector("#id-personaje-3").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-500}px`
@@ -290,6 +297,8 @@ function trasladar() {
             document.querySelector("#id-personaje-3").style.left = `${pos}px`;
         }
         if (window.scrollY > 4140) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `120px`;
 
             document.querySelector("#id-personaje-4").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-750}px`
@@ -301,6 +310,8 @@ function trasladar() {
             document.querySelector("#id-personaje-4").style.left = `${pos}px`;
         }
         if (window.scrollY > 4170) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `100px`;
 
             document.querySelector("#id-personaje-5").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-1000}px`
@@ -314,6 +325,8 @@ function trasladar() {
             document.querySelector("#id-personaje-5").style.left = `${pos}px`;
         }
         if (window.scrollY > 4200) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `60px`;
 
             document.querySelector("#id-personaje-6").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-1250}px`
@@ -329,6 +342,8 @@ function trasladar() {
             document.querySelector("#id-personaje-6").style.left = `${pos}px`;
         }
         if (window.scrollY > 4230) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `20px`;
 
             document.querySelector("#id-personaje-7").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-1500}px`
@@ -347,6 +362,9 @@ function trasladar() {
 
         }
         if (window.scrollY > 4260) {
+            document.querySelector(".titulo-personajes").classList.add("trasladarTitte");
+            document.querySelector(".titulo-personajes").style.top = `0px`;
+
             document.querySelector("#id-personaje-8").classList.remove("oculto");
             document.querySelector("#id-personaje-1").style.left = `${pos-1750}px`;
             document.querySelector("#id-personaje-1").classList.add("trasladarCard")
