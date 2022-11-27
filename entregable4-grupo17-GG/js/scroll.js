@@ -231,7 +231,6 @@ function scrollDescripcion() {
 }
 
 function trasladar() {
-    console.log(window.scrollY)
     let size = cardsPersonajes.length;
 
 
@@ -242,11 +241,7 @@ function trasladar() {
     if (window.scrollY > 400) {
         parallax2.classList.remove("trasladarTop")
     }
-    // if (window.scrollY > 4050) {
-    //     document.querySelector(".titulo-personajes").classList.add("trasladarTop");
-    // } else {
-    //     document.querySelector(".titulo-personajes").classList.remove("trasladarTop");
-    // }
+
 
     if (window.pageYOffset > 50) {
         parallax2.classList.add("moveStars")
@@ -254,7 +249,6 @@ function trasladar() {
 
     if (window.pageYOffset > 400) {
         parallax2.classList.remove("moveStars")
-            // nave.classList.add("moveNave")
     }
 
 
@@ -264,7 +258,6 @@ function trasladar() {
     })
 
     let pos = 1750;
-    // let tamanioCard = 250;
 
     if (window.scrollY > 4050 && window.scrollY < 4850) {
         if (window.scrollY > 4050) {
