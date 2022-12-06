@@ -531,37 +531,37 @@ ul {
 }
 
 .spritesheet {
-    background: url(../images/spritesheet.png);
+    background: url(../images/spritesheet-correr.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80px;
-    width: 60px;
-    animation: pelea 1.5s steps(20) infinite;
+    height: 100px;
+    width: 81px;
+    animation: pelea 2s steps(10) infinite;
 }
 
 @keyframes pelea {
     0% {
-        background-position-x: 8px;
+        background-position-x: 0;
     }
     100% {
-        background-position-x: -1300px;
+        background-position-x: -813px;
     }
 }
 
 .spritesheet2 {
-    background: url(../images/spritesheet2.png);
+    background: url(../images/spritesheet-saltar.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80px;
+    height: 100px;
     width: 60px;
-    animation: pelea2 1.8s steps(8) infinite;
+    animation: pelea2 2s steps(12) infinite;
 }
 
 @keyframes pelea2 {
     0% {
-        background-position-x: 0px;
+        background-position-x: 0;
     }
     100% {
-        background-position-x: -600px;
+        background-position-x: -727px;
     }
 }
